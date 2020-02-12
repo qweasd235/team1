@@ -13,14 +13,14 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="logo"><a href="/board/home">TEAM1 <span>by TEAM1</span></a></div>
-				<a href="#menu"><span>Menu</span></a>
+				<a href="#menu" style="background-color: red;"><span>Menu</span></a>
 			</header>
 
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="/board/home">Home</a></li>
-					<li><a href="/board/login">Login</a></li>
+					<li><a href="/board/login">Login</a></li> 
 					<li><a href="/mem/joinGet">Join</a></li>
 					<li><a href="/board/regist">명소 등록</a></li>
 					<li><a href="#">명소 수정</a></li>
