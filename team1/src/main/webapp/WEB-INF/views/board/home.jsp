@@ -20,8 +20,8 @@
 			<nav id="menu">
 				<ul class="links">
 
-					<li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Login</a></li>
+					<li><a href="board/home">Home</a></li>
+					<li><a href="board/login">Login</a></li>
 					<li><a href="elements.html">Join</a></li>
 
 				</ul>
@@ -54,7 +54,7 @@
 							<p>Scelerisque enim mi curae erat ultricies lobortis donec velit in per cum consectetur purus a enim platea vestibulum lacinia et elit ante scelerisque vestibulum. At urna condimentum sed vulputate a duis in senectus ullamcorper lacus cubilia consectetur odio proin sociosqu a parturient nam ac blandit praesent aptent. Eros dignissim mus mauris a natoque ad suspendisse nulla a urna in tincidunt tristique enim arcu litora scelerisque eros suspendisse.</p>
 						</div>
 						<footer>
-							<a href="generic.html" class="button alt">Learn More</a>
+							<a href="board/detail" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
