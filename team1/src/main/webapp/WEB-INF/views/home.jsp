@@ -19,9 +19,11 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li><a href="generic.html">Generic</a></li>
 					<li><a href="elements.html">Elements</a></li>
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">회원가입</a></li>
 				</ul>
 			</nav>
 
