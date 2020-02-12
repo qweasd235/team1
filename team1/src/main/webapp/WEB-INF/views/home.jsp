@@ -19,9 +19,11 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
+
 					<li><a href="index.html">Home</a></li>
 					<li><a href="generic.html">Login</a></li>
 					<li><a href="elements.html">Join</a></li>
+
 				</ul>
 			</nav>
 
@@ -43,11 +45,10 @@
 		<!-- One -->
 			<section id="one" class="wrapper post bg-img" data-bg="banner2.jpg">
 				<div class="inner">
-				<h1>대관령</h1>
 					<article class="box">
 						<header>
-							<h2>Nibh non lobortis mus nibh</h2>
-							<p>01.01.2017</p>
+							<h2>대관령</h2>
+							<p>02.12.2020</p>
 						</header>
 						<div class="content">
 							<p>Scelerisque enim mi curae erat ultricies lobortis donec velit in per cum consectetur purus a enim platea vestibulum lacinia et elit ante scelerisque vestibulum. At urna condimentum sed vulputate a duis in senectus ullamcorper lacus cubilia consectetur odio proin sociosqu a parturient nam ac blandit praesent aptent. Eros dignissim mus mauris a natoque ad suspendisse nulla a urna in tincidunt tristique enim arcu litora scelerisque eros suspendisse.</p>
