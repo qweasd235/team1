@@ -18,28 +18,16 @@
 
 		<!-- Nav -->
 			<nav id="menu">
-<<<<<<< HEAD
-				<ul class="links">
 
-
-					<li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Login</a></li>
-=======
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
-
-<<<<<<< HEAD
-					<li><a href="board/home">Home</a></li>
-					<li><a href="board/login">Login</a></li>
-					<li><a href="elements.html">Join</a></li>
-
-=======
 			<ul class="links">
 					<li><a href="/board/home">Home</a></li>
 					<li><a href="/board/login">Login</a></li>
 					<li><a href="elements.html">Join</a></li>
 					<li><a href="/board/regist">명소 등록</a></li>
+					<li><a href="#">명소 수정</a></li>
+					<li><a href="#">명소 삭제</a></li>
 
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
+
 				</ul>
 			</nav>
 
