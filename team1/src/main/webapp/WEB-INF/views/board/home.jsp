@@ -12,17 +12,17 @@
 
 		<!-- Header -->
 			<header id="header">
-				<div class="logo"><a href="index.html">TEAM1 <span>by TEAM1</span></a></div>
+				<div class="logo"><a href="/board/home">TEAM1 <span>by TEAM1</span></a></div>
 				<a href="#menu"><span>Menu</span></a>
 			</header>
 
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="board/home">Home</a></li>
-					<li><a href="board/login">Login</a></li>
+					<li><a href="/board/home">Home</a></li>
+					<li><a href="/board/login">Login</a></li>
 					<li><a href="elements.html">Join</a></li>
-					<li><a href="board/regist">명소 등록</a></li>
+					<li><a href="/board/regist">명소 등록</a></li>
 				</ul>
 			</nav>
 
@@ -56,7 +56,7 @@
 불어와 강원도 여행을 하기에 더욱 좋았다.</p>
 						</div>
 						<footer>
-							<a href="board/detail" class="button alt">Learn More</a>
+							<a href="/board/detail" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>

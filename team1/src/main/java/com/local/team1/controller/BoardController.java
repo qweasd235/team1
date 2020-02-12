@@ -19,5 +19,11 @@ public class BoardController {
 		
 		return "board/regist";
 	}
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String home() {
+		
+		return "board/home";
+	}
 
 }

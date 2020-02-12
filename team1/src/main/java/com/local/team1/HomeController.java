@@ -22,7 +22,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/nono", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
@@ -33,9 +33,13 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "/board/home";
+		return "/home";
 	}
 	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String main() {
+		return "redirect:/board/home"; // 글목록으로 리다이렉트
+	}
 	
 
 }
