@@ -12,17 +12,18 @@
 
 		<!-- Header -->
 			<header id="header">
-				<div class="logo"><a href="index.html">TEAM1 <span>by TEAM1</span></a></div>
+				<div class="logo"><a href="/board/home">TEAM1 <span>by TEAM1</span></a></div>
 				<a href="#menu"><span>Menu</span></a>
 			</header>
 
 		<!-- Nav -->
 			<nav id="menu">
-				<ul class="links">
 
+			<ul class="links">
 					<li><a href="/board/home">Home</a></li>
 					<li><a href="/board/login">Login</a></li>
-					<li><a href="/board/join">Join</a></li>
+					<li><a href="elements.html">Join</a></li>
+					<li><a href="/board/regist">명소 등록</a></li>
 
 				</ul>
 			</nav>
@@ -35,8 +36,9 @@
 		-->
 			<section id="banner" class="bg-img" data-bg="banner.jpg">
 				<div class="inner">
-					<header> 
-						<h1>무제</h1>
+					<header>
+						<h1>Team1 Project</h1>
+						<p>경북궁</p>
 					</header>
 				</div>
 				<a href="#one" class="more">Learn More</a>
@@ -47,14 +49,16 @@
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>Nibh non lobortis mus nibh</h2>
-							<p>01.01.2017</p>
+							<h2>대관령</h2>
+							<p>02.12.2020</p>
 						</header>
 						<div class="content">
-							<p>Scelerisque enim mi curae erat ultricies lobortis donec velit in per cum consectetur purus a enim platea vestibulum lacinia et elit ante scelerisque vestibulum. At urna condimentum sed vulputate a duis in senectus ullamcorper lacus cubilia consectetur odio proin sociosqu a parturient nam ac blandit praesent aptent. Eros dignissim mus mauris a natoque ad suspendisse nulla a urna in tincidunt tristique enim arcu litora scelerisque eros suspendisse.</p>
+							<p>가을에 가기 좋은 강원도 여행, 우리는 늦 여름 휴가 겸 & 가을 맞이 휴가를 떠난다. 추암 해수욕장과 삼척 해수욕장에서 여름에 못했던
+물 놀이와 모래 놀이를 하며 즐겁게 여름 휴가를 보냈다면, 이번에는 가을 맞이 여행을 즐겼다. 가을이 되니 파란 하늘과 선선한 바람이
+불어와 강원도 여행을 하기에 더욱 좋았다.</p>
 						</div>
 						<footer>
-							<a href="generic.html" class="button alt">Learn More</a>
+							<a href="/board/detail" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <!--
 	Road Trip by TEMPLATED
@@ -9,22 +11,22 @@
 		<title>Generic - Road Trip by TEMPLATED</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../resources/assets/css/main.css" />
 	</head>
 	<body class="subpage">
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="index.html">Road Trip <span>by TEMPLATED</span></a></div>
+				<div class="logo"><a href="/board/home">Road Trip <span>by TEMPLATED</span></a></div>
 				<a href="#menu"><span>Menu</span></a>
 			</header>
 
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Generic</a></li>
-					<li><a href="elements.html">Elements</a></li>
+					<li><a href="/board/home">Home</a></li>
+					<li><a href="/board/join">Generic</a></li>
+					<li><a href="/board/">Elements</a></li>
 				</ul>
 			</nav>
 
@@ -101,12 +103,12 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../resources/assets/js/jquery.min.js"></script>
+			<script src="../resources/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../resources/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../resources/assets/js/skel.min.js"></script>
+			<script src="../resources/assets/js/util.js"></script>
+			<script src="../resources/assets/js/main.js"></script>
 
 	</body>
 </html>
