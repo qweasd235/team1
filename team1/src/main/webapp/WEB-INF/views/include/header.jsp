@@ -13,7 +13,7 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="logo"><a href="/board/home">TEAM1 <span>by TEAM1</span></a></div>
-				<a href="#menu"><span>Menu</span></a>
+				<a href="#menu" style="background-color: red;"><span>Menu</span></a>
 			</header>
 
 		<!-- Nav -->
