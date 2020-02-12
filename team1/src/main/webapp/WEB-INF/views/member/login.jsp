@@ -7,7 +7,9 @@
 <script>
 $(function(){
 	$("#btnCancel").click(function(){
-		href = "board/home";
+		location.href = "/board/home";
+	});
+
 	});
 });
 </script>
@@ -32,7 +34,7 @@ $(function(){
 				<td><input type="password" id="mem_id" name="mem_pw" required/></td>
 			</tr>
 		</table>
-			<input type="submit" value="로그인"/>
+			<input type="submit" value="로그인" id="btnSubmit"/>
 			<input type="button" value="취소" id="btnCancel"/>
 	</form>
 
