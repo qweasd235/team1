@@ -12,7 +12,7 @@ import com.local.team1.domain.MemberVo;
 @Repository
 public class MemberDaoImpl implements MemberDao {
 	
-	private static final String NAMESPACE = "com.local.team1.memberMapper";
+	private static final String NAMESPACE = "com.local.mappers.memberMapper";
 	
 	@Inject
 	private SqlSession sqlSession;
@@ -31,7 +31,7 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public MemberVo readWithPw(String mem_id, String mem_pw) {
-		Map<String, Object> paramMap = new HashMap<>();
+		Map<String, Object> paramMap = new HashMap<String, Object>();
 		paramMap.put("mem_id", mem_id);
 		paramMap.put("mem_pw", mem_pw);
 		return sqlSession.selectOne(NAMESPACE + ".readWithPw", paramMap);

@@ -29,9 +29,11 @@ public class MemberController {
 	@RequestMapping(value="/loginPost", method= RequestMethod.POST)
 	public String loginPost(HttpSession session, LoginDto loginDto, Model model) throws Exception{
 		MemberVo memberVo = memberService.login(loginDto);
-		
+				
+		System.out.println("loginDto:" + loginDto);
+		System.out.println("memberVo:" + memberVo);
 		if(memberVo == null) {
-			return "redirect:/member/loginGet";
+			return "redirect:/mem/loginGet";
 		}
 		
 		String targetLocation = (String)session.getAttribute("targetLocation");
