@@ -20,9 +20,9 @@
 			<nav id="menu">
 				<ul class="links">
 
-					<li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Login</a></li>
-					<li><a href="elements.html">Join</a></li>
+					<li><a href="/board/home">Home</a></li>
+					<li><a href="/board/login">Login</a></li>
+					<li><a href="/board/join">Join</a></li>
 
 				</ul>
 			</nav>
