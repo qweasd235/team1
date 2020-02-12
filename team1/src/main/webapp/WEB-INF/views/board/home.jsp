@@ -18,28 +18,23 @@
 
 		<!-- Nav -->
 			<nav id="menu">
-<<<<<<< HEAD
+
 				<ul class="links">
 
 
 					<li><a href="index.html">Home</a></li>
 					<li><a href="generic.html">Login</a></li>
-=======
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 
-<<<<<<< HEAD
 					<li><a href="board/home">Home</a></li>
 					<li><a href="board/login">Login</a></li>
 					<li><a href="elements.html">Join</a></li>
+				</ul>
 
-=======
 			<ul class="links">
 					<li><a href="/board/home">Home</a></li>
 					<li><a href="/board/login">Login</a></li>
 					<li><a href="elements.html">Join</a></li>
 					<li><a href="/board/regist">명소 등록</a></li>
-
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 				</ul>
 			</nav>
 
@@ -64,11 +59,13 @@
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>대관령</h2>
-							<p>강원도 평창군 대관령 대관령마루길 483-32</p>
+							<h2>강원도</h2>
+<!-- 							<p>강원도 평창군 대관령 대관령마루길 483-32</p> -->
 						</header>
 						<div class="content">
-							<p>가을에 가기 좋은 강원도 여행, 우리는 늦 여름 휴가 겸 & 가을 맞이 휴가를 떠난다. 추암 해수욕장과 삼척 해수욕장에서 여름에 못했던 물 놀이와 모래 놀이를 하며 즐겁게 여름 휴가를 보냈다면, 이번에는 가을 맞이 여행을 즐겼다. 가을이 되니 파란 하늘과 선선한 바람이 불어와 강원도 여행을 하기에 더욱 좋았다.</p>
+						<p><img src="../resources/images/mountain.png">
+						   <img src="../resources/images/monorail.png">
+						</p>
 						</div>
 						<footer>
 							<a href="/board/detail" class="button alt">Learn More</a>
