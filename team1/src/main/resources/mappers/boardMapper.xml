@@ -4,7 +4,30 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.kh.mappers.boardMapper">
-
+<mapper namespace="com.local.mappers.boardMapper">
 	
+		<insert id="create">
+			insert into t_spot (s_id, s_name, s_add, s_detail, s_pic, s_ref)
+			values (seq_s_id.nextval(), #{s_name}, #{s_add}, #{s_detail}, #{s_pic}, #{s_ref})
+		</insert>
+		
+		<select id="read" resultType="BoardVo">
+			select * from t_spot
+			where s_id = #{s_id}
+		</select>
+		
+		<update id="update">
+			update t_spot set
+				s_name = #{s_name},
+				s_add = #{s_add},
+				s_detail = #{s_detail},
+				s_pic = #{s_pic}
+			where s_id = #{s_id}
+	</update>
+	
+	<delete id="delete">
+		delete from t_spot
+		where s_id = #{s_id}
+	</delete>
+		
 </mapper>  
