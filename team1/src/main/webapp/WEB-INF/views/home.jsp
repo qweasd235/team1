@@ -35,7 +35,7 @@
 		-->
 			<section id="banner" class="bg-img" data-bg="banner.jpg">
 				<div class="inner">
-					<header>
+					<header> 
 						<h1>무제</h1>
 					</header>
 				</div>
