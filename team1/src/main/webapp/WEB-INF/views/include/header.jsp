@@ -23,5 +23,7 @@
 					<li><a href="/board/login">Login</a></li>
 					<li><a href="/mem/joinGet">Join</a></li>
 					<li><a href="/board/regist">명소 등록</a></li>
+					<li><a href="#">명소 수정</a></li>
+					<li><a href="#">명소 삭제</a></li>
 				</ul>
 			</nav>

@@ -12,6 +12,7 @@
 <%@ include file="../include/header.jsp" %>
 >>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 
+
 		<!-- Banner -->
 		<!--
 			Note: To show a background image, set the "data-bg" attribute below
