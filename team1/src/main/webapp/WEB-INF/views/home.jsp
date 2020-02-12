@@ -34,7 +34,7 @@
 			<section id="banner" class="bg-img" data-bg="banner.jpg">
 				<div class="inner">
 					<header>
-						<h1>무제</h1>
+						<h1>경북궁</h1>
 					</header>
 				</div>
 				<a href="#one" class="more">Learn More</a>
@@ -43,6 +43,7 @@
 		<!-- One -->
 			<section id="one" class="wrapper post bg-img" data-bg="banner2.jpg">
 				<div class="inner">
+				<h1>대관령</h1>
 					<article class="box">
 						<header>
 							<h2>Nibh non lobortis mus nibh</h2>
