@@ -77,7 +77,7 @@
 					var post 	= $(this),
 						bg 		= post.data('bg');
 
-					post.css( 'background-image', 'url(./resources/images/' + bg + ')' );
+					post.css( 'background-image', 'url(../resources/images/' + bg + ')' );
 
 				});
 
