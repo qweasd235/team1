@@ -13,5 +13,11 @@ public class BoardController {
 		
 		return "board/detail";
 	}
+	
+	@RequestMapping(value = "/regist", method = RequestMethod.GET)
+	public String regist() {
+		
+		return "board/regist";
+	}
 
 }

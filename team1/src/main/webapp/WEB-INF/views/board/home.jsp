@@ -23,6 +23,7 @@
 					<li><a href="board/home">Home</a></li>
 					<li><a href="board/login">Login</a></li>
 					<li><a href="elements.html">Join</a></li>
+					<li><a href="board/regist">명소 등록</a></li>
 
 				</ul>
 			</nav>
