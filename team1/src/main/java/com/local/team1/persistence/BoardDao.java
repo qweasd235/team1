@@ -1,5 +1,7 @@
 package com.local.team1.persistence;
 
+import com.local.team1.domain.BoardVo;
+
 public interface BoardDao {
 	
 	// 데이터 추가

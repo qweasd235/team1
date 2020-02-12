@@ -4,6 +4,8 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.local.team1.domain.BoardVo;
+
 public class BoardDaoImpl implements BoardDao {
 
 	private static final String NAMESPACE = "com.local.mappers.boardMapper";
@@ -20,18 +22,18 @@ public class BoardDaoImpl implements BoardDao {
 
 	@Override
 	public BoardVo read(Integer s_id) throws Exception {
-		return sqlsession.select(NAMESPACE, ".read", s_id);;
+		return sqlsession.selectOne(NAMESPACE + ".read", s_id);
 	}
 
 	@Override
 	public void update(BoardVo vo) throws Exception {
-		// TODO Auto-generated method stub
+		sqlsession.update(NAMESPACE + ".update", vo);
 		
 	}
 	
 	@Override
 	public void delete(Integer s_id) throws Exception {
-		// TODO Auto-generated method stub
+		sqlsession.delete(NAMESPACE + ".delete", s_id);
 
 	}
 
