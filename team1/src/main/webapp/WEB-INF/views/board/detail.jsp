@@ -17,16 +17,16 @@
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="index.html">Road Trip <span>by TEMPLATED</span></a></div>
+				<div class="logo"><a href="/board/home">Road Trip <span>by TEMPLATED</span></a></div>
 				<a href="#menu"><span>Menu</span></a>
 			</header>
 
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="board/home">Home</a></li>
-					<li><a href="board/join">Generic</a></li>
-					<li><a href="board/">Elements</a></li>
+					<li><a href="/board/home">Home</a></li>
+					<li><a href="/board/join">Generic</a></li>
+					<li><a href="/board/">Elements</a></li>
 				</ul>
 			</nav>
 
