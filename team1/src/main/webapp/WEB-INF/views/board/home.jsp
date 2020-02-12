@@ -1,49 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<<<<<<< HEAD
-		<!-- Header -->
-			<header id="header">
-				<div class="logo"><a href="/board/home">TEAM1 <span>by TEAM1</span></a></div>
-				<a href="#menu"><span>Menu</span></a>
-			</header>
-
-		<!-- Nav -->
-			<nav id="menu">
-
-				<ul class="links">
-
-
-					<li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Login</a></li>
-=======
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
-
-<<<<<<< HEAD
-					<li><a href="board/home">Home</a></li>
-					<li><a href="board/login">Login</a></li>
-					<li><a href="elements.html">Join</a></li>
-				</ul>
-
-=======
-<<<<<<< HEAD
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
-			<ul class="links">
-					<li><a href="/board/home">Home</a></li>
-					<li><a href="/board/login">Login</a></li>
-					<li><a href="/mem/joinGet">Join</a></li>
-					<li><a href="/board/regist">명소 등록</a></li>
-<<<<<<< HEAD
-				</ul>
-			</nav>
-
-=======
-=======
 <%@ include file="../include/header.jsp" %>
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 
 
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 		<!-- Banner -->
 		<!--
 			Note: To show a background image, set the "data-bg" attribute below

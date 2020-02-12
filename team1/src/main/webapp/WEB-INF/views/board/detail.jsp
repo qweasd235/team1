@@ -15,12 +15,9 @@
 <!-- 							<p>01.01.2017</p> -->
 						</header>
 						<div class="content">
-<<<<<<< HEAD
-=======
-							<p><img src="banner.jpg"></p>
+s							<p><img src="banner.jpg"></p>
 							
 							<p>Aliquet a consectetur semper suscipit ridiculus mattis augue volutpat hendrerit proin hac vel tristique quis amet parturient sem. Adipiscing laoreet blandit vestibulum laoreet fermentum sed sociis lorem class ipsum scelerisque porttitor viverra vestibulum nascetur. Ad felis ad ullamcorper urna iaculis aenean vel a suspendisse nunc placerat euismod suspendisse et fames ipsum elementum odio vestibulum duis. Fringilla condimentum donec tincidunt enim volutpat nam velit quisque laoreet adipiscing nam in suspendisse mattis ad libero parturient scelerisque. Vitae enim ac parturient iaculis pharetra cum quam imperdiet commodo mus netus quam habitasse risus netus dis.</p>
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 
 							<p>Arcu est vestibulum condimentum conubia tempus a porttitor quam urna adipiscing a adipiscing condimentum tortor cubilia parturient per senectus interdum felis suspendisse penatibus auctor pretium ac. Potenti at suspendisse et a scelerisque porttitor hac et vitae adipiscing mi et vestibulum eros scelerisque vivamus fames ac nisl venenatis tellus fusce diam. Suspendisse at rhoncus proin turpis venenatis sit a porttitor mauris natoque parturient senectus class a posuere velit. Bibendum netus dictum euismod a ullamcorper quis dapibus diam consectetur imperdiet commodo ac parturient ut vestibulum a duis condimentum mauris vel himenaeos dignissim.</p>
 
