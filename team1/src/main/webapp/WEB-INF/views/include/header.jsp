@@ -20,8 +20,8 @@
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="/board/home">Home</a></li>
-					<li><a href="/mem/loginGet">Login</a></li>
-					<li><a href="/mem/joinGet">Join</a></li>
+					<li><a href="/mem/loginGet">로그인</a></li>
+					<li><a href="/mem/joinGet">회원가입</a></li>
 					<li><a href="/board/regist">명소 등록</a></li>
 					<li><a href="#">명소 수정</a></li>
 					<li><a href="#">명소 삭제</a></li>
