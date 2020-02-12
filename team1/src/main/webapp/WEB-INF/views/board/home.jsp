@@ -19,9 +19,15 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
+<<<<<<< HEAD
 
 					<li><a href="index.html">Home</a></li>
 					<li><a href="generic.html">Login</a></li>
+=======
+
+					<li><a href="board/home">Home</a></li>
+					<li><a href="board/login">Login</a></li>
+>>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 					<li><a href="elements.html">Join</a></li>
 
 				</ul>
@@ -57,7 +63,7 @@
 불어와 강원도 여행을 하기에 더욱 좋았다.</p>
 						</div>
 						<footer>
-							<a href="generic.html" class="button alt">Learn More</a>
+							<a href="board/detail" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
