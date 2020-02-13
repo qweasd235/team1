@@ -36,10 +36,10 @@ $(document).ready(function(){
 		}
 		
 		if(isCheckId == false){
-			alert("아이디 중복 체크를 해주세요.");
+			alert("아이디 중복을 체크해 주세요.");
 			return false;
-		}
-		
+		}		
+				
 		var mem_id = $("input[name=mem_id]").val();
 		console.log("--------------------");
 		for(var v = 0; v < mem_id.length; v++){
@@ -48,7 +48,7 @@ $(document).ready(function(){
 			if(!(65 <= keyCode && keyCode <= 90) &&  	//영소문자가 아니고
 					!(48 <= keyCode && keyCode <= 57) &&
 					!(97 <= keyCode && keyCode <= 122)){	//숫자가 아니면
-				alert("유효하지 않은 아이디\n영문자와 숫자 조합으로 입력");
+				alert("유효하지 않은 아이디\n영소문자와 숫자 조합으로 입력");
 				$("input[name=mem_id]").val("").focus();
 				return false; //for 종료, 폼 전송 X
 			}
@@ -63,7 +63,7 @@ $(document).ready(function(){
 					"mem_id" : mem_id
 			};
 			$.post(url, sendData, function(receivedData){
-				var v = receivedData; // 공백 제거
+				var v = receivedData; 
 // 				console.log(receivedData);
 				if(v == 1){
 					$("#resultSpan").text("사용중인 아이디");
@@ -104,7 +104,6 @@ $(document).ready(function(){
 
 	<hr />
 	
-
 
 		<!-- Scripts -->
 			<script src="../resources/assets/js/jquery.min.js"></script>

@@ -13,7 +13,7 @@
 				<div class="inner">
 					<header>
 						<h1>Team1 Project</h1>
-						<p>경북궁</p>
+						<p>${memberVo}경북궁</p>
 					</header>
 				</div>
 				<a href="#one" class="more">Learn More</a>
