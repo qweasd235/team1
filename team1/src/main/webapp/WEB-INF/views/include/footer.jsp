@@ -40,7 +40,7 @@
 
 		<!-- Scripts -->
 			<script src="../resources/assets/js/jquery.min.js"></script>
-			<script src="../resources/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../resources/assets/js/jquery.scrolly.min.js"></script> 
 			<script src="../resources/assets/js/jquery.scrollex.min.js"></script>
 			<script src="../resources/assets/js/skel.min.js"></script>
 			<script src="../resources/assets/js/util.js"></script>
