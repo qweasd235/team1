@@ -12,8 +12,8 @@
   				values(#{mem_id}, #{mem_pw}, #{mem_name})
   	</insert>
   	<!-- 아이디 체크 -->
-  	<select id="selectMember" resultType="MemberVo">
-  		select * from t_member
+  	<select id="readMember" resultType="int" parameterType="String">
+  		select count(*) from t_member
   		where mem_id = #{mem_id}
   	</select>
   	

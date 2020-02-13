@@ -33,7 +33,29 @@ $(document).ready(function(){
 			$("#mem_name").focus();
 			return false;
 		}
-});
+	});	
+	
+	$(function(){
+		var isCheckId = false;
+		$("#btnCheckId").click(function(){
+			var mem_id = $("input[name=mem_id]").val();
+			var url = "/mem/checkId";
+			var sendData = {
+					"mem_id" : mem_id
+			};
+			$.post(url, sendData, function(receivedData){
+				var v = receivedData; // 공백 제거
+// 				console.log(receivedData);
+				if(v == 1){
+					$("#resultSpan").text("사용중인 아이디");
+				}else if (v == 0){
+					$("#resultSpan").text("사용가능한 아이디");
+					isCheckId = true;
+				}
+			});	// $.get
+		}); // $(#btnCheckId)
+	}); //$(function)
+}); //ready
 </script>	
 <body>
 	<!-- Main -->
