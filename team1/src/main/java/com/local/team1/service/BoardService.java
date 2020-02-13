@@ -19,5 +19,5 @@ public interface BoardService {
 		public void delete(Integer s_id) throws Exception;
 		
 		// 글목록
-		public List<BoardVo> listAll() throws Exception;
+		public List<BoardVo> list(String s_cate) throws Exception;
 }
