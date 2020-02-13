@@ -8,8 +8,8 @@
 
 	<!-- 회원가입 -->
 	<insert id="insertMember">
-  		insert into t_member(mem_id, mem_pw, mem_name, mem_pic)
-  				values(#{mem_id}, #{mem_pw}, #{mem_name}, #{mem_pic})
+  		insert into t_member(mem_id, mem_pw, mem_name)
+  				values(#{mem_id}, #{mem_pw}, #{mem_name})
   	</insert>
   	<!-- 아이디 체크 -->
   	<select id="selectMember" resultType="MemberVo">
