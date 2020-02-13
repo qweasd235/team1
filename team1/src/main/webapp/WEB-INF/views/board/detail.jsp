@@ -17,13 +17,13 @@
 						</header>
 						<div class="content">
 
-							<p><img src="../resources/images/">1</p>
+							<p><img src="../resources/images/"></p>
 							
-							<p><img src="../resources/images/">2</p>
+							<p><img src="../resources/images/"></p>
 							
-							<p><img src="../resources/images/">3</p>
+							<p><img src="../resources/images/"></p>
 							
-							<p><img src="../resources/images/">4</p>
+							<p><img src="../resources/images/"></p>
 						<table>
 							<c:forEach items="${list}" var="vo">
 								<tr>
