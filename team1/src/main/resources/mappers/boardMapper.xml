@@ -29,5 +29,10 @@
 		delete from t_spot
 		where s_id = #{s_id}
 	</delete>
+	
+	<select id="list" resultType="BoardVo">
+		select * from t_spot
+		where s_cate = #{s_cate}
+	</select>
 		
 </mapper>  

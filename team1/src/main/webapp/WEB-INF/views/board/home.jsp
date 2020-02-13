@@ -33,7 +33,7 @@
 						</p>
 						</div>
 						<footer>
-							<a href="/board/detail" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=강원도" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
@@ -52,7 +52,7 @@
 						<p>울산의 동쪽 끝 해안을 따라 여러가지 바위들이 있으며 원래는 울기공원이라 불렸다가 2004년 대왕암공원으로 변경되었다.</p>
 						</div>
 						<footer>
-							<a href="generic.html" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=서울/경기" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
@@ -71,7 +71,7 @@
 						<p>향일암은 전국 4대 관음 기도처 중의 한 곳으로 644년 백제 의자왕 4년 신라의 원효대사가 창건하여 원통암이라 불렀다. 고려 광종 9년(958)에 윤필거사가 금오암으로, 조선 숙종 41년 (1715년)에 인묵대사가 향일암이라 개칭했다.</p>
 						</div>
 						<footer>
-							<a href="generic.html" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=충청/전라" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
@@ -90,7 +90,7 @@
 						<p>쁘띠프랑스는 2008년 7월 25일 경기도 가평군 청평면 호반로 1063에 조성된 프랑스식 테마공원이다.</p>
 						</div>
 						<footer>
-							<a href="generic.html" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=경남" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>

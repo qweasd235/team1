@@ -37,14 +37,10 @@ public class MemberController {
 			return "redirect:/mem/loginGet";
 		}
 		
-		String targetLocation = (String)session.getAttribute("targetLocation");
-		String redirectPage = "/board/home";
-		if(targetLocation != null) {
-			redirectPage = targetLocation;
-		}
-		System.out.println(redirectPage);
+		
+		
 		model.addAttribute("memberVo", memberVo);
-		return "redirect:" + redirectPage;
+		return "redirect:/board/home" ;
 	}
 	
 	//아이디 중복체크
