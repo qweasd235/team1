@@ -2,6 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../include/header.jsp" %>
+
+<script>
+$(document).ready(function() {
+	$("#btnRegister").click(function() {
+		location.href = "/board/fbRegisterGet";
+	});
+});
+</script>
+
 		<!-- Content -->
 		<!--
 			Note: To show a background image, set the "data-bg" attribute below

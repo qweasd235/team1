@@ -53,12 +53,6 @@ public class BoardController {
 	public String home() throws Exception {
 		
 		return "board/home";
-	}
-	
-	// 자유게시판
-	@RequestMapping(value = "/freeBoard", method = RequestMethod.GET)
-	public String freeBoard() throws Exception {
-		return "board/freeBoard";
-	}
+	}		
 
 }
