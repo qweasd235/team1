@@ -24,11 +24,12 @@ public class FreeBoardController {
 	// 게시판 글쓰기창
 	@RequestMapping(value = "/fbRegisterGet", method = RequestMethod.GET)
 	public String freeBoardRestierGet() throws Exception {
+		
 		return "/board/freeBoardRegister";
 	}
 	
 	// 게시판 글쓰기처리
-		@RequestMapping(value = "/fbRegisterGet", method = RequestMethod.POST)
+		@RequestMapping(value = "/fbRegisterPOST", method = RequestMethod.POST)
 		public String freeBoardRestierPost() throws Exception {
 			return "redirect:/board/home";
 		}
