@@ -11,6 +11,7 @@
 	</head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
+var isCheckId = false;
 $(document).ready(function(){
 	$("#btnCancel").click(function(){
 		location.href = "/mem/loginGet"
@@ -33,10 +34,28 @@ $(document).ready(function(){
 			$("#mem_name").focus();
 			return false;
 		}
+		
+		if(isCheckId == false){
+			alert("아이디 중복 체크를 해주세요.");
+			return false;
+		}
+		
+		var mem_id = $("input[name=mem_id]").val();
+		console.log("--------------------");
+		for(var v = 0; v < mem_id.length; v++){
+			var keyCode = mem_id.charCodeAt(v); // 해당위치번째 문자의 코드값
+// 			console.log(keyCode);
+			if(!(65 <= keyCode && keyCode <= 90) &&  	//영소문자가 아니고
+					!(48 <= keyCode && keyCode <= 57) &&
+					!(97 <= keyCode && keyCode <= 122)){	//숫자가 아니면
+				alert("유효하지 않은 아이디\n영문자와 숫자 조합으로 입력");
+				$("input[name=mem_id]").val("").focus();
+				return false; //for 종료, 폼 전송 X
+			}
+		}
 	});	
 	
 	$(function(){
-		var isCheckId = false;
 		$("#btnCheckId").click(function(){
 			var mem_id = $("input[name=mem_id]").val();
 			var url = "/mem/checkId";
