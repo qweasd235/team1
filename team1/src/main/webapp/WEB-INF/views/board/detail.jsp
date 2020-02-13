@@ -19,7 +19,10 @@
 						<table>
 							<c:forEach items="${list}" var="vo">
 								<tr>
-									<th colspan='2'>${vo.s_pic}</th>
+									<th rowspan='2'>
+									<img alt='Bootstrap Image Preview' 
+										 src='/board/displayFile?fileName=${vo.s_pic}' width='150'/>
+									</th>
 									<th>${vo.s_add }</th>
 								</tr>
 								<tr>
