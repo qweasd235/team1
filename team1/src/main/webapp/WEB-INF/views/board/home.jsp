@@ -25,11 +25,12 @@
 					<article class="box">
 						<header>
 							<h2>강원도</h2>
-<!-- 							<p>강원도 평창군 대관령 대관령마루길 483-32</p> -->
 						</header>
 						<div class="content">
-						<p><img src="../resources/images/mountain.png">
-						   <img src="../resources/images/monorail.png">
+						<p><img src="../resources/images/">
+						   <img src="../resources/images/">
+						   <img src="../resources/images/">
+<!-- 						   <img src="../resources/images/Skywalk.png"> 이거는 사진이 너무커서 안씀-->
 						</p>
 						</div>
 						<footer>
@@ -45,11 +46,15 @@
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>대왕암</h2>
-							<p>경상도 울산광역시 동구 일산동 산907</p>
+							<h2>경상도</h2>
 						</header>
 						<div class="content">
-						<p>울산의 동쪽 끝 해안을 따라 여러가지 바위들이 있으며 원래는 울기공원이라 불렸다가 2004년 대왕암공원으로 변경되었다.</p>
+						<p>
+							<img src="../resources/images/">
+							<img src="../resources/images/">
+							<img src="../resources/images/">
+							<!-- image는 3개만 쓰죠 -->
+						</p>
 						</div>
 						<footer>
 							<a href="generic.html" class="button alt">Learn More</a>
@@ -64,18 +69,21 @@
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>향일암</h2>
-							<p>여수</p>
+							<h2>전라도</h2>
 						</header>
 						<div class="content">
-						<p>향일암은 전국 4대 관음 기도처 중의 한 곳으로 644년 백제 의자왕 4년 신라의 원효대사가 창건하여 원통암이라 불렀다. 고려 광종 9년(958)에 윤필거사가 금오암으로, 조선 숙종 41년 (1715년)에 인묵대사가 향일암이라 개칭했다.</p>
+						<p>
+							<img src="../resources/images/">
+							<img src="../resources/images/">
+							<img src="../resources/images/">
+						</p>
 						</div>
 						<footer>
 							<a href="generic.html" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
-				<a href="#four" class="more">Learn More</a>
+				<a href="#four" class="more">Learn More	</a>
 			</section>
 
 		<!-- Four -->
@@ -83,11 +91,14 @@
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>쁘띠프랑스 마을</h2>
-							<p>경기도 가평군 청평면 호반로</p>
+							<h2>경기도</h2>
 						</header>
 						<div class="content">
-						<p>쁘띠프랑스는 2008년 7월 25일 경기도 가평군 청평면 호반로 1063에 조성된 프랑스식 테마공원이다.</p>
+							<p>
+								<img src="../resources/images/">
+								<img src="../resources/images/">
+								<img src="../resources/images/">
+							</p>
 						</div>
 						<footer>
 							<a href="generic.html" class="button alt">Learn More</a>
