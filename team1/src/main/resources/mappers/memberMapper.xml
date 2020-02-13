@@ -8,12 +8,12 @@
 
 	<!-- 회원가입 -->
 	<insert id="insertMember">
-  		insert into t_member(mem_id, mem_pw, mem_name, mem_pic)
-  				values(#{mem_id}, #{mem_pw}, #{mem_name}, #{mem_pic})
+  		insert into t_member(mem_id, mem_pw, mem_name)
+  				values(#{mem_id}, #{mem_pw}, #{mem_name})
   	</insert>
   	<!-- 아이디 체크 -->
-  	<select id="selectMember" resultType="MemberVo">
-  		select * from t_member
+  	<select id="readMember" resultType="int" parameterType="String">
+  		select count(*) from t_member
   		where mem_id = #{mem_id}
   	</select>
   	

@@ -11,12 +11,12 @@
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>Nibh non lobortis mus nibh</h2>
-							<p>01.01.2017</p>
+<!-- 							<h2>Nibh non lobortis mus nibh</h2> -->
+<!-- 							<p>01.01.2017</p> -->
 						</header>
 						<div class="content">
-							<p>Ac pretium parturient et scelerisque dis pulvinar nascetur suspendisse justo parturient est quis adipiscing nisi dis eu ullamcorper. Penatibus aliquet vestibulum dis pretium a ullamcorper accumsan facilisis elit ullamcorper porttitor dictumst per a a potenti interdum fusce a adipiscing nostra ac parturient. Proin a imperdiet at a scelerisque quam et at ante aenean per per faucibus senectus lobortis mi tincidunt a penatibus. Mauris vestibulum aliquet parturient odio dapibus euismod a mi ullamcorper maecenas turpis non scelerisque nibh fermentum natoque erat parturient suspendisse a magna curabitur cum.</p>
-
+s							<p><img src="banner.jpg"></p>
+							
 							<p>Aliquet a consectetur semper suscipit ridiculus mattis augue volutpat hendrerit proin hac vel tristique quis amet parturient sem. Adipiscing laoreet blandit vestibulum laoreet fermentum sed sociis lorem class ipsum scelerisque porttitor viverra vestibulum nascetur. Ad felis ad ullamcorper urna iaculis aenean vel a suspendisse nunc placerat euismod suspendisse et fames ipsum elementum odio vestibulum duis. Fringilla condimentum donec tincidunt enim volutpat nam velit quisque laoreet adipiscing nam in suspendisse mattis ad libero parturient scelerisque. Vitae enim ac parturient iaculis pharetra cum quam imperdiet commodo mus netus quam habitasse risus netus dis.</p>
 
 							<p>Arcu est vestibulum condimentum conubia tempus a porttitor quam urna adipiscing a adipiscing condimentum tortor cubilia parturient per senectus interdum felis suspendisse penatibus auctor pretium ac. Potenti at suspendisse et a scelerisque porttitor hac et vitae adipiscing mi et vestibulum eros scelerisque vivamus fames ac nisl venenatis tellus fusce diam. Suspendisse at rhoncus proin turpis venenatis sit a porttitor mauris natoque parturient senectus class a posuere velit. Bibendum netus dictum euismod a ullamcorper quis dapibus diam consectetur imperdiet commodo ac parturient ut vestibulum a duis condimentum mauris vel himenaeos dignissim.</p>
