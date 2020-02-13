@@ -42,7 +42,7 @@ public class MemberController {
 		if(targetLocation != null) {
 			redirectPage = targetLocation;
 		}
-		
+		System.out.println(redirectPage);
 		model.addAttribute("memberVo", memberVo);
 		return "redirect:" + redirectPage;
 	}
