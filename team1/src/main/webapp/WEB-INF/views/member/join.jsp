@@ -36,12 +36,10 @@ $(document).ready(function(){
 		}
 		
 		if(isCheckId == false){
-			alert("아이디 중복 체크를 해주세요.");
+			alert("아이디 중복을 체크해 주세요.");
 			return false;
-		}
-		
-		if($("#mem_name").val == mem_name)
-		
+		}		
+				
 		var mem_id = $("input[name=mem_id]").val();
 		console.log("--------------------");
 		for(var v = 0; v < mem_id.length; v++){
