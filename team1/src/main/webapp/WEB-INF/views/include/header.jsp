@@ -25,5 +25,6 @@
 					<li><a href="/board/regist">명소 등록</a></li>
 					<li><a href="#">명소 수정</a></li>
 					<li><a href="#">명소 삭제</a></li>
+					<li><a href="/board/freeBoard">자유 게시판</a></li>
 				</ul>
 			</nav>

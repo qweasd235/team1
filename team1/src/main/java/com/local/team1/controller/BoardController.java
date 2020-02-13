@@ -16,17 +16,20 @@ public class BoardController {
 	@Inject
 	private BoardService bService;
 	
+	// 상세보기
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public String detail() throws Exception {
 		
 		return "board/detail";
 	}
 	
+	// 명소 등록창
 	@RequestMapping(value = "/regist", method = RequestMethod.GET)
 	public String regist() throws Exception {
 		return "board/regist";
 	}
 	
+	// 명소 등록
 	@RequestMapping(value = "/registPro", method = RequestMethod.POST)
 	public String registPro(BoardVo vo) throws Exception {
 		System.out.println(vo);
@@ -40,10 +43,17 @@ public class BoardController {
 		return "board/home";
 	}
 	
+	// home
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home() throws Exception {
 		
 		return "board/home";
+	}
+	
+	// 자유게시판
+	@RequestMapping(value = "/freeBoard", method = RequestMethod.GET)
+	public String freeBoard() throws Exception {
+		return "board/freeBoard";
 	}
 
 }
