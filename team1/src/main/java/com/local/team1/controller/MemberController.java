@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.local.team1.domain.LoginDto;
 import com.local.team1.domain.MemberVo;
@@ -36,14 +37,18 @@ public class MemberController {
 			return "redirect:/mem/loginGet";
 		}
 		
-		String targetLocation = (String)session.getAttribute("targetLocation");
-		String redirectPage = "/board/home";
-		if(targetLocation != null) {
-			redirectPage = targetLocation;
-		}
+		
 		
 		model.addAttribute("memberVo", memberVo);
-		return "redirect:" + redirectPage;
+		return "redirect:/board/home" ;
+	}
+	
+	//아이디 중복체크
+	@ResponseBody
+	@RequestMapping(value="/checkId", method = RequestMethod.POST)
+	public int checkId(MemberVo vo, String mem_id) throws Exception{
+		int result = memberService.CheckId(mem_id);
+		return result;
 	}
 	
 	//회원가입 get
@@ -54,10 +59,20 @@ public class MemberController {
 	
 	// 회원가입 post 처리
 	@RequestMapping(value="/joinPost", method= RequestMethod.POST)
-	public String joinPost(MemberVo vo) throws Exception{
-		memberService.join(vo);
+	public String joinPost(MemberVo vo, String mem_id) throws Exception{
 		
-		return "redirect:/board/home";
+		int result = memberService.CheckId(mem_id);
+		try {
+			if(result == 1) {
+				return "/mem/join";
+			}else if(result == 0) {
+				memberService.join(vo);
+			}
+		}catch(Exception e) {
+			throw new RuntimeException();
+		}
+		
+		return "redirect:/";
 	}
 	
 	

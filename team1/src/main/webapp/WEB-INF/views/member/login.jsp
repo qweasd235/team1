@@ -10,7 +10,7 @@ $(function(){
 		location.href = "/board/home";
 	});
 
-	});
+	
 });
 </script>
 <head>

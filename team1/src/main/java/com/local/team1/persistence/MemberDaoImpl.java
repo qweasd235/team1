@@ -24,9 +24,8 @@ public class MemberDaoImpl implements MemberDao {
 	}
 
 	@Override
-	public MemberVo readMember(String mem_id) {
-		MemberVo vo = sqlSession.selectOne(NAMESPACE + ".readMember", mem_id);
-		return vo;
+	public int readMember(String mem_id) {
+		return sqlSession.selectOne(NAMESPACE + ".readMember", mem_id);
 	}
 
 	@Override

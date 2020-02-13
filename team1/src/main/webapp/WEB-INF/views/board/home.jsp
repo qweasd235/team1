@@ -13,7 +13,7 @@
 				<div class="inner">
 					<header>
 						<h1>Team1 Project</h1>
-						<p>경북궁</p>
+						<p>경복궁</p>
 					</header>
 				</div>
 				<a href="#one" class="more">Learn More</a>
@@ -34,7 +34,7 @@
 						</p>
 						</div>
 						<footer>
-							<a href="/board/detail" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=강원도" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
@@ -57,7 +57,7 @@
 						</p>
 						</div>
 						<footer>
-							<a href="generic.html" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=서울/경기" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
@@ -79,7 +79,7 @@
 						</p>
 						</div>
 						<footer>
-							<a href="generic.html" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=충청/전라" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
@@ -101,7 +101,7 @@
 							</p>
 						</div>
 						<footer>
-							<a href="generic.html" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=경남" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>

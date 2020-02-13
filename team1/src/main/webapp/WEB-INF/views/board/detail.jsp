@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../include/header.jsp" %>
 		<!-- Content -->
 		<!--
@@ -15,6 +16,7 @@
 <!-- 							<p>01.01.2017</p> -->
 						</header>
 						<div class="content">
+
 							<p><img src="../resources/images/">1</p>
 							
 							<p><img src="../resources/images/">2</p>
@@ -22,6 +24,17 @@
 							<p><img src="../resources/images/">3</p>
 							
 							<p><img src="../resources/images/">4</p>
+						<table>
+							<c:forEach items="${list}" var="vo">
+								<tr>
+									<th colspan='2'>${vo.s_pic}</th>
+									<th>${vo.s_add }</th>
+								</tr>
+								<tr>
+									<td>${vo.s_detail }</td>
+								</tr>
+							</c:forEach>
+						</table>
 						</div>
 						<footer>
 							<ul class="actions">
