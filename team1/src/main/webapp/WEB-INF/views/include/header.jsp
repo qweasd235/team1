@@ -18,7 +18,14 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="logo"><a href="/board/home">TEAM1 <span>by TEAM1</span></a></div>
-				<span>${memberVo.mem_id}님 환영합니다.</span>
+				<c:choose>
+					<c:when test="${memberVo.mem_name != null}">
+						<span>${memberVo.mem_name}님 환영합니다.</span>
+					</c:when>
+					<c:otherwise>
+						<span></span>
+					</c:otherwise>
+				</c:choose>
 				<a href="#menu" style="background-color: red;"><span>Menu</span></a>
 			</header>
 
@@ -26,8 +33,13 @@
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="/board/home">Home</a></li>
-					<li><a href="/mem/loginGet">로그인</a></li>
-					<li><a href="/mem/joinGet">회원가입</a></li>
+					<c:if test="${empty memberVo}">
+						<li><a href="/mem/loginGet">로그인</a></li>
+						<li><a href="/mem/joinGet">회원가입</a></li>
+					</c:if>
+					<c:if test="${not empty memberVo}">
+						<li><a href="/mem/logout">로그아웃</a></li>
+					</c:if>
 					<li><a href="/board/regist">명소 등록</a></li>
 					<li><a href="#">명소 수정</a></li>
 					<li><a href="#">명소 삭제</a></li>

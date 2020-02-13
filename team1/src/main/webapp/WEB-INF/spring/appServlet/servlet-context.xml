@@ -36,24 +36,33 @@
 	
 	<context:component-scan base-package="com.local.team1" />
 					
+	<!-- @transactional -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+	<beans:bean id="loginInterceptor"
+				class="com.local.team1.intercepter.LoginInterceptor"/>	
+		
+	<beans:bean id="authInterceptor"
+				class="com.local.team1.intercepter.AuthInterceptor"/>	
+	
 	
 	<!-- Interceptor -->
-<!-- 	<interceptors> -->
+	<interceptors>
 <!-- 		<interceptor> -->
 <!-- 			<mapping path="/doA"/> -->
 <!-- 			<mapping path="/doB"/> -->
 <!-- 			<beans:ref bean="sampleInterceptor"/> -->
 <!-- 		</interceptor> -->
-<!-- 		<interceptor> -->
-<!-- 			<mapping path="/member/loginPost"/> -->
-<!-- 			<beans:ref bean="loginInterceptor"/> -->
-<!-- 		</interceptor> -->
-<!-- 		<interceptor> -->
-<!-- 			<mapping path="/board/**/*"/> -->
-<!-- 			<exclude-mapping path="/board/listAll"/> -->
-<!-- 			<beans:ref bean="authInterceptor"/> -->
-<!-- 		</interceptor> -->
-<!-- 	</interceptors> -->
+		<interceptor>
+			<mapping path="/mem/loginPost"/>
+			<beans:ref bean="loginInterceptor"/>
+		</interceptor>
+		<interceptor>
+			<mapping path="/board/**/*"/>
+			<exclude-mapping path="/board/home"/>
+			<beans:ref bean="authInterceptor"/>
+		</interceptor>
+	</interceptors>
 	
 	
 </beans:beans>
