@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,6 +14,7 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="logo"><a href="/board/home">TEAM1 <span>by TEAM1</span></a></div>
+				<span>${memberVo.mem_id}님 환영합니다.</span>
 				<a href="#menu" style="background-color: red;"><span>Menu</span></a>
 			</header>
 
