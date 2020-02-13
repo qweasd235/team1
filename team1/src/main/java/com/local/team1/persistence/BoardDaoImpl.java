@@ -1,5 +1,7 @@
 package com.local.team1.persistence;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -37,6 +39,11 @@ public class BoardDaoImpl implements BoardDao {
 	public void delete(Integer s_id) throws Exception {
 		sqlsession.delete(NAMESPACE + ".delete", s_id);
 
+	}
+
+	@Override
+	public List<BoardVo> list(String s_cate) throws Exception {
+		return sqlsession.selectList(NAMESPACE + ".list", s_cate);
 	}
 
 }
