@@ -4,7 +4,7 @@
 	<!-- Main -->
 
 	<h3>Form</h3>
-	<form method="post" action="/board/registPro">
+	<form method="post" action="/board/registPro" enctype="multipart/form-data">
 	<input type="hidden" name="s_ref" value="MASTER">
 		<div class="row uniform">
 			<div class="6u 12u$(xsmall)">
@@ -30,6 +30,9 @@
 			<div class="12u$">
 				<textarea name="s_detail" id="s_detail"
 					placeholder="상세설명" rows="6"></textarea>
+			</div>
+			<div class="12u$">
+				<input type="file" name="file" id="s_pic"/>
 			</div>
 			<!-- Break -->
 			<div class="12u$">
