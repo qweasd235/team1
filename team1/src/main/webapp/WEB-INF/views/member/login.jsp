@@ -9,8 +9,13 @@ $(function(){
 	$("#btnCancel").click(function(){
 		location.href = "/board/home";
 	});
-
-	
+	$("#btnSubmit").click(function(){
+		if("${memberVo.mem_id}" == null){
+			alert("아이디와 패스워드를 확인해주세요");
+			$("#mem_id").focus();
+			return false;
+		}
+	});	
 });
 </script>
 <head>

@@ -36,9 +36,7 @@ public class MemberController {
 		if(memberVo == null) {
 			return "redirect:/mem/loginGet";
 		}
-		
-		
-		
+				
 		model.addAttribute("memberVo", memberVo);
 		return "redirect:/board/home" ;
 	}
