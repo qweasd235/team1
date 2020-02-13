@@ -4,24 +4,24 @@
 	<!-- Main -->
 
 	<h3>Form</h3>
-	<form method="post" action="#">
+	<form method="post" action="/board/registPro">
+	<input type="hidden" name="s_ref" value="MASTER">
 		<div class="row uniform">
 			<div class="6u 12u$(xsmall)">
-				<input type="text" name="s_name" id="s_name" value="" placeholder="명소" />
+				<input type="text" name="s_name" id="s_name" placeholder="명소" />
 			</div>
 			<div class="6u$ 12u$(xsmall)">
-				<input type="text" name="s_add" id="s_add" value=""
-					placeholder="주소" />
+				<input type="text" name="s_add" id="s_add" placeholder="주소" />
 			</div>
 			<!-- Break -->
 			<div class="12u$">
 				<div class="select-wrapper">
-					<select name="category" id="category">
+					<select name="s_cate" id="s_cate">
 						<option value="">- Category -</option>
-						<option value="1">서울/경기</option>
-						<option value="1">강원도</option>
-						<option value="1">충청/전라</option>
-						<option value="1">경남</option>
+						<option value="서울/경기">서울/경기</option>
+						<option value="강원도">강원도</option>
+						<option value="충청/전라">충청/전라</option>
+						<option value="경남">경남</option>
 					</select>
 				</div>
 			</div>
@@ -42,17 +42,5 @@
 	</form>
 
 	<hr />
-
-	<form method="post" action="#">
-		<div class="row uniform">
-			<div class="9u 12u$(small)">
-				<input type="text" name="query" id="query" value=""
-					placeholder="Query" />
-			</div>
-			<div class="3u$ 12u$(small)">
-				<input type="submit" value="Search" class="fit" />
-			</div>
-		</div>
-	</form>
 
 <%@ include file="../include/footer.jsp" %>

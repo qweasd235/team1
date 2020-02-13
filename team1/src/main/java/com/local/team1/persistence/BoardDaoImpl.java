@@ -3,9 +3,11 @@ package com.local.team1.persistence;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
 import com.local.team1.domain.BoardVo;
 
+@Repository
 public class BoardDaoImpl implements BoardDao {
 
 	private static final String NAMESPACE = "com.local.mappers.boardMapper";

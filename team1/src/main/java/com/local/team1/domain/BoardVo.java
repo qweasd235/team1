@@ -2,6 +2,7 @@ package com.local.team1.domain;
 
 public class BoardVo {
 	private int s_id;
+	private String s_cate;
 	private String s_name;
 	private String s_add;
 	private String s_detail;
@@ -14,6 +15,14 @@ public class BoardVo {
 
 	public void setS_id(int s_id) {
 		this.s_id = s_id;
+	}
+
+	public String getS_cate() {
+		return s_cate;
+	}
+
+	public void setS_cate(String s_cate) {
+		this.s_cate = s_cate;
 	}
 
 	public String getS_name() {
@@ -58,8 +67,8 @@ public class BoardVo {
 
 	@Override
 	public String toString() {
-		return "BoardVo [s_id=" + s_id + ", s_name=" + s_name + ", s_add=" + s_add + ", s_detail=" + s_detail
-				+ ", s_pic=" + s_pic + ", s_ref=" + s_ref + "]";
+		return "BoardVo [s_id=" + s_id + ", s_cate=" + s_cate + ", s_name=" + s_name + ", s_add=" + s_add
+				+ ", s_detail=" + s_detail + ", s_pic=" + s_pic + ", s_ref=" + s_ref + "]";
 	}
 
 }

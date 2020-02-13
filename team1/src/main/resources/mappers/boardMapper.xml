@@ -7,8 +7,8 @@
 <mapper namespace="com.local.mappers.boardMapper">
 	
 		<insert id="create">
-			insert into t_spot (s_id, s_name, s_add, s_detail, s_pic, s_ref)
-			values (seq_s_id.nextval(), #{s_name}, #{s_add}, #{s_detail}, #{s_pic}, #{s_ref})
+			insert into t_spot (s_id, s_cate, s_name, s_add, s_detail, s_pic, s_ref)
+			values (seq_s_id.nextval, #{s_cate}, #{s_name}, #{s_add}, #{s_detail}, #{s_pic}, #{s_ref})
 		</insert>
 		
 		<select id="read" resultType="BoardVo">
