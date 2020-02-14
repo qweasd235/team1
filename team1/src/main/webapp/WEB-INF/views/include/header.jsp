@@ -46,5 +46,9 @@
 					<li><a href="#">명소 삭제</a></li>
 					</c:if>
 					<li><a href="/board/freeBoardList">자유 게시판</a></li>
+					<li><a href="/board/detail?s_cate=서울/경기">서울/경기</a></li>
+					<li><a href="/board/detail?s_cate=강원도">강원도</a></li>
+					<li><a href="/board/detail?s_cate=충청/전라">충청/전라</a></li>
+					<li><a href="/board/detail?s_cate=경남">경남</a></li>
 				</ul>
 			</nav>
