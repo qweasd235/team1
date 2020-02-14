@@ -6,16 +6,38 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 $(function(){
+	
+	var msg = "${msg}";
+	if (msg == "login_fail") {
+		alert("로그인 실패");
+	}
+	
 	$("#btnCancel").click(function(){
 		location.href = "/board/home";
 	});
-	$("#btnSubmit").click(function(){
-		if("${memberVo.mem_id == null || memberVo.mem_pw == null}"){
-			alert("아이디와 패스워드를 확인해주세요");
-			$("#mem_id").focus();
-			return false;
-		}
-	});	
+	
+// 	$(function(){
+// 		$("#btnSubmit").click(function(){
+// 			var mem_id = $("input[name=mem_id]").val();
+// 			var mem_pw = $("input[name=mem_pw]").val();
+// 			var url = "/mem/loginPost";
+// 			var sendData = {
+// 					"mem_id" : mem_id,
+// 					"mem_pw" : mem_pw
+// 			};
+// 			$.post(url, sendData, function(receivedData){
+// 				var v = receivedData;
+// 				console.log("v == " + v);
+// 				if(v == null){
+// 					alert("아이디와 패스워드를 확인해주세요");
+// 					return false;
+// 				}else{
+// 					alert("로그인 성공");
+// 					return true;
+// 				}
+// 			});
+// 		});
+// 	});	
 });
 </script>
 <head>

@@ -34,6 +34,7 @@ public class MemberController {
 		System.out.println("loginDto:" + loginDto);
 		System.out.println("memberVo:" + memberVo);
 		if(memberVo == null) {
+			session.setAttribute("msg", "login_fail");
 			return "redirect:/mem/loginGet";
 		}
 				
