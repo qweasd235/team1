@@ -49,7 +49,7 @@
 					placeholder="상세설명" rows="6">${vo.s_detail}</textarea>
 			</div>
 			<div class="12u$">
-				<input type="file" name="file" id="s_pic" value="${vo.s_pic }"/>
+				<input type="file" name="file" id="s_pic"/>
 			</div>
 			<!-- Break -->
 			<div class="12u$">
