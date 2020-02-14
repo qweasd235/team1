@@ -15,8 +15,11 @@ $(function(){
 	
 	$(".editSpot").click(function(){
 		console.log("editSpot");
+		var s_id =$(this).val();
+		location.href = "/board/editSpot?s_id=" + s_id;
 	});
 });
+
 </script>
 
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">

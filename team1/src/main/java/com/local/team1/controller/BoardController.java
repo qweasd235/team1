@@ -8,7 +8,6 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.inject.Inject;
 
-import org.apache.commons.fileupload.FileUpload;
 import org.apache.commons.io.IOUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +20,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.local.team1.domain.BoardVo;
 import com.local.team1.service.BoardService;
-import com.local.team1.util.FileUploadUtil;
+
 
 @Controller
 @RequestMapping("/board/*")
@@ -50,31 +49,11 @@ public class BoardController {
 	// 명소 등록
 	@RequestMapping(value = "/registPro", method = RequestMethod.POST)
 	public String registPro(BoardVo vo, MultipartHttpServletRequest req) throws Exception {
-		MultipartFile mFile = req.getFile("file");
-	
-	      String src = req.getParameter("src");
-	        System.out.println("src value : " + src);
-
-	        String originFileName = mFile.getOriginalFilename(); // 원본 파일 명
-	        long fileSize = mFile.getSize(); // 파일 사이즈
-
-	        System.out.println("originFileName : " + originFileName);
-	        System.out.println("fileSize : " + fileSize);
-
-	        String safeFile = uploadPath + System.currentTimeMillis() + originFileName;
-
-	        try {
-	        	mFile.transferTo(new File(safeFile));
-	        } catch (IllegalStateException e) {
-	            // TODO Auto-generated catch block
-	            e.printStackTrace();
-	        } catch (IOException e) {
-	            // TODO Auto-generated catch block
-	            e.printStackTrace();
-	        }
-	     String s_pic = safeFile.substring(uploadPath.length());
+		 String s_pic = dataUpload(req);
+	     System.out.println(vo);
 	     System.out.println(s_pic);
 	     vo.setS_pic(s_pic);
+	     System.out.println(vo);
 		bService.regist(vo);
 		return "board/home";
 	}
@@ -104,11 +83,23 @@ public class BoardController {
 		bService.delete(s_id);
 		return "redirect:/board/editPage";
 	}
-	@RequestMapping(value = "/edit", method = RequestMethod.GET)
-	public String edit() throws Exception {
-		return null;
+	@RequestMapping(value = "/editSpot", method = RequestMethod.GET)
+	public String edit(@RequestParam("s_id") int s_id, Model model) throws Exception {
+		System.out.println(s_id);
+		BoardVo vo = bService.read(s_id);
+		model.addAttribute("vo", vo);
+		return "/board/editSpotForm";
 	}
 	
+	@RequestMapping(value = "/eidtSpotPro", method = RequestMethod.POST)
+	public String editPro(BoardVo vo, MultipartHttpServletRequest req) throws Exception {
+		System.out.println(vo);
+		String s_pic = dataUpload(req);
+		vo.setS_pic(s_pic);
+		bService.modify(vo);
+		return "redirect:/board/editPage";
+	}
+
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home() throws Exception {
@@ -116,4 +107,32 @@ public class BoardController {
 		return "board/home";
 	}		
 
+	public String dataUpload(MultipartHttpServletRequest req) {
+		    MultipartFile mFile = req.getFile("file");
+		
+	        String src = req.getParameter("src");
+	        System.out.println("src value : " + src);
+
+	        String originFileName = mFile.getOriginalFilename(); // 원본 파일 명
+	        long fileSize = mFile.getSize(); // 파일 사이즈
+
+	        System.out.println("originFileName : " + originFileName);
+	        System.out.println("fileSize : " + fileSize);
+
+	        String safeFile = uploadPath + System.currentTimeMillis() + originFileName;
+
+	        try {
+	        	mFile.transferTo(new File(safeFile));
+	        } catch (IllegalStateException e) {
+	            // TODO Auto-generated catch block
+	            e.printStackTrace();
+	        } catch (IOException e) {
+	            // TODO Auto-generated catch block
+	            e.printStackTrace();
+	        }
+	        String s_pic = safeFile.substring(uploadPath.length());
+	     
+	        return s_pic;
+	}
+	
 }
