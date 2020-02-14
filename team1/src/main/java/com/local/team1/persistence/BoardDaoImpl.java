@@ -46,4 +46,9 @@ public class BoardDaoImpl implements BoardDao {
 		return sqlsession.selectList(NAMESPACE + ".list", s_cate);
 	}
 
+	@Override
+	public List<BoardVo> editList() throws Exception {
+		return sqlsession.selectList(NAMESPACE + ".editList");
+	}
+
 }

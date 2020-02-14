@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.local.team1.domain.BoardVo;
 import com.local.team1.service.BoardService;
 
+
 @Controller
 @RequestMapping("/board/*")
 public class BoardController {
@@ -48,9 +49,68 @@ public class BoardController {
 	// 명소 등록
 	@RequestMapping(value = "/registPro", method = RequestMethod.POST)
 	public String registPro(BoardVo vo, MultipartHttpServletRequest req) throws Exception {
-		MultipartFile mFile = req.getFile("file");
+		 String s_pic = dataUpload(req);
+	     System.out.println(vo);
+	     System.out.println(s_pic);
+	     vo.setS_pic(s_pic);
+	     System.out.println(vo);
+		bService.regist(vo);
+		return "board/home";
+	}
 	
-	      String src = req.getParameter("src");
+	@RequestMapping(value = "/displayFile", method =  RequestMethod.GET)
+	@ResponseBody
+	public byte[] displayFile(@RequestParam("fileName") String fileName) throws Exception {
+		String realPath = uploadPath + File.separator + fileName.replace("/", "\\");
+		System.out.println("realPath:"+ realPath);
+		FileInputStream is = new FileInputStream(realPath);
+		byte[] bytes = IOUtils.toByteArray(is);
+		is.close();
+		return bytes;
+	}
+	
+	@RequestMapping(value = "/editPage", method = RequestMethod.GET)
+	public String editSpot(Model model) throws Exception {
+		List<BoardVo> list = bService.editList();
+		model.addAttribute("list", list);
+		return "board/editPage";
+	}
+	
+	@RequestMapping(value = "/delSpot", method = RequestMethod.GET)
+	public String delete(@RequestParam("s_id") int s_id) throws Exception {
+		System.out.println("delSpot!");
+		System.out.println(s_id);
+		bService.delete(s_id);
+		return "redirect:/board/editPage";
+	}
+	@RequestMapping(value = "/editSpot", method = RequestMethod.GET)
+	public String edit(@RequestParam("s_id") int s_id, Model model) throws Exception {
+		System.out.println(s_id);
+		BoardVo vo = bService.read(s_id);
+		model.addAttribute("vo", vo);
+		return "/board/editSpotForm";
+	}
+	
+	@RequestMapping(value = "/eidtSpotPro", method = RequestMethod.POST)
+	public String editPro(BoardVo vo, MultipartHttpServletRequest req) throws Exception {
+		System.out.println(vo);
+		String s_pic = dataUpload(req);
+		vo.setS_pic(s_pic);
+		bService.modify(vo);
+		return "redirect:/board/editPage";
+	}
+
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String home() throws Exception {
+		
+		return "board/home";
+	}		
+
+	public String dataUpload(MultipartHttpServletRequest req) {
+		    MultipartFile mFile = req.getFile("file");
+		
+	        String src = req.getParameter("src");
 	        System.out.println("src value : " + src);
 
 	        String originFileName = mFile.getOriginalFilename(); // 원본 파일 명
@@ -70,28 +130,9 @@ public class BoardController {
 	            // TODO Auto-generated catch block
 	            e.printStackTrace();
 	        }
-	     String s_pic = safeFile.substring(uploadPath.length());
-	     System.out.println(s_pic);
-	     vo.setS_pic(s_pic);
-		bService.regist(vo);
-		return "board/home";
+	        String s_pic = safeFile.substring(uploadPath.length());
+	     
+	        return s_pic;
 	}
 	
-	@RequestMapping(value = "/displayFile", method =  RequestMethod.GET)
-	@ResponseBody
-	public byte[] displayFile(@RequestParam("fileName") String fileName) throws Exception {
-		String realPath = uploadPath + File.separator + fileName.replace("/", "\\");
-		System.out.println("realPath:"+ realPath);
-		FileInputStream is = new FileInputStream(realPath);
-		byte[] bytes = IOUtils.toByteArray(is);
-		is.close();
-		return bytes;
-	}
-	
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String home() throws Exception {
-		
-		return "board/home";
-	}		
-
 }

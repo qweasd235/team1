@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>    
-<!DOCTYPE html>
-<html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 $(function(){
 	
@@ -18,12 +15,6 @@ $(function(){
 	
 });
 </script>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="../resources/assets/css/main.css" />
-<title>로그인</title>
-</head>
 <body>
 
 <!-- Main -->
