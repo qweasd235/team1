@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.local.mappers.freeBoardMapper">
+	
+	<!-- 게시판 글쓰기 -->
+	<insert id="create">
+		insert into t_board (b_num, b_title, b_content, b_writer)
+		values (seq_b_num.nextval, #{b_title}, #{b_content}, #{b_writer})
+	</insert>
+		
+	<!-- 게시판 전체리스트보기 -->
+	<select id="listAll" resultType="FreeBoardVo">
+		select * from t_board 
+		order by b_num desc
+	</select>
+		
+</mapper>  
