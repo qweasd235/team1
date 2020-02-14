@@ -111,6 +111,7 @@ $(document).ready(function(){
 				<td><input type="password" name="mem_pw2" id="mem_pw2" required/>
 					<span id="pwSpan"></span>
 				</td>
+				
 			</tr>
 		</table>
 			<input type="submit" value="가입완료" id="btnSubmit"/>
