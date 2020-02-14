@@ -16,28 +16,6 @@ $(function(){
 		location.href = "/board/home";
 	});
 	
-// 	$(function(){
-// 		$("#btnSubmit").click(function(){
-// 			var mem_id = $("input[name=mem_id]").val();
-// 			var mem_pw = $("input[name=mem_pw]").val();
-// 			var url = "/mem/loginPost";
-// 			var sendData = {
-// 					"mem_id" : mem_id,
-// 					"mem_pw" : mem_pw
-// 			};
-// 			$.post(url, sendData, function(receivedData){
-// 				var v = receivedData;
-// 				console.log("v == " + v);
-// 				if(v == null){
-// 					alert("아이디와 패스워드를 확인해주세요");
-// 					return false;
-// 				}else{
-// 					alert("로그인 성공");
-// 					return true;
-// 				}
-// 			});
-// 		});
-// 	});	
 });
 </script>
 <head>
