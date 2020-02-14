@@ -34,5 +34,10 @@
 		select * from t_spot
 		where s_cate = #{s_cate}
 	</select>
+	
+	<select id="editList" resultType="BoardVo">
+		select * from t_spot
+		order by s_id desc
+	</select>
 		
 </mapper>  

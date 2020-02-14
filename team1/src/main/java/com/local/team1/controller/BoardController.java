@@ -8,6 +8,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.inject.Inject;
 
+import org.apache.commons.fileupload.FileUpload;
 import org.apache.commons.io.IOUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.local.team1.domain.BoardVo;
 import com.local.team1.service.BoardService;
+import com.local.team1.util.FileUploadUtil;
 
 @Controller
 @RequestMapping("/board/*")
@@ -87,6 +89,26 @@ public class BoardController {
 		is.close();
 		return bytes;
 	}
+	
+	@RequestMapping(value = "/editPage", method = RequestMethod.GET)
+	public String editSpot(Model model) throws Exception {
+		List<BoardVo> list = bService.editList();
+		model.addAttribute("list", list);
+		return "board/editPage";
+	}
+	
+	@RequestMapping(value = "/delSpot", method = RequestMethod.GET)
+	public String delete(@RequestParam("s_id") int s_id) throws Exception {
+		System.out.println("delSpot!");
+		System.out.println(s_id);
+		bService.delete(s_id);
+		return "board/editPage";
+	}
+	@RequestMapping(value = "/edit", method = RequestMethod.GET)
+	public String edit() throws Exception {
+		return null;
+	}
+	
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home() throws Exception {
