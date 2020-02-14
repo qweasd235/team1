@@ -3,7 +3,7 @@
 <%@ include file="../include/header.jsp" %> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-var isCheckId = false;
+
 $(document).ready(function(){
 	$("#btnCancel").click(function(){
 		location.href = "/board/home"
@@ -47,7 +47,8 @@ $(document).ready(function(){
 		}
 	});	
 	
-	$(function(){
+	
+		var isCheckId = false;
 		$("#btnCheckId").click(function(){
 			var mem_id = $("input[name=mem_id]").val();
 			var url = "/mem/checkId";
@@ -59,13 +60,14 @@ $(document).ready(function(){
 // 				console.log(receivedData);
 				if(v == 1){
 					$("#resultSpan").text("사용중인 아이디");
+					isCheckId = false;
 				}else if (v == 0){
 					$("#resultSpan").text("사용가능한 아이디");
 					isCheckId = true;
 				}
 			});	// $.get
 		}); // $(#btnCheckId)
-	}); //$(function)
+
 	
 	$("#mem_pw2").blur(function(){
 		if($("#mem_pw").val() != $("#mem_pw2").val()){
@@ -73,6 +75,8 @@ $(document).ready(function(){
 				$("#pwSpan").text("패스워드가 일치하지 않습니다.");
 				$("#mem_pw2").focus();
 			}
+		}else{
+			$("#pwSpan").text("패스워드가 일치합니다.");
 		}
 	});
 }); //ready

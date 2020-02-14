@@ -6,14 +6,17 @@
 $(function(){
 	$(".delSpot").click(function(){
 		console.log("delSopt!");
-		var s_id = $(this).val();
-		location.href = "/board/delSpot?s_id=" + s_id;
-	})
+		if(confirm("명소를 삭제하겠습니까?") == true){
+			var s_id = $(this).val();
+			location.href = "/board/delSpot?s_id=" + s_id;
+			alert("삭제 완료되었습니다.");
+		}
+	});
 	
 	$(".editSpot").click(function(){
 		console.log("editSpot");
-	})
-})
+	});
+});
 </script>
 
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
