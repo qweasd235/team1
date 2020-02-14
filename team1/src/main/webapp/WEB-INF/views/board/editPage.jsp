@@ -9,6 +9,10 @@ $(function(){
 		var s_id = $(this).val();
 		location.href = "/board/delSpot?s_id=" + s_id;
 	})
+	
+	$(".editSpot").click(function(){
+		colsole.log("editSpot");
+	})
 })
 </script>
 
@@ -28,7 +32,7 @@ $(function(){
 						</tr>
 						<tr>
 							<td><button class="delSpot" name="s_id" value="${vo.s_id }">삭제</button>
-								<button class="delEdit">수정</button></td>
+								<button class="editSpot" name="s_id" value="${vo.s_id }">수정</button></td>
 						</tr>
 					</c:forEach>
 				</table>

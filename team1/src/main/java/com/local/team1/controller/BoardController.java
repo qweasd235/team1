@@ -94,7 +94,7 @@ public class BoardController {
 	public String editSpot(Model model) throws Exception {
 		List<BoardVo> list = bService.editList();
 		model.addAttribute("list", list);
-		return "board/editSpot";
+		return "board/editPage";
 	}
 	
 	@RequestMapping(value = "/delSpot", method = RequestMethod.GET)
