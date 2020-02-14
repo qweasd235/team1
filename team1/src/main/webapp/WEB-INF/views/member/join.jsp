@@ -14,7 +14,7 @@
 var isCheckId = false;
 $(document).ready(function(){
 	$("#btnCancel").click(function(){
-		location.href = "/mem/loginGet"
+		location.href = "/board/home"
 	});
 		
 	$("#btnSubmit").click(function(){
