@@ -18,4 +18,10 @@
 		order by b_num desc
 	</select>
 		
+	<!-- 게시판 글 상세보기 -->
+	<select id="read" resultType="FreeBoardVo">
+		select * from t_board
+		where b_num = #{b_num}
+	</select>
+		
 </mapper>  

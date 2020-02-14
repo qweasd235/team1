@@ -32,4 +32,9 @@ public class FreeBoardDaoTest {
 	public void listAllTest() throws Exception {
 		dao.listAll();
 	}
+	
+	@Test
+	public void readTest() throws Exception {
+		dao.read(25);
+	}
 }

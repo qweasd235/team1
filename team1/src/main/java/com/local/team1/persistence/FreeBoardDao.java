@@ -9,5 +9,7 @@ public interface FreeBoardDao {
 	public void create(FreeBoardVo fb_vo) throws Exception;
 	// 데이터 목록
 	public List<FreeBoardVo> listAll() throws Exception;
+	// 데이터 읽기
+	public FreeBoardVo read(int b_num) throws Exception;
 	
 }

@@ -22,4 +22,9 @@ public class FreeBoardServiceTest {
 		service.listAll();
 	}
 	
+	@Test
+	public void readTest() throws Exception {
+		service.read(25);
+	}
+	
 }

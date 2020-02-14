@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.local.team1.domain.FreeBoardVo;
 import com.local.team1.domain.MemberVo;
@@ -25,8 +26,9 @@ public class FreeBoardController {
 	// 자유게시판 전체목록
 	@RequestMapping(value = "/freeBoardList", method = RequestMethod.GET)
 	public String freeBoard(Model model) throws Exception {
-		List<FreeBoardVo> list = fb_Service.listAll();
+		List<FreeBoardVo> list = fb_Service.listAll();		
 		model.addAttribute("list", list);
+		
 		return "/board/freeBoardList";
 	}
 	
