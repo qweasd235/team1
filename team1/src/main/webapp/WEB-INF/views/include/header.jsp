@@ -43,7 +43,7 @@
 					<c:if test="${memberVo.mem_id == 'MASTER'}">
 					<li>--관리자 페이지--</li>
 					<li><a href="/board/regist">명소 등록</a></li>
-					<li><a href="/board/editSpot">명소 수정/삭제</a></li>
+					<li><a href="/board/editPage">명소 수정/삭제</a></li>
 					</c:if>
 					<li><a href="/board/freeBoardList">자유 게시판</a></li>
 					<li>--관광지 추천--</li>
