@@ -12,6 +12,10 @@
 		values (seq_b_num.nextval, #{b_title}, #{b_content}, #{b_writer})
 	</insert>
 		
-		
+	<!-- 게시판 전체리스트보기 -->
+	<select id="listAll" resultType="FreeBoardVo">
+		select * from t_board 
+		order by b_num desc
+	</select>
 		
 </mapper>  

@@ -7,29 +7,19 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.local.team1.domain.FreeBoardVo;
-import com.local.team1.persistence.FreeBoardDao;
+import com.local.team1.service.FreeBoardService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
 		locations= {"file:src/main/webapp/WEB-INF/spring/**/*.xml"})
-public class FreeBoardDaoTest {
+public class FreeBoardServiceTest {
 
 	@Inject
-	private FreeBoardDao dao;
-	
-	@Test
-	public void createTest() throws Exception {
-		FreeBoardVo fb_vo = new FreeBoardVo();
-		fb_vo.setB_title("testTitle");
-		fb_vo.setB_content("testContent");
-		fb_vo.setB_writer("user01");
-		
-		dao.create(fb_vo);
-	}
+	private FreeBoardService service;
 	
 	@Test
 	public void listAllTest() throws Exception {
-		dao.listAll();
+		service.listAll();
 	}
+	
 }

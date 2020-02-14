@@ -23,7 +23,7 @@ $(document).ready(function() {
 						<header>
 							<h2>자유 게시판</h2>
 							<button type="button" id="btnRegister" class="btn btn-danger">글쓰기</button>
-							<br><br>
+							<br><br>							
 <!-- 							<p>01.01.2017</p> -->
 						</header>
 						<table>
@@ -37,27 +37,17 @@ $(document).ready(function() {
 								</tr>
 							</thead>
 							<tbody>
+			<!-- 게시판 글목록 -->					
+								<c:forEach items="${list}" var="fb_vo">
 								<tr>
-									<td>1</td>
-									<td>1</td>
-									<td>1</td>
-									<td>1</td>
-									<td>1</td>
+									<td>${fb_vo.b_num}</td>
+									<td>${fb_vo.b_title}</td>
+									<td>${fb_vo.b_writer}</td>
+									<td>${fb_vo.b_regdate}</td>
+									<td>${fb_vo.b_read_count}</td>
 								</tr>
-								<tr>
-									<td>2</td>
-									<td>2</td>
-									<td>2</td>
-									<td>2</td>
-									<td>2</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>3</td>
-									<td>3</td>
-									<td>3</td>
-									<td>3</td>
-								</tr>
+								</c:forEach>
+								
 							</tbody>
 					</table>
 					</article>

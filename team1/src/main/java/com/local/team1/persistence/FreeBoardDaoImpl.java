@@ -1,5 +1,7 @@
 package com.local.team1.persistence;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -18,6 +20,11 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 	@Override
 	public void create(FreeBoardVo fb_vo) throws Exception {
 		sqlsession.insert(NAMESPACE + ".create", fb_vo);
+	}
+
+	@Override
+	public List<FreeBoardVo> listAll() throws Exception {
+		return sqlsession.selectList(NAMESPACE + ".listAll");
 	}
 
 }
