@@ -40,9 +40,11 @@
 					<c:if test="${not empty memberVo}">
 						<li><a href="/mem/logout">로그아웃</a></li>
 					</c:if>
+					<c:if test="${memberVo.mem_id == 'MASTER'}">
 					<li><a href="/board/regist">명소 등록</a></li>
 					<li><a href="#">명소 수정</a></li>
 					<li><a href="#">명소 삭제</a></li>
+					</c:if>
 					<li><a href="/board/freeBoardList">자유 게시판</a></li>
 				</ul>
 			</nav>
