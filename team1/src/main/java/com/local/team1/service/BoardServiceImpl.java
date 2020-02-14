@@ -43,4 +43,9 @@ public class BoardServiceImpl implements BoardService {
 		return dao.list(s_cate);
 	}
 
+	@Override
+	public List<BoardVo> editList() throws Exception {
+		return dao.editList();
+	}
+
 }

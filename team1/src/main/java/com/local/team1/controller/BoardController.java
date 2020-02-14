@@ -88,6 +88,22 @@ public class BoardController {
 		return bytes;
 	}
 	
+	@RequestMapping(value = "/editSpot", method = RequestMethod.GET)
+	public String editSpot(Model model) throws Exception {
+		List<BoardVo> list = bService.editList();
+		model.addAttribute("list", list);
+		return "board/editSpot";
+	}
+	
+	@RequestMapping(value = "/delSpot", method = RequestMethod.GET)
+	public String delete(@RequestParam("s_id") int s_id) throws Exception {
+		System.out.println("delSpot!");
+		System.out.println(s_id);
+		bService.delete(s_id);
+		return "board/editSpot";
+	}
+	
+	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home() throws Exception {
 		
