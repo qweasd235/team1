@@ -41,7 +41,7 @@ $(document).ready(function() {
 								<c:forEach items="${list}" var="fb_vo">
 								<tr>
 									<td>${fb_vo.b_num}</td>
-									<td>${fb_vo.b_title}</td>
+									<td><a href="#">${fb_vo.b_title}</a></td>
 									<td>${fb_vo.b_writer}</td>
 									<td>${fb_vo.b_regdate}</td>
 									<td>${fb_vo.b_read_count}</td>
