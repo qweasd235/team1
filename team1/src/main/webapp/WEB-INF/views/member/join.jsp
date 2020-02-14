@@ -66,6 +66,15 @@ $(document).ready(function(){
 			});	// $.get
 		}); // $(#btnCheckId)
 	}); //$(function)
+	
+	$("#mem_pw2").blur(function(){
+		if($("#mem_pw").val() != $("#mem_pw2").val()){
+			if($("#mem_pw2").val() != ""){
+				$("#pwSpan").text("패스워드가 일치하지 않습니다.");
+				$("#mem_pw2").focus();
+			}
+		}
+	});
 }); //ready
 </script>	
 <body>
@@ -88,6 +97,12 @@ $(document).ready(function(){
 			<tr>
 				<th>패스워드</th>
 				<td><input type="password" name="mem_pw" id="mem_pw" required/></td>
+			</tr>
+			<tr>
+				<th>패스워드 확인</th>
+				<td><input type="password" name="mem_pw2" id="mem_pw2" required/>
+					<span id="pwSpan"></span>
+				</td>
 			</tr>
 		</table>
 			<input type="submit" value="가입완료" id="btnSubmit"/>
