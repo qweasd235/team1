@@ -8,7 +8,6 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.inject.Inject;
 
-import org.apache.commons.fileupload.FileUpload;
 import org.apache.commons.io.IOUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +20,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.local.team1.domain.BoardVo;
 import com.local.team1.service.BoardService;
-import com.local.team1.util.FileUploadUtil;
+
 
 @Controller
 @RequestMapping("/board/*")
@@ -104,11 +103,20 @@ public class BoardController {
 		bService.delete(s_id);
 		return "redirect:/board/editPage";
 	}
-	@RequestMapping(value = "/edit", method = RequestMethod.GET)
-	public String edit() throws Exception {
-		return null;
+	@RequestMapping(value = "/editSpot", method = RequestMethod.GET)
+	public String edit(@RequestParam("s_id") int s_id, Model model) throws Exception {
+		System.out.println(s_id);
+		BoardVo vo = bService.read(s_id);
+		model.addAttribute("vo", vo);
+		return "/board/editSpotForm";
 	}
-	
+	@RequestMapping(value = "/eidtSpotPro", method = RequestMethod.POST)
+	public String editPro(BoardVo vo) throws Exception {
+		System.out.println(vo);
+		bService.modify(vo);
+		return "redirect:/board/editPage";
+	}
+
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home() throws Exception {
