@@ -11,7 +11,7 @@ $(function(){
 	})
 	
 	$(".editSpot").click(function(){
-		colsole.log("editSpot");
+		console.log("editSpot");
 	})
 })
 </script>

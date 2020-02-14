@@ -102,7 +102,7 @@ public class BoardController {
 		System.out.println("delSpot!");
 		System.out.println(s_id);
 		bService.delete(s_id);
-		return "board/editPage";
+		return "redirect:/board/editPage";
 	}
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public String edit() throws Exception {
