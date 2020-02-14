@@ -20,6 +20,7 @@ $(document).ready(function() {
 	$("#freeBoard").on("click", ".content", function() {
 		console.log("clicked freeboard");
 		$("#modal-a").trigger("click");
+		
 		var b_num = $(this).attr("data-b_num");
 		console.log(b_num);	
 		
@@ -63,7 +64,7 @@ $(document).ready(function() {
 								<c:forEach items="${list}" var="fb_vo">
 								<tr>
 									<td>${fb_vo.b_num}</td>
-									<td><a data-b_num="${fb_vo.b_num}" class="content">${fb_vo.b_title}</a></td>
+									<td><a data-toggle="modal" data-b_num="${fb_vo.b_num}" class="content">${fb_vo.b_title}</a></td>
 									<td>${fb_vo.b_writer}</td>
 									<td>${fb_vo.b_regdate}</td>
 									<td>${fb_vo.b_read_count}</td>

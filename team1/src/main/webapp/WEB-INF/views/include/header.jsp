@@ -45,11 +45,12 @@
 					<li><a href="/board/regist">명소 등록</a></li>
 					<li><a href="/board/editPage">명소 수정/삭제</a></li>
 					</c:if>
-					<li><a href="/board/freeBoardList">자유 게시판</a></li>
 					<li>--관광지 추천--</li>
 					<li><a href="/board/detail?s_cate=서울/경기">서울/경기</a></li>
 					<li><a href="/board/detail?s_cate=강원도">강원도</a></li>
 					<li><a href="/board/detail?s_cate=충청/전라">충청/전라</a></li>
 					<li><a href="/board/detail?s_cate=경남">경남</a></li>
+					<li>--커뮤니티--</li>
+					<li><a href="/board/freeBoardList">자유 게시판</a></li>
 				</ul>
 			</nav>
