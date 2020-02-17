@@ -1,8 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
+<<<<<<< HEAD
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+=======
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+>>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 
 
 <style>
@@ -10,46 +16,34 @@ img{
 	width : 225.25px;
 	height : 155px;
 }
+
 .swiper-container {
-	width:640px;
-	height:420px;
-	border:5px solid silver;
-	border-radius:7px;
-	box-shadow:0 0 20px #ccc inset;
+	width:901px;
+	height:358px;
 }
-.swiper-slide {
-	text-align:center;
-	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
-	align-items:center; /* 위아래 기준 중앙정렬 */
-	justify-content:center; /* 좌우 기준 중앙정렬 */
+
+.swiper-slide{
+	  display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
 }
-.swiper-slide img {
-	box-shadow:0 0 5px #555;
-}
+
 
 </style>
 
 <script>
-var mySwiper = new Swiper ('.swiper-container', {
-	// Optional parameters 
-	autoHeight : true,
-	loop: true,
-	// If we need pagination 
-	pagination: {
-		el: '.swiper-pagination'		
-},
-// Navigation arrows 
-navigation: {
-	nextEl: '.swiper-button-next', 
-	prevEl: '.swiper-button-prev'
-}, 
-// And if we need scrollbar 
-scrollbar: { el: '.swiper-scrollbar'
-}, 
-});
+
 
 </script>
-
 
 		<!-- Banner -->
 		<!--
@@ -77,18 +71,21 @@ scrollbar: { el: '.swiper-scrollbar'
 
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<img src="../resources/images/gyeong.PNG">
-									<img src="../resources/images/banner3.png">
-								    <img src="../resources/images/banner4.png">
+								<div class="swiper-slide">								
+							       <img src="../resources/images/mountain.png">
+								   <img src="../resources/images/monorail.png">
+								   <img src="../resources/images/food1.png">
 								</div>
-
+								<div class="swiper-slide">
+								   <img src="../resources/images/gyeongsang.png">
+								   <img src="../resources/images/jeonlado.PNG">
+								   <img src="../resources/images/ulsan.PNG">
+								</div>
 								<div class="swiper-slide">
 									<img src="../resources/images/banner5.png">
 									<img src="../resources/images/ulsan.PNG">
 								    <img src="../resources/images/gyeongsang3.png">
-								</div> 
-								
+								</div> 								
 							</div>
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
@@ -170,5 +167,12 @@ scrollbar: { el: '.swiper-scrollbar'
 					</article>
 				</div>
 			</section>
-
+<script>
+new Swiper('.swiper-container', {
+	navigation : {
+		nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+	},
+});
+</script>
 <%@ include file="../include/footer.jsp" %>
