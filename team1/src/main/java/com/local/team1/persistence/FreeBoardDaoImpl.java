@@ -32,4 +32,15 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 		return sqlsession.selectOne(NAMESPACE + ".read", b_num);
 	}
 
+	@Override
+	public void modify(FreeBoardVo fb_vo) throws Exception {
+		sqlsession.update(NAMESPACE + ".modify", fb_vo);
+	}
+
+	@Override
+	public void delete(int b_num) throws Exception {
+		sqlsession.delete(NAMESPACE + ".delete", b_num);
+		
+	}
+
 }

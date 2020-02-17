@@ -32,4 +32,14 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		return dao.read(b_num);
 	}
 
+	@Override
+	public void modify(FreeBoardVo fb_vo) throws Exception {
+		dao.modify(fb_vo);		
+	}
+
+	@Override
+	public void delete(int b_num) throws Exception {
+		dao.delete(b_num);
+	}
+
 }
