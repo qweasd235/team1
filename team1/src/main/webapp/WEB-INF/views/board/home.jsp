@@ -15,11 +15,6 @@ img{
 	width : 901px;
 	height : 358px;
 }
-.swiper-wraper{
-	position : absolute;
-	left : 100px;
-	top : 100px;
-}
 
 .swiper-slide{
 	  display: -webkit-box;
@@ -87,7 +82,6 @@ var mySwiper = new Swiper ('.swiper-container', {
 						<header>
 							<h2>강원도</h2>
 						</header>
-
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">
