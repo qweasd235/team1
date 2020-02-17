@@ -8,6 +8,7 @@
 
 <style>
 img{
+<<<<<<< HEAD
 	width : 225.25px;
 	height : 155px;
 }
@@ -21,6 +22,11 @@ img{
 	top : 100px;
 }
 
+=======
+	width : 250px;
+	height : 150px;
+}
+>>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 </style>
 
 <script>
@@ -68,6 +74,7 @@ scrollbar: { el: '.swiper-scrollbar',
 						<header>
 							<h2>강원도</h2>
 						</header>
+
 						<div class="swiper-container">
 							<div class="swiper-wraper">
 								<div class="swiper-slide">
@@ -96,9 +103,9 @@ scrollbar: { el: '.swiper-scrollbar',
 						</header>
 						<div class="content">
 						<p>
-							<img src="../resources/images/">
-							<img src="../resources/images/">
-							<img src="../resources/images/">
+							<img src="../resources/images/ulsan.PNG">
+							<img src="../resources/images/gyeongsang.png">
+							<img src="../resources/images/gyeongsang3.png">
 							<!-- image는 3개만 쓰죠 -->
 						</p>
 						</div>
@@ -119,9 +126,9 @@ scrollbar: { el: '.swiper-scrollbar',
 						</header>
 						<div class="content">
 						<p>
-							<img src="../resources/images/">
-							<img src="../resources/images/">
-							<img src="../resources/images/">
+							<img src="../resources/images/jeonlado.PNG">
+							<img src="../resources/images/jeonlado2.PNG">
+							<img src="../resources/images/jeonlado3.PNG">
 						</p>
 						</div>
 						<footer>
@@ -141,9 +148,9 @@ scrollbar: { el: '.swiper-scrollbar',
 						</header>
 						<div class="content">
 							<p>
-								<img src="../resources/images/">
-								<img src="../resources/images/">
-								<img src="../resources/images/">
+								<img src="../resources/images/gyeong.PNG">
+								<img src="../resources/images/gyeong2.PNG">
+								<img src="../resources/images/gyeong3.PNG">
 							</p>
 						</div>
 						<footer>
