@@ -1,52 +1,52 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
-<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-
-<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 
 
 <style>
 img{
-<<<<<<< HEAD
 	width : 225.25px;
 	height : 155px;
 }
-.swiper-container{
-	width : 901px;
-	height : 358px;
+.swiper-container {
+	width:640px;
+	height:420px;
+	border:5px solid silver;
+	border-radius:7px;
+	box-shadow:0 0 20px #ccc inset;
 }
-.swiper-wraper{
-	position : absolute;
-	left : 100px;
-	top : 100px;
+.swiper-slide {
+	text-align:center;
+	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
+	align-items:center; /* 위아래 기준 중앙정렬 */
+	justify-content:center; /* 좌우 기준 중앙정렬 */
+}
+.swiper-slide img {
+	box-shadow:0 0 5px #555;
 }
 
-=======
-	width : 250px;
-	height : 150px;
-}
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 </style>
 
 <script>
 var mySwiper = new Swiper ('.swiper-container', {
 	// Optional parameters 
-	direction: 'vertical', 
-	loop: true, 
+	autoHeight : true,
+	loop: true,
 	// If we need pagination 
 	pagination: {
-		el: '.swiper-pagination',
+		el: '.swiper-pagination'		
 },
 // Navigation arrows 
 navigation: {
 	nextEl: '.swiper-button-next', 
-	prevEl: '.swiper-button-prev', 
+	prevEl: '.swiper-button-prev'
 }, 
 // And if we need scrollbar 
-scrollbar: { el: '.swiper-scrollbar', 
+scrollbar: { el: '.swiper-scrollbar'
 }, 
-})
+});
 
 </script>
 
@@ -76,16 +76,27 @@ scrollbar: { el: '.swiper-scrollbar',
 						</header>
 
 						<div class="swiper-container">
-							<div class="swiper-wraper">
+							<div class="swiper-wrapper">
 								<div class="swiper-slide">
-									<img src="../resources/images/">
-								   <img src="../resources/images/">
-								   <img src="../resources/images/">
+									<img src="../resources/images/gyeong.PNG">
+									<img src="../resources/images/banner3.png">
+								    <img src="../resources/images/banner4.png">
 								</div>
+
+								<div class="swiper-slide">
+									<img src="../resources/images/banner5.png">
+									<img src="../resources/images/ulsan.PNG">
+								    <img src="../resources/images/gyeongsang3.png">
+								</div> 
+								
 							</div>
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
+							
+							<!-- 페이징 -->
+							<div class="swiper-pagination"></div>
 						</div>
+						
 						<footer>					
 							<a href="/board/detail?s_cate=강원도" class="button alt">Learn More</a>
 						</footer>
