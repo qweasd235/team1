@@ -11,5 +11,9 @@ public interface FreeBoardDao {
 	public List<FreeBoardVo> listAll() throws Exception;
 	// 데이터 읽기
 	public FreeBoardVo read(int b_num) throws Exception;
+	// 데이터 수정
+	public void modify(FreeBoardVo fb_vo) throws Exception;
+	// 데이터 삭제
+	public void delete(int b_num) throws Exception;
 	
 }

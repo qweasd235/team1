@@ -11,5 +11,9 @@ public interface FreeBoardService {
 	public List<FreeBoardVo> listAll() throws Exception;
 	// 글 상세보기
 	public FreeBoardVo read(int b_num) throws Exception;
+	// 글 수정하기
+	public void modify(FreeBoardVo fb_vo) throws Exception;
+	// 글 삭제하기
+	public void delete(int b_num) throws Exception;
 	
 }

@@ -37,4 +37,18 @@ public class FreeBoardDaoTest {
 	public void readTest() throws Exception {
 		dao.read(25);
 	}
+	
+	@Test
+	public void modifyTest() throws Exception {
+		FreeBoardVo fb_vo = new FreeBoardVo();
+		fb_vo.setB_title("수정수정수정1");
+		fb_vo.setB_content("수정수정수정1");
+		fb_vo.setB_num(24);
+		dao.modify(fb_vo);
+	}
+	
+	@Test
+	public void deleteTest() throws Exception {
+		dao.delete(24);
+	}
 }

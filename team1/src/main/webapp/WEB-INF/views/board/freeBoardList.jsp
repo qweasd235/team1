@@ -66,11 +66,7 @@ $(document).ready(function() {
 								<c:forEach items="${list}" var="fb_vo">
 								<tr>
 									<td>${fb_vo.b_num}</td>
-<<<<<<< HEAD
 									<td><a href="/board/fbRead" data-b_num="${fb_vo.b_num}" class="title">${fb_vo.b_title}</a></td>
-=======
-									<td><a data-toggle="modal" data-b_num="${fb_vo.b_num}" class="content">${fb_vo.b_title}</a></td>
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 									<td>${fb_vo.b_writer}</td>
 									<td>${fb_vo.b_regdate}</td>
 									<td>${fb_vo.b_read_count}</td>

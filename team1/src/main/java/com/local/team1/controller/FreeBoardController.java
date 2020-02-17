@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.local.team1.domain.FreeBoardVo;
 import com.local.team1.domain.MemberVo;
-import com.local.team1.service.BoardService;
 import com.local.team1.service.FreeBoardService;
 
 @Controller
@@ -50,10 +50,27 @@ public class FreeBoardController {
 		
 	// 게시판 상세보기
 	@RequestMapping(value = "/fbRead", method = RequestMethod.GET)
-	public String freeBoardRead(@RequestParam("b_num") int b_num, Model model) throws Exception {
+	public String freeBoardRead(@RequestParam("b_num") int b_num, Model model, HttpSession session) throws Exception {
 		FreeBoardVo fb_vo = fb_Service.read(b_num);
 		model.addAttribute("fb_vo", fb_vo);
+		MemberVo memberVo = (MemberVo)session.getAttribute("memberVo");
+		model.addAttribute("memberVo", memberVo);
 		return "board/freeBoardContent";
+	}
+	
+	// 게시판 글 수정하기	
+	@RequestMapping(value = "/fbModify", method = RequestMethod.POST)
+	public String freeBoardModify(FreeBoardVo fb_vo, Model model) throws Exception {
+		System.out.println("fb_vo == " + fb_vo);
+		fb_Service.modify(fb_vo);		
+		return "redirect:/board/freeBoardList";
+	}
+	
+	// 게시판 글 삭제하기
+	@RequestMapping(value = "/fbDelete", method = RequestMethod.GET)
+	public String freeBoardDelete(@RequestParam("b_num") int b_num) throws Exception {
+		fb_Service.delete(b_num);
+		return "redirect:/board/freeBoardList";
 	}
 	
 }
