@@ -1,12 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+
 <style>
 img{
 	width : 225.25px;
 	height : 155px;
 }
+.swiper-container{
+	width : 901px;
+	height : 358px;
+}
+.swiper-wraper{
+	position : absolute;
+	left : 100px;
+	top : 100px;
+}
+
 </style>
+
+<script>
+var mySwiper = new Swiper ('.swiper-container', {
+	// Optional parameters 
+	direction: 'vertical', 
+	loop: true, 
+	// If we need pagination 
+	pagination: {
+		el: '.swiper-pagination',
+},
+// Navigation arrows 
+navigation: {
+	nextEl: '.swiper-button-next', 
+	prevEl: '.swiper-button-prev', 
+}, 
+// And if we need scrollbar 
+scrollbar: { el: '.swiper-scrollbar', 
+}, 
+})
+
+</script>
 
 
 		<!-- Banner -->
@@ -32,14 +68,18 @@ img{
 						<header>
 							<h2>강원도</h2>
 						</header>
-						<div class="content">
-						<p><img src="../resources/images/">
-						   <img src="../resources/images/">
-						   <img src="../resources/images/">
-<!-- 						   <img src="../resources/images/Skywalk.png"> 이거는 사진이 너무커서 안씀-->
-						</p>
+						<div class="swiper-container">
+							<div class="swiper-wraper">
+								<div class="swiper-slide">
+									<img src="../resources/images/">
+								   <img src="../resources/images/">
+								   <img src="../resources/images/">
+								</div>
+							</div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
 						</div>
-						<footer>
+						<footer>					
 							<a href="/board/detail?s_cate=강원도" class="button alt">Learn More</a>
 						</footer>
 					</article>
