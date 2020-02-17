@@ -27,4 +27,9 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 		return sqlsession.selectList(NAMESPACE + ".listAll");
 	}
 
+	@Override
+	public FreeBoardVo read(int b_num) throws Exception {		
+		return sqlsession.selectOne(NAMESPACE + ".read", b_num);
+	}
+
 }

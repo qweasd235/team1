@@ -22,7 +22,14 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 
 	@Override
 	public List<FreeBoardVo> listAll() throws Exception {
+//		List<FreeBoardVo> list = dao.listAll();
+		
 		return dao.listAll();
+	}
+
+	@Override
+	public FreeBoardVo read(int b_num) throws Exception {
+		return dao.read(b_num);
 	}
 
 }

@@ -37,8 +37,10 @@ public class MemberController {
 			session.setAttribute("msg", "login_fail");
 			return "redirect:/mem/loginGet";
 		}
-				
-		model.addAttribute("memberVo", memberVo);
+//		else {
+//			session.setAttribute("msg", "login_success");
+//		}
+			model.addAttribute("memberVo", memberVo);
 		return "redirect:/board/home" ;
 	}
 	

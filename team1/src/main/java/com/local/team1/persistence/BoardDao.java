@@ -16,4 +16,7 @@ public interface BoardDao {
 	public void delete(Integer s_id) throws Exception;
 	//데이터 상세보기
 	public List<BoardVo> list(String s_cate) throws Exception;
+	//수정 페이지 목록
+	public List<BoardVo> editList() throws Exception;
+
 }

@@ -9,5 +9,7 @@ public interface FreeBoardService {
 	public void create(FreeBoardVo fb_vo) throws Exception;
 	// 글 목록
 	public List<FreeBoardVo> listAll() throws Exception;
+	// 글 상세보기
+	public FreeBoardVo read(int b_num) throws Exception;
 	
 }

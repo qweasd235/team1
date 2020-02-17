@@ -20,4 +20,6 @@ public interface BoardService {
 		
 		// 글목록
 		public List<BoardVo> list(String s_cate) throws Exception;
+		
+		public List<BoardVo> editList() throws Exception;
 }
