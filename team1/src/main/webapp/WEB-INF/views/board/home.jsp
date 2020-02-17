@@ -3,8 +3,8 @@
 <%@ include file="../include/header.jsp" %>
 <style>
 img{
-	width : 225.25px;
-	height : 155px;
+	width : 250px;
+	height : 150px;
 }
 </style>
 
@@ -33,9 +33,9 @@ img{
 							<h2>강원도</h2>
 						</header>
 						<div class="content">
-						<p><img src="../resources/images/">
-						   <img src="../resources/images/">
-						   <img src="../resources/images/">
+						<p><img src="../resources/images/monorail.png">
+						   <img src="../resources/images/mountain.png">
+						   <img src="../resources/images/Daegeumgul.png">
 <!-- 						   <img src="../resources/images/Skywalk.png"> 이거는 사진이 너무커서 안씀-->
 						</p>
 						</div>
@@ -56,9 +56,9 @@ img{
 						</header>
 						<div class="content">
 						<p>
-							<img src="../resources/images/">
-							<img src="../resources/images/">
-							<img src="../resources/images/">
+							<img src="../resources/images/ulsan.PNG">
+							<img src="../resources/images/gyeongsang.png">
+							<img src="../resources/images/gyeongsang3.png">
 							<!-- image는 3개만 쓰죠 -->
 						</p>
 						</div>
@@ -79,9 +79,9 @@ img{
 						</header>
 						<div class="content">
 						<p>
-							<img src="../resources/images/">
-							<img src="../resources/images/">
-							<img src="../resources/images/">
+							<img src="../resources/images/jeonlado.PNG">
+							<img src="../resources/images/jeonlado2.PNG">
+							<img src="../resources/images/jeonlado3.PNG">
 						</p>
 						</div>
 						<footer>
@@ -101,9 +101,9 @@ img{
 						</header>
 						<div class="content">
 							<p>
-								<img src="../resources/images/">
-								<img src="../resources/images/">
-								<img src="../resources/images/">
+								<img src="../resources/images/gyeong.PNG">
+								<img src="../resources/images/gyeong2.PNG">
+								<img src="../resources/images/gyeong3.PNG">
 							</p>
 						</div>
 						<footer>
