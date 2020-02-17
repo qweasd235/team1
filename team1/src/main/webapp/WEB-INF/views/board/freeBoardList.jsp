@@ -65,6 +65,7 @@ $(document).ready(function() {
 			<!-- 게시판 글목록 -->					
 								<c:forEach items="${list}" var="fb_vo">
 								<tr>
+
 									<td>${fb_vo.b_num}</td>
 									<td><a href="/board/fbRead" data-b_num="${fb_vo.b_num}" class="title">${fb_vo.b_title}</a></td>
 									<td>${fb_vo.b_writer}</td>
