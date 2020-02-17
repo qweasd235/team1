@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.local.team1.domain.FreeBoardVo;
+import com.local.team1.domain.PagingDto;
 
 @Repository
 public class FreeBoardDaoImpl implements FreeBoardDao {
@@ -23,8 +24,8 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 	}
 
 	@Override
-	public List<FreeBoardVo> listAll() throws Exception {
-		return sqlsession.selectList(NAMESPACE + ".listAll");
+	public List<FreeBoardVo> listAll(PagingDto pagingDto) throws Exception {
+		return sqlsession.selectList(NAMESPACE + ".listAll", pagingDto);
 	}
 
 	@Override
@@ -41,6 +42,11 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 	public void delete(int b_num) throws Exception {
 		sqlsession.delete(NAMESPACE + ".delete", b_num);
 		
+	}
+
+	@Override
+	public int totalCount(PagingDto pagingDto) throws Exception {		
+		return sqlsession.selectOne(NAMESPACE + ".totalCount", pagingDto);
 	}
 
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.local.team1.domain.FreeBoardVo;
 import com.local.team1.domain.MemberVo;
+import com.local.team1.domain.PagingDto;
 import com.local.team1.service.FreeBoardService;
 
 @Controller
@@ -25,9 +26,14 @@ public class FreeBoardController {
 	
 	// 자유게시판 전체목록
 	@RequestMapping(value = "/freeBoardList", method = RequestMethod.GET)
-	public String freeBoard(Model model) throws Exception {
-		List<FreeBoardVo> list = fb_Service.listAll();		
+	public String freeBoard(Model model, PagingDto pagingDto) throws Exception {
+		System.out.println("pagingDto == " + pagingDto);
+		List<FreeBoardVo> list = fb_Service.listAll(pagingDto);	 
+		int totalCount =  fb_Service.totalCount(pagingDto); // 글 총 갯수 구하기
+		pagingDto.setTotalCount(totalCount);
+		System.out.println("pagingDto ==== " + pagingDto);
 		model.addAttribute("list", list);		
+		model.addAttribute("pagingDto", pagingDto);		
 		return "board/freeBoardList";
 	}
 	
