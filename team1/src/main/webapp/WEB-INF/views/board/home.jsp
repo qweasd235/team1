@@ -63,7 +63,7 @@ img{
 						</p>
 						</div>
 						<footer>
-							<a href="/board/detail?s_cate=서울/경기" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=경남" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
@@ -75,7 +75,7 @@ img{
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>전라도</h2>
+							<h2>충북/전라도</h2>
 						</header>
 						<div class="content">
 						<p>
@@ -97,7 +97,7 @@ img{
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>경기도</h2>
+							<h2>서울/경기</h2>
 						</header>
 						<div class="content">
 							<p>
@@ -107,7 +107,7 @@ img{
 							</p>
 						</div>
 						<footer>
-							<a href="/board/detail?s_cate=경남" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=서울/경기" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
