@@ -1,12 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+
 <style>
 img{
+<<<<<<< HEAD
+	width : 225.25px;
+	height : 155px;
+}
+.swiper-container{
+	width : 901px;
+	height : 358px;
+}
+.swiper-wraper{
+	position : absolute;
+	left : 100px;
+	top : 100px;
+}
+
+=======
 	width : 250px;
 	height : 150px;
 }
+>>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 </style>
+
+<script>
+var mySwiper = new Swiper ('.swiper-container', {
+	// Optional parameters 
+	direction: 'vertical', 
+	loop: true, 
+	// If we need pagination 
+	pagination: {
+		el: '.swiper-pagination',
+},
+// Navigation arrows 
+navigation: {
+	nextEl: '.swiper-button-next', 
+	prevEl: '.swiper-button-prev', 
+}, 
+// And if we need scrollbar 
+scrollbar: { el: '.swiper-scrollbar', 
+}, 
+})
+
+</script>
 
 
 		<!-- Banner -->
@@ -32,14 +74,19 @@ img{
 						<header>
 							<h2>강원도</h2>
 						</header>
-						<div class="content">
-						<p><img src="../resources/images/monorail.png">
-						   <img src="../resources/images/mountain.png">
-						   <img src="../resources/images/Daegeumgul.png">
-<!-- 						   <img src="../resources/images/Skywalk.png"> 이거는 사진이 너무커서 안씀-->
-						</p>
+
+						<div class="swiper-container">
+							<div class="swiper-wraper">
+								<div class="swiper-slide">
+									<img src="../resources/images/">
+								   <img src="../resources/images/">
+								   <img src="../resources/images/">
+								</div>
+							</div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
 						</div>
-						<footer>
+						<footer>					
 							<a href="/board/detail?s_cate=강원도" class="button alt">Learn More</a>
 						</footer>
 					</article>
@@ -63,7 +110,7 @@ img{
 						</p>
 						</div>
 						<footer>
-							<a href="/board/detail?s_cate=서울/경기" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=경남" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
@@ -75,7 +122,7 @@ img{
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>전라도</h2>
+							<h2>충북/전라도</h2>
 						</header>
 						<div class="content">
 						<p>
@@ -97,7 +144,7 @@ img{
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>경기도</h2>
+							<h2>서울/경기</h2>
 						</header>
 						<div class="content">
 							<p>
@@ -107,7 +154,7 @@ img{
 							</p>
 						</div>
 						<footer>
-							<a href="/board/detail?s_cate=경남" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=서울/경기" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
