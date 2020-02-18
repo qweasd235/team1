@@ -72,19 +72,16 @@ $(document).ready(function() {
 							<h2>강원도</h2>
 						</header>
 						<div class="swiper-container">
-
-							<div class="swiper-wraper">
+							<div class="swiper-wrapper">
 								<div class="swiper-slide">
 									<img src="../resources/images/mountain.png">
 								   <img src="../resources/images/monorail.png">
 								   <img src="../resources/images/Daegeumgul.png">
-
-							<div class="swiper-wrapper">
+								</div>
 								<div class="swiper-slide">								
 							       <img src="../resources/images/mountain.png">
 								   <img src="../resources/images/monorail.png">
 								   <img src="../resources/images/food1.png">
-
 								</div>
 								<div class="swiper-slide">
 								   <img src="../resources/images/gyeongsang.png">
@@ -99,13 +96,7 @@ $(document).ready(function() {
 							</div>
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
-							
-							<!-- 페이징 -->
-							<div class="swiper-pagination"></div>
-									</div>
-								</div>
-							</div>
-						
+						</div>
 						<footer>					
 							<a href="/board/detail?s_cate=강원도" class="button alt">Learn More</a>
 						</footer>
@@ -130,7 +121,6 @@ $(document).ready(function() {
 											</div>
 										</c:if>
 								</c:forEach>	
-							<!-- image는 3개만 쓰죠 -->
 							</div>	
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
