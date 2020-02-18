@@ -17,10 +17,10 @@ public class FreeBoardServiceTest {
 	@Inject
 	private FreeBoardService service;
 	
-	@Test
-	public void listAllTest() throws Exception {
-		service.listAll();
-	}
+	
+//	public void listAllTest() throws Exception {
+//		service.listAll();
+//	}
 	
 	@Test
 	public void readTest() throws Exception {

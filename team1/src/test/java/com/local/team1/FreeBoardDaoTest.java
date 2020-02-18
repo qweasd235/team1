@@ -28,10 +28,10 @@ public class FreeBoardDaoTest {
 		dao.create(fb_vo);
 	}
 	
-	@Test
-	public void listAllTest() throws Exception {
-		dao.listAll();
-	}
+	
+//	public void listAllTest() throws Exception {
+//		dao.listAll();
+//	}
 	
 	@Test
 	public void readTest() throws Exception {

@@ -2,52 +2,49 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
 <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
 
 
 <style>
 img{
-<<<<<<< HEAD
 	width : 225.25px;
 	height : 155px;
 }
+
+
 .swiper-container{
-	width : 901px;
-	height : 358px;
-}
-.swiper-wraper{
-	position : absolute;
-	left : 100px;
-	top : 100px;
+	width:901px;
+	height:358px;
+
+.swiper-slide{
+	  display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
 }
 
-=======
-	width : 250px;
-	height : 150px;
-}
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
+
 </style>
 
 <script>
-var mySwiper = new Swiper ('.swiper-container', {
-	// Optional parameters 
-	direction: 'vertical', 
-	loop: true, 
-	// If we need pagination 
-	pagination: {
-		el: '.swiper-pagination',
-},
-// Navigation arrows 
-navigation: {
-	nextEl: '.swiper-button-next', 
-	prevEl: '.swiper-button-prev', 
-}, 
-// And if we need scrollbar 
-scrollbar: { el: '.swiper-scrollbar', 
-}, 
-})
-
+$(document).ready(function() {
+	new Swiper('.swiper-container', {
+		navigation : {
+			nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+			prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+		},
+	});
+});
 </script>
 
 
@@ -74,18 +71,41 @@ scrollbar: { el: '.swiper-scrollbar',
 						<header>
 							<h2>강원도</h2>
 						</header>
-
 						<div class="swiper-container">
+
 							<div class="swiper-wraper">
 								<div class="swiper-slide">
 									<img src="../resources/images/mountain.png">
 								   <img src="../resources/images/monorail.png">
 								   <img src="../resources/images/Daegeumgul.png">
+
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">								
+							       <img src="../resources/images/mountain.png">
+								   <img src="../resources/images/monorail.png">
+								   <img src="../resources/images/food1.png">
+
 								</div>
+								<div class="swiper-slide">
+								   <img src="../resources/images/gyeongsang.png">
+								   <img src="../resources/images/jeonlado.PNG">
+								   <img src="../resources/images/ulsan.PNG">
+								</div>
+								<div class="swiper-slide">
+									<img src="../resources/images/banner5.png">
+									<img src="../resources/images/ulsan.PNG">
+								    <img src="../resources/images/gyeongsang3.png">
+								</div> 								
 							</div>
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
-						</div>
+							
+							<!-- 페이징 -->
+							<div class="swiper-pagination"></div>
+									</div>
+								</div>
+							</div>
+						
 						<footer>					
 							<a href="/board/detail?s_cate=강원도" class="button alt">Learn More</a>
 						</footer>
@@ -159,5 +179,7 @@ scrollbar: { el: '.swiper-scrollbar',
 					</article>
 				</div>
 			</section>
+
+
 
 <%@ include file="../include/footer.jsp" %>
