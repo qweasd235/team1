@@ -24,13 +24,6 @@ img{
 						</header>
 						<div class="content">
 
-<!-- 							<p><img src="../resources/images/"></p> -->
-							
-<!-- 							<p><img src="../resources/images/"></p> -->
-							
-<!-- 							<p><img src="../resources/images/"></p> -->
-							
-<!-- 							<p><img src="../resources/images/"></p> -->
 						<table>
 							<c:forEach items="${list}" var="vo">
 								<tr>
