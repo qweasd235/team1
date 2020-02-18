@@ -13,10 +13,10 @@ img{
 	height : 155px;
 }
 
+
 .swiper-container {
 	width:901px;
 	height:358px;
-}
 
 .swiper-slide{
 	  display: -webkit-box;
@@ -71,7 +71,6 @@ $(document).ready(function() {
 						<header>
 							<h2>강원도</h2>
 						</header>
-
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">								
