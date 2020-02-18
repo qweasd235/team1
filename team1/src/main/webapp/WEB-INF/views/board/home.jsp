@@ -1,14 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
-<<<<<<< HEAD
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-=======
 <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
+
 
 
 <style>
@@ -41,9 +37,16 @@ img{
 </style>
 
 <script>
-
-
+$(document).ready(function() {
+	new Swiper('.swiper-container', {
+		navigation : {
+			nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+			prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+		},
+	});
+});
 </script>
+
 
 		<!-- Banner -->
 		<!--
@@ -167,12 +170,7 @@ img{
 					</article>
 				</div>
 			</section>
-<script>
-new Swiper('.swiper-container', {
-	navigation : {
-		nextEl : '.swiper-button-next', // 다음 버튼 클래스명
-		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
-	},
-});
-</script>
+
+
+
 <%@ include file="../include/footer.jsp" %>
