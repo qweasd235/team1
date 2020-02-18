@@ -94,9 +94,20 @@ public class BoardController {
 	@RequestMapping(value = "/eidtSpotPro", method = RequestMethod.POST)
 	public String editPro(BoardVo vo, MultipartHttpServletRequest req) throws Exception {
 		System.out.println(vo);
-		String s_pic = dataUpload(req);
-		vo.setS_pic(s_pic);
-		bService.modify(vo);
+		String file = dataUpload(req);
+		vo.setS_pic(file);
+		String s_pic = vo.getS_pic();
+		System.out.println(s_pic);
+//		if (s_pic.equals("")) {
+//			System.out.println("1번");
+//			System.out.println(s_pic);
+//			bService.modifyNoData(vo);
+//		} else {
+//			vo.setS_pic(s_pic);
+//			System.out.println("2번번");
+//			System.out.println(s_pic);
+//			bService.modify(vo);
+//		}
 		return "redirect:/board/editPage";
 	}
 

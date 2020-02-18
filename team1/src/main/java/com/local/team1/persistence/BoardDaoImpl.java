@@ -51,4 +51,9 @@ public class BoardDaoImpl implements BoardDao {
 		return sqlsession.selectList(NAMESPACE + ".editList");
 	}
 
+	@Override
+	public void updateData(BoardVo vo) throws Exception {
+		sqlsession.update(NAMESPACE + ".updateData", vo);
+	}
+
 }

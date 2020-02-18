@@ -48,4 +48,10 @@ public class BoardServiceImpl implements BoardService {
 		return dao.editList();
 	}
 
+	@Override
+	public void modifyNoData(BoardVo vo) throws Exception {
+		dao.updateData(vo);
+		
+	}
+
 }
