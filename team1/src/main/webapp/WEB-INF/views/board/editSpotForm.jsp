@@ -4,7 +4,7 @@
 	<!-- Main -->
 
 	<h3>EDIT Form</h3>
-	<form method="post" action="/board/eidtSpotPro" enctype="multipart/form-data">
+	<form method="post" action="/board/editSpotPro" enctype="multipart/form-data">
 	<input type="hidden" name="s_ref" value="MASTER">
 	<input type="hidden" name="s_id" value="${vo.s_id }">
 		<div class="row uniform">

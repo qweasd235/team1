@@ -77,10 +77,12 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/delSpot", method = RequestMethod.GET)
-	public String delete(@RequestParam("s_id") int s_id) throws Exception {
+	public String delete(@RequestParam("s_id") int s_id, 
+						 @RequestParam("fileName") String fileName) throws Exception {
 		System.out.println("delSpot!");
 		System.out.println(s_id);
 		bService.delete(s_id);
+		boardFileDelete(fileName);
 		return "redirect:/board/editPage";
 	}
 	@RequestMapping(value = "/editSpot", method = RequestMethod.GET)
@@ -91,12 +93,23 @@ public class BoardController {
 		return "/board/editSpotForm";
 	}
 	
-	@RequestMapping(value = "/eidtSpotPro", method = RequestMethod.POST)
+	@RequestMapping(value = "/editSpotPro", method = RequestMethod.POST)
 	public String editPro(BoardVo vo, MultipartHttpServletRequest req) throws Exception {
 		System.out.println(vo);
-		String s_pic = dataUpload(req);
-		vo.setS_pic(s_pic);
-		bService.modify(vo);
+		String file = dataUpload(req);
+		vo.setS_pic(file);
+		String s_pic = vo.getS_pic();
+		System.out.println(s_pic);
+		if (s_pic.equals("")) {
+			System.out.println("1번");
+			System.out.println(s_pic);
+			bService.modifyNoData(vo);
+		} else {
+			vo.setS_pic(s_pic);
+			System.out.println("2번번");
+			System.out.println(s_pic);
+			bService.modify(vo);
+		}
 		return "redirect:/board/editPage";
 	}
 
@@ -115,7 +128,8 @@ public class BoardController {
 
 	        String originFileName = mFile.getOriginalFilename(); // 원본 파일 명
 	        long fileSize = mFile.getSize(); // 파일 사이즈
-
+	        
+	        
 	        System.out.println("originFileName : " + originFileName);
 	        System.out.println("fileSize : " + fileSize);
 
@@ -130,9 +144,31 @@ public class BoardController {
 	            // TODO Auto-generated catch block
 	            e.printStackTrace();
 	        }
-	        String s_pic = safeFile.substring(uploadPath.length());
-	     
+	        
+	        String s_pic = "";
+	        	
+	        if(!originFileName.equals("")) {
+	        	s_pic = safeFile.substring(uploadPath.length());
+	        }
+	        
 	        return s_pic;
 	}
+	
+	@ResponseBody
+	public String boardFileDelete(String fileName) {
+
+	String path = uploadPath + fileName;
+
+	File file = new File(path);
+	
+	if(file.exists() == true){
+	   
+		file.delete();
+
+	}
+	
+	return null;
+} 
+	
 	
 }

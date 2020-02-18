@@ -6,9 +6,12 @@
 $(function(){
 	$(".delSpot").click(function(){
 		console.log("delSopt!");
+		var src = $(".srcVal").attr("src");
+		var str = src.substring(src.lastIndexOf("=") + 1);
+		console.log(str);
 		if(confirm("명소를 삭제하겠습니까?") == true){
 			var s_id = $(this).val();
-			location.href = "/board/delSpot?s_id=" + s_id;
+			location.href = "/board/delSpot?s_id=" + s_id + "&fileName=" + str ;
 			alert("삭제 완료되었습니다.");
 		}
 	});
@@ -30,7 +33,7 @@ $(function(){
 					<c:forEach items="${list}" var="vo">
 						<tr>
 							<th rowspan='3'><img alt='Bootstrap Image Preview'
-								src='/board/displayFile?fileName=${vo.s_pic}' width='150' /></th>
+								src='/board/displayFile?fileName=${vo.s_pic}' class="srcVal" width='150' /></th>
 							<th>${vo.s_add }</th>
 						</tr>
 						<tr>

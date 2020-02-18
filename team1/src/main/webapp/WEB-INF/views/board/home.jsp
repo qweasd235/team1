@@ -72,11 +72,19 @@ $(document).ready(function() {
 							<h2>강원도</h2>
 						</header>
 						<div class="swiper-container">
+
+							<div class="swiper-wraper">
+								<div class="swiper-slide">
+									<img src="../resources/images/mountain.png">
+								   <img src="../resources/images/monorail.png">
+								   <img src="../resources/images/Daegeumgul.png">
+
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">								
 							       <img src="../resources/images/mountain.png">
 								   <img src="../resources/images/monorail.png">
 								   <img src="../resources/images/food1.png">
+
 								</div>
 								<div class="swiper-slide">
 								   <img src="../resources/images/gyeongsang.png">
@@ -94,7 +102,9 @@ $(document).ready(function() {
 							
 							<!-- 페이징 -->
 							<div class="swiper-pagination"></div>
-						</div>
+									</div>
+								</div>
+							</div>
 						
 						<footer>					
 							<a href="/board/detail?s_cate=강원도" class="button alt">Learn More</a>

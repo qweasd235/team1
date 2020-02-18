@@ -18,5 +18,7 @@ public interface BoardDao {
 	public List<BoardVo> list(String s_cate) throws Exception;
 	//수정 페이지 목록
 	public List<BoardVo> editList() throws Exception;
+	
+	public void updateData(BoardVo vo) throws Exception;
 
 }
