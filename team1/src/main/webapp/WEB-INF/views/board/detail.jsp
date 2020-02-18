@@ -3,10 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../include/header.jsp" %>
 <style>
-/* img{ */
-/* 	width : 150px; */
-/* 	height : 130px; */
-/* } */
+img{ 
+ 	width : 160px; 
+ 	height : 140px;
+ } 
 </style>
 
 		<!-- Content -->
