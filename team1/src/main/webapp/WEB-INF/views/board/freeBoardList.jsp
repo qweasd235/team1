@@ -17,19 +17,30 @@ $(document).ready(function() {
 		location.href = "/board/fbRegisterGet";
 	});
 	
-	$("#freeBoard").on("click", ".content", function() {
-		console.log("clicked freeboard");
-		$("#modal-a").trigger("click");
-		
+
+
+	$(".title").click(function(e) {
+		e.preventDefault();			
 		var b_num = $(this).attr("data-b_num");
-		console.log(b_num);	
-		
+		$("input[name=b_num]").val(b_num);
+		$("#frmPage").attr("action", "/board/fbRead");
+		$("#frmPage").submit();
 	});
 	
-	
+	$(".page-link").click(function(e) {
+		e.preventDefault(); // 브라우저의 기본 기능 막기
+		var page = $(this).attr("data-page");
+		$("input[name=page]").val(page);
+		$("#frmPage").submit();
+	});
 	
 });
 </script>
+
+	<form id="frmPage" action="/board/freeBoardList" method="get">
+		<input type="hidden" name="b_num" />
+		<input type="hidden" name="page" value="${pagingDto.page}"/>						
+	</form>
 
 		<!-- Content -->
 		<!--
@@ -37,14 +48,13 @@ $(document).ready(function() {
 			to the full filename of your image. This is used in each section to set
 			the background image.
 		-->
-		
-	
-		
+						
 			<section id="post" class="wrapper bg-img" data-bg="wrapper bg-img" style="background-color: black;">
 				<div class="inner">
 					<article class="box" style="background-color: threedhighlight;">
 						<header>
-							<h2><span class = "font_color">자유 게시판</span></h2>																																															
+							<h2><span class = "font_color">자유 게시판</span></h2>	
+							${pagingDto} 																																														
 							<button type="button" id="btnRegister" class="btn btn-danger">글쓰기</button>
 							<br><br>							
 <!-- 							<p>01.01.2017</p> -->
@@ -63,8 +73,9 @@ $(document).ready(function() {
 			<!-- 게시판 글목록 -->					
 								<c:forEach items="${list}" var="fb_vo">
 								<tr>
+
 									<td>${fb_vo.b_num}</td>
-									<td><a data-toggle="modal" data-b_num="${fb_vo.b_num}" class="content">${fb_vo.b_title}</a></td>
+									<td><a href="/board/fbRead" data-b_num="${fb_vo.b_num}" class="title">${fb_vo.b_title}</a></td>
 									<td>${fb_vo.b_writer}</td>
 									<td>${fb_vo.b_regdate}</td>
 									<td>${fb_vo.b_read_count}</td>
@@ -73,45 +84,54 @@ $(document).ready(function() {
 								
 							</tbody>
 					</table>
+		<!-- // 게시판 테이블 -->
+		
+		<!-- pagination -->
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<nav>
+				<ul class="pagination">
+					<c:if test="${pagingDto.hasPrev == true}">
+						<li class="page-item">
+							<a class="page-link" 
+						data-page="${pagingDto.startPage - 1}">이전</a>
+						</li>
+					</c:if>
+					<c:forEach begin="${pagingDto.startPage}" 
+							   end="${pagingDto.endPage}" 
+							   var="v">
+						<li 
+							<c:choose>
+								<c:when test="${pagingDto.page == v}">
+									class="page-item active"
+								</c:when>
+								<c:otherwise>
+									class="page-item"
+								</c:otherwise>
+							</c:choose>
+						>
+							<a class="page-link" data-page="${v}">${v}</a>
+						</li>
+					</c:forEach>
+					<c:if test="${pagingDto.hasNext == true}">
+						<li class="page-item">
+							<a class="page-link" 
+						data-page="${pagingDto.endPage + 1}">다음</a>
+						</li>
+					</c:if>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<!-- // pagination -->
+	
 					</article>
 				</div>
 			</section>
 			
-<!-- 	상세보기 모달 창 -->			
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			 <a id="modal-a" href="#modal-container" role="button" class="btn" data-toggle="modal"
-			 	>Launch demo modal</a>
-			
-			 <div class="modal fade" id="modal-container" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="myModalLabel">
-								상세보기
-							</h5> 
-							<button type="button" class="close" data-dismiss="modal">
-								<span aria-hidden="true">×</span>
-							</button>
-						</div>
-						
-						<div class="modal-footer">
-							
-							<button type="button" class="btn btn-secondary" data-dismiss="modal"
-								id="btnModalClose">
-								닫기
-							</button>
-						</div>
-					</div>
-					
-				</div>
-				
-			</div>
-			
-		</div>
-	</div>
-</div>
+	
+	
+
 			
 
 	

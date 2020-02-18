@@ -1,7 +1,63 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
+
+<style>
+img{
+	width : 225.25px;
+	height : 155px;
+}
+.swiper-container{
+	width : 901px;
+	height : 358px;
+}
+
+.swiper-slide{
+	  display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+}
+
+</style>
+
+<script>
+/*
+var mySwiper = new Swiper ('.swiper-container', {
+		// Optional parameters 
+		direction: 'vertical', 
+		loop: true, 
+		// If we need pagination 
+		pagination: {
+			el: '.swiper-pagination',
+			slidesPerView : '1',
+			spaceBetween : '2',
+			initialSlide : '1'
+	},
+	// Navigation arrows 
+	navigation: {
+		nextEl: '.swiper-button-next', 
+		prevEl: '.swiper-button-prev', 
+	}, 
+	// And if we need scrollbar 
+	scrollbar: { el: '.swiper-scrollbar', 
+	}, 
+});
+*/
+
+</script>
 
 		<!-- Banner -->
 		<!--
@@ -25,14 +81,24 @@
 					<article class="box">
 						<header>
 							<h2>강원도</h2>
-<!-- 							<p>강원도 평창군 대관령 대관령마루길 483-32</p> -->
 						</header>
-						<div class="content">
-						<p><img src="../resources/images/mountain.png">
-						   <img src="../resources/images/monorail.png">
-						</p>
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+							       <img src="../resources/images/mountain.png">
+								   <img src="../resources/images/monorail.png">
+								   <img src="../resources/images/food1.png">
+								</div>
+								<div class="swiper-slide">
+								   <img src="../resources/images/gyeongsang.png">
+								   <img src="../resources/images/jeonlado.PNG">
+								   <img src="../resources/images/ulsan.PNG">
+								</div>
+							</div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
 						</div>
-						<footer>
+						<footer>					
 							<a href="/board/detail?s_cate=강원도" class="button alt">Learn More</a>
 						</footer>
 					</article>
@@ -45,14 +111,18 @@
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>대왕암</h2>
-							<p>경상도 울산광역시 동구 일산동 산907</p>
+							<h2>경상도</h2>
 						</header>
 						<div class="content">
-						<p>울산의 동쪽 끝 해안을 따라 여러가지 바위들이 있으며 원래는 울기공원이라 불렸다가 2004년 대왕암공원으로 변경되었다.</p>
+						<p>
+							<img src="../resources/images/ulsan.PNG">
+							<img src="../resources/images/gyeongsang.png">
+							<img src="../resources/images/gyeongsang3.png">
+							<!-- image는 3개만 쓰죠 -->
+						</p>
 						</div>
 						<footer>
-							<a href="/board/detail?s_cate=서울/경기" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=경남" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
@@ -64,18 +134,21 @@
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>향일암</h2>
-							<p>여수</p>
+							<h2>충북/전라도</h2>
 						</header>
 						<div class="content">
-						<p>향일암은 전국 4대 관음 기도처 중의 한 곳으로 644년 백제 의자왕 4년 신라의 원효대사가 창건하여 원통암이라 불렀다. 고려 광종 9년(958)에 윤필거사가 금오암으로, 조선 숙종 41년 (1715년)에 인묵대사가 향일암이라 개칭했다.</p>
+						<p>
+							<img src="../resources/images/jeonlado.PNG">
+							<img src="../resources/images/jeonlado2.PNG">
+							<img src="../resources/images/jeonlado3.PNG">
+						</p>
 						</div>
 						<footer>
 							<a href="/board/detail?s_cate=충청/전라" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
-				<a href="#four" class="more">Learn More</a>
+				<a href="#four" class="more">Learn More	</a>
 			</section>
 
 		<!-- Four -->
@@ -83,17 +156,27 @@
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>쁘띠프랑스 마을</h2>
-							<p>경기도 가평군 청평면 호반로</p>
+							<h2>서울/경기</h2>
 						</header>
 						<div class="content">
-						<p>쁘띠프랑스는 2008년 7월 25일 경기도 가평군 청평면 호반로 1063에 조성된 프랑스식 테마공원이다.</p>
+							<p>
+								<img src="../resources/images/gyeong.PNG">
+								<img src="../resources/images/gyeong2.PNG">
+								<img src="../resources/images/gyeong3.PNG">
+							</p>
 						</div>
 						<footer>
-							<a href="/board/detail?s_cate=경남" class="button alt">Learn More</a>
+							<a href="/board/detail?s_cate=서울/경기" class="button alt">Learn More</a>
 						</footer>
 					</article>
 				</div>
 			</section>
-
+<script>
+new Swiper('.swiper-container', {
+	navigation : {
+		nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+	},
+});
+</script>
 <%@ include file="../include/footer.jsp" %>

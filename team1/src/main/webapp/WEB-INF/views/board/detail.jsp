@@ -2,6 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../include/header.jsp" %>
+<style>
+/* img{ */
+/* 	width : 150px; */
+/* 	height : 130px; */
+/* } */
+</style>
+
 		<!-- Content -->
 		<!--
 			Note: To show a background image, set the "data-bg" attribute below
@@ -16,12 +23,20 @@
 <!-- 							<p>01.01.2017</p> -->
 						</header>
 						<div class="content">
+
+<!-- 							<p><img src="../resources/images/"></p> -->
+							
+<!-- 							<p><img src="../resources/images/"></p> -->
+							
+<!-- 							<p><img src="../resources/images/"></p> -->
+							
+<!-- 							<p><img src="../resources/images/"></p> -->
 						<table>
 							<c:forEach items="${list}" var="vo">
 								<tr>
-									<td rowspan='2'>
-									<img alt='Bootstrap Image Preview' 
-										 src='/board/displayFile?fileName=${vo.s_pic}' width='150'/>
+									<td rowspan='2' height='0'>
+									<div style="height:100%"><img alt='Bootstrap Image Preview' 
+										 src='/board/displayFile?fileName=${vo.s_pic}' height='100%'/></div>										 
 									</td>
 									<td>${vo.s_add }</td>
 								</tr>

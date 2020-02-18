@@ -14,8 +14,11 @@
 		
 	<!-- 게시판 전체리스트보기 -->
 	<select id="listAll" resultType="FreeBoardVo">
-		select * from t_board 
-		order by b_num desc
+		select *
+		from (select rownum rnum, a.*
+			  from (select * from t_board 
+					order by b_num desc) a)
+		where rnum &gt;= #{startRow} and rnum &lt;= #{endRow}
 	</select>
 		
 	<!-- 게시판 글 상세보기 -->
@@ -24,4 +27,22 @@
 		where b_num = #{b_num}
 	</select>
 		
+	<!-- 게시판 글 수정하기 -->
+	<update id="modify">
+		update t_board set
+			b_title = #{b_title},
+			b_content = #{b_content}
+		where b_num = #{b_num}
+	</update>	
+	
+	<!-- 게시판 글 삭제 -->
+	<delete id="delete">
+		delete from t_board
+		where b_num = #{b_num}
+	</delete>
+	
+	<!-- 게시판 전체 글 갯수 -->
+	<select id="totalCount" resultType="int">
+		select count(*) from t_board
+	</select>
 </mapper>  
