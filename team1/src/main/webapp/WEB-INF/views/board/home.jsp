@@ -168,11 +168,13 @@ $(document).ready(function() {
 						</header>
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<img src="../resources/images/gyeong.PNG">
-									<img src="../resources/images/gyeong2.PNG">
-									<img src="../resources/images/gyeong3.PNG">
-								</div>
+									<c:forEach items="${list}" var= "vo">
+										<c:if test="${vo.s_cate == '서울/경기'}">
+											<div class="swiper-slide">
+												<img src="/board/displayFile?fileName=${vo.s_pic}">
+											</div>
+										</c:if>
+								</c:forEach>	
 							</div>
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>		
