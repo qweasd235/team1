@@ -1,6 +1,8 @@
 package com.local.team1.persistence;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -8,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.local.team1.domain.BoardVo;
+import com.local.team1.domain.PagingDto;
 
 @Repository
 public class BoardDaoImpl implements BoardDao {
@@ -42,8 +45,11 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public List<BoardVo> list(String s_cate) throws Exception {
-		return sqlsession.selectList(NAMESPACE + ".list", s_cate);
+	public List<BoardVo> list(String s_cate, PagingDto dto) throws Exception {
+		Map<String, Object> paramMap = new HashMap<>();
+		paramMap.put("s_cate", s_cate);
+		paramMap.put("dto", dto);
+		return sqlsession.selectList(NAMESPACE + ".list", paramMap);
 	}
 
 	@Override
@@ -55,5 +61,6 @@ public class BoardDaoImpl implements BoardDao {
 	public void updateData(BoardVo vo) throws Exception {
 		sqlsession.update(NAMESPACE + ".updateData", vo);
 	}
+
 
 }

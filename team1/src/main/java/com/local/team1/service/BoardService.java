@@ -3,6 +3,7 @@ package com.local.team1.service;
 import java.util.List;
 
 import com.local.team1.domain.BoardVo;
+import com.local.team1.domain.PagingDto;
 
 public interface BoardService {
 	
@@ -19,7 +20,7 @@ public interface BoardService {
 		public void delete(Integer s_id) throws Exception;
 		
 		// 글목록
-		public List<BoardVo> list(String s_cate) throws Exception;
+		public List<BoardVo> list(String s_cate, PagingDto dto) throws Exception;
 		
 		public List<BoardVo> editList() throws Exception;
 		

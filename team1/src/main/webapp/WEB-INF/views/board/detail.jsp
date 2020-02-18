@@ -24,23 +24,17 @@ img{
 						</header>
 						<div class="content">
 
-<!-- 							<p><img src="../resources/images/"></p> -->
-							
-<!-- 							<p><img src="../resources/images/"></p> -->
-							
-<!-- 							<p><img src="../resources/images/"></p> -->
-							
-<!-- 							<p><img src="../resources/images/"></p> -->
 						<table>
 							<c:forEach items="${list}" var="vo">
 								<tr>
-									<td rowspan='2' height='0'>
-									<div style="height:100%"><img alt='Bootstrap Image Preview' 
-										 src='/board/displayFile?fileName=${vo.s_pic}' height='100%'/></div>										 
-									</td>
-									<td>${vo.s_add }</td>
+									<th>${vo.s_name }</th>
+									<th>${vo.s_add }</th>
 								</tr>
 								<tr>
+									<td>
+										<img alt='Bootstrap Image Preview' 
+										 	src='/board/displayFile?fileName=${vo.s_pic}'/>
+									</td>
 									<td>${vo.s_detail }</td>
 								</tr>
 							</c:forEach>

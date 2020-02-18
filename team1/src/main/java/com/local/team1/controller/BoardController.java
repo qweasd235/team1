@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.local.team1.domain.BoardVo;
+import com.local.team1.domain.PagingDto;
 import com.local.team1.service.BoardService;
 
 
@@ -34,8 +35,11 @@ public class BoardController {
 	
 	// 상세보기
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
-	public String detail(Model model, @RequestParam("s_cate") String s_cate) throws Exception {
-		List<BoardVo> list = bService.list(s_cate);
+	public String detail(Model model, @RequestParam("s_cate") String s_cate, PagingDto dto) throws Exception {
+		System.out.println(dto);
+		System.out.println(dto.getStartRow());
+		System.out.println(dto.getEndRow());
+		List<BoardVo> list = bService.list(s_cate, dto);
 		model.addAttribute("list", list);
 		return "board/detail";
 	}
