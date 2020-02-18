@@ -78,9 +78,9 @@ scrollbar: { el: '.swiper-scrollbar',
 						<div class="swiper-container">
 							<div class="swiper-wraper">
 								<div class="swiper-slide">
-									<img src="../resources/images/">
-								   <img src="../resources/images/">
-								   <img src="../resources/images/">
+									<img src="../resources/images/mountain.png">
+								   <img src="../resources/images/monorail.png">
+								   <img src="../resources/images/Daegeumgul.png">
 								</div>
 							</div>
 							<div class="swiper-button-prev"></div>
