@@ -126,7 +126,7 @@ $(document).ready(function() {
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>충북/전라도</h2>
+							<h2>충청/전라</h2>
 						</header>
 						<div class="swiper-container">
 							<div class="swiper-wrapper">

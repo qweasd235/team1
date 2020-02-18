@@ -62,7 +62,7 @@ public class BoardController {
 	@ResponseBody
 	public byte[] displayFile(@RequestParam("fileName") String fileName) throws Exception {
 		String realPath = uploadPath + File.separator + fileName.replace("/", "\\");
-		System.out.println("realPath:"+ realPath);
+//		System.out.println("realPath:"+ realPath);
 		FileInputStream is = new FileInputStream(realPath);
 		byte[] bytes = IOUtils.toByteArray(is);
 		is.close();
