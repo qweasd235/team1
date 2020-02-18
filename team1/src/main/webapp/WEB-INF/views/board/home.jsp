@@ -72,40 +72,18 @@ $(document).ready(function() {
 							<h2>강원도</h2>
 						</header>
 						<div class="swiper-container">
-
-							<div class="swiper-wraper">
-								<div class="swiper-slide">
-									<img src="../resources/images/mountain.png">
-								   <img src="../resources/images/monorail.png">
-								   <img src="../resources/images/Daegeumgul.png">
-
 							<div class="swiper-wrapper">
-								<div class="swiper-slide">								
-							       <img src="../resources/images/mountain.png">
-								   <img src="../resources/images/monorail.png">
-								   <img src="../resources/images/food1.png">
-
-								</div>
-								<div class="swiper-slide">
-								   <img src="../resources/images/gyeongsang.png">
-								   <img src="../resources/images/jeonlado.PNG">
-								   <img src="../resources/images/ulsan.PNG">
-								</div>
-								<div class="swiper-slide">
-									<img src="../resources/images/banner5.png">
-									<img src="../resources/images/ulsan.PNG">
-								    <img src="../resources/images/gyeongsang3.png">
-								</div> 								
+									<c:forEach items="${list}" var= "vo">
+										<c:if test="${vo.s_cate == '강원도'}">
+											<div class="swiper-slide">
+												<img src="/board/displayFile?fileName=${vo.s_pic}">
+											</div>
+										</c:if>
+								</c:forEach>	
 							</div>
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
-							
-							<!-- 페이징 -->
-							<div class="swiper-pagination"></div>
-									</div>
-								</div>
-							</div>
-						
+						</div>
 						<footer>					
 							<a href="/board/detail?s_cate=강원도" class="button alt">Learn More</a>
 						</footer>
@@ -152,11 +130,13 @@ $(document).ready(function() {
 						</header>
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<img src="../resources/images/jeonlado.PNG">
-									<img src="../resources/images/jeonlado2.PNG">
-									<img src="../resources/images/jeonlado3.PNG">
-								</div>
+									<c:forEach items="${list}" var= "vo">
+										<c:if test="${vo.s_cate == '충청/전라'}">
+											<div class="swiper-slide">
+												<img src="/board/displayFile?fileName=${vo.s_pic}">
+											</div>
+										</c:if>
+								</c:forEach>	
 							</div>
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>	
