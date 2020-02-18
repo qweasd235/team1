@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,12 +27,10 @@ public class FreeBoardController {
 	
 	// 자유게시판 전체목록
 	@RequestMapping(value = "/freeBoardList", method = RequestMethod.GET)
-	public String freeBoard(Model model, PagingDto pagingDto) throws Exception {
-		System.out.println("pagingDto == " + pagingDto);
+	public String freeBoard(Model model, PagingDto pagingDto) throws Exception {		
 		List<FreeBoardVo> list = fb_Service.listAll(pagingDto);	 
 		int totalCount =  fb_Service.totalCount(pagingDto); // 글 총 갯수 구하기
-		pagingDto.setTotalCount(totalCount);
-		System.out.println("pagingDto ==== " + pagingDto);
+		pagingDto.setTotalCount(totalCount);		
 		model.addAttribute("list", list);		
 		model.addAttribute("pagingDto", pagingDto);		
 		return "board/freeBoardList";
@@ -56,7 +55,8 @@ public class FreeBoardController {
 		
 	// 게시판 상세보기
 	@RequestMapping(value = "/fbRead", method = RequestMethod.GET)
-	public String freeBoardRead(@RequestParam("b_num") int b_num, Model model, HttpSession session) throws Exception {
+	public String freeBoardRead(@RequestParam("b_num") int b_num, Model model, 
+								HttpSession session, @ModelAttribute PagingDto pagingDto) throws Exception {
 		FreeBoardVo fb_vo = fb_Service.read(b_num);
 		model.addAttribute("fb_vo", fb_vo);
 		MemberVo memberVo = (MemberVo)session.getAttribute("memberVo");

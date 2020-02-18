@@ -9,6 +9,10 @@ span, .font_color{
 	color: black;
 }
 
+.page-item {
+	cursor: pointer;
+} 
+          
 </style>
   
 <script>

@@ -45,4 +45,6 @@
 	<select id="totalCount" resultType="int">
 		select count(*) from t_board
 	</select>
+	
+	
 </mapper>  
