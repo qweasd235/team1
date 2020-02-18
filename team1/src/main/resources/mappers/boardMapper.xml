@@ -45,12 +45,17 @@
 		from (select rownum rnum, a.*
 			  from (select * from t_spot
 					where s_cate = #{s_cate}) a)
-		where rnum &gt;= #{startRow} and rnum &lt;= #{endRow}
+		where rnum &gt;= #{dto.startRow} and rnum &lt;= #{dto.endRow}
 	</select>
 	
 	<select id="editList" resultType="BoardVo">
 		select * from t_spot
 		order by s_id desc
+	</select>
+	
+	<select id="totalCount" resultType="int">
+		select count(*) from t_spot
+		where s_cate = #{s_cate}
 	</select>
 		
 </mapper>  

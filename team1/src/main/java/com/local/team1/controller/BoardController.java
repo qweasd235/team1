@@ -40,7 +40,12 @@ public class BoardController {
 		System.out.println(dto.getStartRow());
 		System.out.println(dto.getEndRow());
 		List<BoardVo> list = bService.list(s_cate, dto);
+		System.out.println("list:"+ list);
+		int totalCount = bService.totalCount(s_cate);
+		System.out.println(totalCount);
+		dto.setTotalCount(totalCount);
 		model.addAttribute("list", list);
+		model.addAttribute("dto", dto);
 		return "board/detail";
 	}
 	
