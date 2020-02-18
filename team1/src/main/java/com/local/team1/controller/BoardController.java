@@ -55,7 +55,7 @@ public class BoardController {
 	     vo.setS_pic(s_pic);
 	     System.out.println(vo);
 		bService.regist(vo);
-		return "board/home";
+		return "redirect:/board/home";
 	}
 	
 	@RequestMapping(value = "/displayFile", method =  RequestMethod.GET)
@@ -102,8 +102,9 @@ public class BoardController {
 
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String home() throws Exception {
-		
+	public String home(Model model) throws Exception {
+		List<BoardVo> list = bService.editList();
+		model.addAttribute("list", list);
 		return "board/home";
 	}		
 

@@ -9,15 +9,15 @@
 
 <style>
 img{
-	width : 225.25px;
-	height : 155px;
+	width : 800px;
+	height : 300px;
 }
 
 
 .swiper-container{
 	width:901px;
 	height:358px;
-
+}
 .swiper-slide{
 	  display: -webkit-box;
       display: -ms-flexbox;
@@ -111,14 +111,20 @@ $(document).ready(function() {
 						<header>
 							<h2>경상도</h2>
 						</header>
-						<div class="content">
-						<p>
-							<img src="../resources/images/ulsan.PNG">
-							<img src="../resources/images/gyeongsang.png">
-							<img src="../resources/images/gyeongsang3.png">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+									<c:forEach items="${list}" var= "vo">
+										<c:if test="${vo.s_cate == '경남'}">
+											<div class="swiper-slide">
+												<img src="/board/displayFile?fileName=${vo.s_pic}">
+											</div>
+										</c:if>
+								</c:forEach>	
 							<!-- image는 3개만 쓰죠 -->
-						</p>
-						</div>
+							</div>	
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>	
 						<footer>
 							<a href="/board/detail?s_cate=경남" class="button alt">Learn More</a>
 						</footer>
@@ -134,13 +140,17 @@ $(document).ready(function() {
 						<header>
 							<h2>충북/전라도</h2>
 						</header>
-						<div class="content">
-						<p>
-							<img src="../resources/images/jeonlado.PNG">
-							<img src="../resources/images/jeonlado2.PNG">
-							<img src="../resources/images/jeonlado3.PNG">
-						</p>
-						</div>
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="../resources/images/jeonlado.PNG">
+									<img src="../resources/images/jeonlado2.PNG">
+									<img src="../resources/images/jeonlado3.PNG">
+								</div>
+							</div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>	
+						</div>	
 						<footer>
 							<a href="/board/detail?s_cate=충청/전라" class="button alt">Learn More</a>
 						</footer>
@@ -156,13 +166,17 @@ $(document).ready(function() {
 						<header>
 							<h2>서울/경기</h2>
 						</header>
-						<div class="content">
-							<p>
-								<img src="../resources/images/gyeong.PNG">
-								<img src="../resources/images/gyeong2.PNG">
-								<img src="../resources/images/gyeong3.PNG">
-							</p>
-						</div>
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="../resources/images/gyeong.PNG">
+									<img src="../resources/images/gyeong2.PNG">
+									<img src="../resources/images/gyeong3.PNG">
+								</div>
+							</div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>		
+						</div>	
 						<footer>
 							<a href="/board/detail?s_cate=서울/경기" class="button alt">Learn More</a>
 						</footer>
