@@ -3,18 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../include/header.jsp" %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    
-<style>
-span, .font_color{
-	color: black;
-}
-
-.page-item {
-	cursor: pointer;
-} 
-          
-</style>
-  
+ 
 <script>
 $(document).ready(function() {
 	$("#btnRegister").click(function() {
@@ -40,22 +29,16 @@ $(document).ready(function() {
 	
 });
 </script>
-
-	<form id="frmPage" action="/board/freeBoardList" method="get">
-		<input type="hidden" name="b_num" />
-		<input type="hidden" name="page" value="${pagingDto.page}"/>						
-	</form>
-
+   
 		<!-- Content -->
 		<!--
 			Note: To show a background image, set the "data-bg" attribute below
 			to the full filename of your image. This is used in each section to set
 			the background image.
 		-->
-						
-			<section id="post" class="wrapper bg-img" data-bg="wrapper bg-img" style="background-color: black;">
+			<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 				<div class="inner">
-					<article class="box" style="background-color: threedhighlight;">
+					<article class="box" style="background-color: gray;">
 						<header>
 							<h2><span class = "font_color">자유 게시판</span></h2>	
 							${pagingDto} 																																														
@@ -89,6 +72,11 @@ $(document).ready(function() {
 							</tbody>
 					</table>
 		<!-- // 게시판 테이블 -->
+		
+		<form id="frmPage" action="/board/freeBoardList" method="get">
+			<input type="hidden" name="b_num" />
+			<input type="hidden" name="page" value="${pagingDto.page}"/>						
+		</form>
 		
 		<!-- pagination -->
 	<div class="row">
@@ -128,15 +116,8 @@ $(document).ready(function() {
 		</div>
 	</div>
 	<!-- // pagination -->
-	
 					</article>
 				</div>
 			</section>
-			
-	
-	
 
-			
-
-	
 <%@ include file="../include/footer.jsp" %>
