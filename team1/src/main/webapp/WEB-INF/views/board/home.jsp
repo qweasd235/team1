@@ -14,7 +14,7 @@ img{
 }
 
 
-.swiper-container {
+.swiper-container{
 	width:901px;
 	height:358px;
 
