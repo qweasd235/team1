@@ -77,10 +77,12 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/delSpot", method = RequestMethod.GET)
-	public String delete(@RequestParam("s_id") int s_id) throws Exception {
+	public String delete(@RequestParam("s_id") int s_id, 
+						 @RequestParam("fileName") String fileName) throws Exception {
 		System.out.println("delSpot!");
 		System.out.println(s_id);
 		bService.delete(s_id);
+		boardFileDelete(fileName);
 		return "redirect:/board/editPage";
 	}
 	@RequestMapping(value = "/editSpot", method = RequestMethod.GET)
@@ -151,5 +153,22 @@ public class BoardController {
 	        
 	        return s_pic;
 	}
+	
+	@ResponseBody
+	public String boardFileDelete(String fileName) {
+
+	String path = uploadPath + fileName;
+
+	File file = new File(path);
+	
+	if(file.exists() == true){
+	   
+		file.delete();
+
+	}
+	
+	return null;
+} 
+	
 	
 }
