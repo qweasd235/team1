@@ -6,15 +6,17 @@
 <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
 
+
 <style>
 img{
 	width : 225.25px;
 	height : 155px;
 }
+
+
 .swiper-container{
-	width : 901px;
-	height : 358px;
-}
+	width:901px;
+	height:358px;
 
 .swiper-slide{
 	  display: -webkit-box;
@@ -31,33 +33,20 @@ img{
       align-items: center;
 }
 
+
 </style>
 
 <script>
-/*
-var mySwiper = new Swiper ('.swiper-container', {
-		// Optional parameters 
-		direction: 'vertical', 
-		loop: true, 
-		// If we need pagination 
-		pagination: {
-			el: '.swiper-pagination',
-			slidesPerView : '1',
-			spaceBetween : '2',
-			initialSlide : '1'
-	},
-	// Navigation arrows 
-	navigation: {
-		nextEl: '.swiper-button-next', 
-		prevEl: '.swiper-button-prev', 
-	}, 
-	// And if we need scrollbar 
-	scrollbar: { el: '.swiper-scrollbar', 
-	}, 
+$(document).ready(function() {
+	new Swiper('.swiper-container', {
+		navigation : {
+			nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+			prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+		},
+	});
 });
-*/
-
 </script>
+
 
 		<!-- Banner -->
 		<!--
@@ -84,7 +73,7 @@ var mySwiper = new Swiper ('.swiper-container', {
 						</header>
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
-								<div class="swiper-slide">
+								<div class="swiper-slide">								
 							       <img src="../resources/images/mountain.png">
 								   <img src="../resources/images/monorail.png">
 								   <img src="../resources/images/food1.png">
@@ -94,10 +83,19 @@ var mySwiper = new Swiper ('.swiper-container', {
 								   <img src="../resources/images/jeonlado.PNG">
 								   <img src="../resources/images/ulsan.PNG">
 								</div>
+								<div class="swiper-slide">
+									<img src="../resources/images/banner5.png">
+									<img src="../resources/images/ulsan.PNG">
+								    <img src="../resources/images/gyeongsang3.png">
+								</div> 								
 							</div>
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
+							
+							<!-- 페이징 -->
+							<div class="swiper-pagination"></div>
 						</div>
+						
 						<footer>					
 							<a href="/board/detail?s_cate=강원도" class="button alt">Learn More</a>
 						</footer>
@@ -171,12 +169,7 @@ var mySwiper = new Swiper ('.swiper-container', {
 					</article>
 				</div>
 			</section>
-<script>
-new Swiper('.swiper-container', {
-	navigation : {
-		nextEl : '.swiper-button-next', // 다음 버튼 클래스명
-		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
-	},
-});
-</script>
+
+
+
 <%@ include file="../include/footer.jsp" %>
