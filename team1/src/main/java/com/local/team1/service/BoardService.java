@@ -25,4 +25,6 @@ public interface BoardService {
 		public List<BoardVo> editList() throws Exception;
 		
 		public void modifyNoData(BoardVo vo) throws Exception;
+		
+		public int totalCount(String s_cate) throws Exception;
 }

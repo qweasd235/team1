@@ -8,7 +8,6 @@ img{
  	height : 140px;
  } 
 </style>
-
 		<!-- Content -->
 		<!--
 			Note: To show a background image, set the "data-bg" attribute below

@@ -55,4 +55,9 @@ public class BoardServiceImpl implements BoardService {
 		
 	}
 
+	@Override
+	public int totalCount(String s_cate) throws Exception {
+		return dao.totalCount(s_cate);
+	}
+
 }

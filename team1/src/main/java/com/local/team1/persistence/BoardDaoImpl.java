@@ -62,5 +62,11 @@ public class BoardDaoImpl implements BoardDao {
 		sqlsession.update(NAMESPACE + ".updateData", vo);
 	}
 
+	@Override
+	public int totalCount(String s_cate) throws Exception {
+		
+		return sqlsession.selectOne(NAMESPACE + ".totalCount", s_cate);
+	}
+
 
 }

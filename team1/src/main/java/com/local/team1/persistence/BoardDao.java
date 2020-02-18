@@ -21,5 +21,7 @@ public interface BoardDao {
 	public List<BoardVo> editList() throws Exception;
 	
 	public void updateData(BoardVo vo) throws Exception;
+	
+	public int totalCount(String s_cate) throws Exception;
 
 }
