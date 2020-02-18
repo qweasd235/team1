@@ -4,13 +4,26 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <%@ include file="../include/header.jsp" %> 
 
+<style>
+#replyBox {
+	background-color: gray;
+}
+
+#r_content {
+	background-color: white;	
+	color: black;
+}
+</style>
+
 <script>
 $(document).ready(function() {
-	 
-	$("#btnListAll").click(function() {
-		location.href = "/board/freeBoardList";
+	
+	// 리스트 가기
+	$("#btnListAll").click(function() {		
+		$("#frmPage").submit();
 	});
 	
+	// 글 수정하기
 	$("#btnModify").click(function() {
 		$("#b_title").prop("readonly", false).val("");
 		$("#b_content").prop("readonly", false).val("");
@@ -18,11 +31,24 @@ $(document).ready(function() {
 		$("button[type=submit]").show(600);
 	}); 
 	
+	// 글 삭제하기
 	$("#btnDelete").click(function() {
 		location.href = "/board/fbDelete?b_num=${fb_vo.b_num}";
 	});
+	
+	// 리플 정의
+	function replyList() {
+		$("#reply_Table_List").empty();
+		var url = "";
+	}
 });
 </script>
+
+		<form id="frmPage" action="/board/freeBoardList" method="get">
+			<input type="hidden" name="b_num" />
+			<input type="hidden" name="page" value="${pagingDto.page}"/>						
+		</form>
+		
 
 		<!-- Content -->
 		<!--
@@ -33,10 +59,13 @@ $(document).ready(function() {
 			<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 				<div class="inner">
 					<article class="box">
-						<header>
-							${memberVo}
+						<header>							
 							<h2>글 상세보기</h2>
+							<h5>확인용</h5>
+							${memberVo}
+							${pagingDto}
 							${fb_vo }
+							<h5>// 확인용</h5>
 <!-- 							<p>01.01.2017</p> -->
 						</header>
 						<form id="myform" role="form" method="post" 
@@ -73,10 +102,25 @@ $(document).ready(function() {
 						</c:if>
 							<button type="button" class="btn btn-primary"
 								id="btnListAll">목록</button>
-				</div>
-						
+						</div>																							
 						</form>
+						
+					<!-- 리플 박스 -->	
+						<article class="box" id="replyBox">
+							<label>댓글</label><br>
+							<table id="Reply_Table_List">
+								<tbody>								
+								</tbody>
+							</table>
+							
+							<input type="text" id="r_content" class="form-control font_color" name="r_content"/>
+							<button type="button" class="btn btn-success">등록</button>							
+						</article> 
 					</article>
+					<!-- // 상세보기 박스 -->
+					
+					
+					
 				</div>
 			</section>
 
