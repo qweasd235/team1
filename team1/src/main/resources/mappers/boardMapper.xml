@@ -19,6 +19,7 @@
 		<update id="update">
 			update t_spot set
 				s_name = #{s_name},
+				s_cate = #{s_cate},
 				s_add = #{s_add},
 				s_detail = #{s_detail},
 				s_pic = #{s_pic, jdbcType=VARCHAR}
@@ -28,8 +29,9 @@
 		<update id="updateData">
 			update t_spot set
 				s_name = #{s_name},
+				s_cate = #{s_cate},
 				s_add = #{s_add},
-				s_detail = #{s_detail},
+				s_detail = #{s_detail}
 				where s_id = #{s_id}
 	</update>
 	
