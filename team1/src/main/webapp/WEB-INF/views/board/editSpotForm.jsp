@@ -15,6 +15,23 @@
 				<input type="text" name="s_add" id="s_add" placeholder="주소" value="${vo.s_add }" />
 			</div>
 			<!-- Break -->
+			<div class="6u 12u$(xsmall)">
+				<input type="text" name="s_tel" id="s_tel" placeholder="명소 안내 전화번호" value="${vo.s_tel}"/>
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				<input type="text" name="s_homepage" id="s_homepage" placeholder="명소 홈페이지" value="${vo.s_homepage}"/>
+			</div>
+			<div class="6u 12u$(xsmall)">
+				<input type="text" name="s_holiday" id="s_holiday" placeholder="명소 휴무일" value="${vo.s_holiday}"/>
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				<input type="text" name="s_worktime" id="s_worktime" placeholder="명소 운영시간" value="${vo.s_worktime}"/>
+			</div>
+			<div class="12u$">
+				<input type="text" name="s_cost" id="s_cost" placeholder="명소 입장료" value="${vo.s_cost}"/>		
+			</div>
+			
+			<!-- Break -->
 			<div class="12u$">
 				<div class="select-wrapper">
 					<select name="s_cate" id="s_cate">

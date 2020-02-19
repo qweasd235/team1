@@ -14,6 +14,23 @@
 				<input type="text" name="s_add" id="s_add" placeholder="주소" />
 			</div>
 			<!-- Break -->
+			<div class="6u 12u$(xsmall)">
+				<input type="text" name="s_tel" id="s_tel" placeholder="명소 안내 전화번호"/>
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				<input type="text" name="s_homepage" id="s_homepage" placeholder="명소 홈페이지"/>
+			</div>
+			<div class="6u 12u$(xsmall)">
+				<input type="text" name="s_holiday" id="s_holiday" placeholder="명소 휴무일"/>
+			</div>
+			<div class="6u$ 12u$(xsmall)">
+				<input type="text" name="s_worktime" id="s_worktime" placeholder="명소 운영시간"/>
+			</div>
+			<div class="12u$">
+				<input type="text" name="s_cost" id="s_cost" placeholder="명소 입장료"/>		
+			</div>
+			
+			<!-- Break -->
 			<div class="12u$">
 				<div class="select-wrapper">
 					<select name="s_cate" id="s_cate">
@@ -25,7 +42,6 @@
 					</select>
 				</div>
 			</div>
-			<!-- Break -->
 			<!-- Break -->
 			<div class="12u$">
 				<textarea name="s_detail" id="s_detail"

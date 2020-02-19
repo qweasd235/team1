@@ -7,31 +7,41 @@
 <mapper namespace="com.local.mappers.boardMapper">
 	
 		<insert id="create">
-			insert into t_spot (s_id, s_cate, s_name, s_add, s_detail, s_pic, s_ref)
-			values (seq_s_id.nextval, #{s_cate}, #{s_name}, #{s_add}, #{s_detail}, #{s_pic, jdbcType=VARCHAR}, #{s_ref})
+			insert into t_spot (s_id, s_cate, s_name, s_add, s_detail, s_pic, s_ref, s_tel, s_homepage, s_holiday, s_worktime, s_cost)
+			values (seq_s_id.nextval, #{s_cate}, #{s_name}, #{s_add}, #{s_detail}, #{s_pic, jdbcType=VARCHAR}, #{s_ref}, #{s_tel}, #{s_homepage}, #{s_holiday}, #{s_worktime}, #{s_cost})
 		</insert>
 		
 		<select id="read" resultType="BoardVo">
 			select * from t_spot
 			where s_id = #{s_id}
 		</select>
-		
+		<!-- 명소 수정 -->
 		<update id="update">
 			update t_spot set
 				s_name = #{s_name},
 				s_cate = #{s_cate},
 				s_add = #{s_add},
 				s_detail = #{s_detail},
-				s_pic = #{s_pic, jdbcType=VARCHAR}
+				s_pic = #{s_pic, jdbcType=VARCHAR},
+				s_tel = #{s_tel},
+				s_homepage = #{s_homepage},
+				s_holiday = #{s_holiday},
+				s_worktime = #{s_worktime},
+				s_cost = #{s_cost}
 			where s_id = #{s_id}
 	</update>
-		
+		<!-- 첨부파일없이 명소 수정 -->
 		<update id="updateData">
 			update t_spot set
 				s_name = #{s_name},
 				s_cate = #{s_cate},
 				s_add = #{s_add},
-				s_detail = #{s_detail}
+				s_detail = #{s_detail},
+				s_tel = #{s_tel},
+				s_homepage = #{s_homepage},
+				s_holiday = #{s_holiday},
+				s_worktime = #{s_worktime},
+				s_cost = #{s_cost}
 				where s_id = #{s_id}
 	</update>
 	
