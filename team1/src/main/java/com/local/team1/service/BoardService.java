@@ -22,11 +22,15 @@ public interface BoardService {
 		// 글목록
 		public List<BoardVo> list(String s_cate, PagingDto dto) throws Exception;
 		
-		public List<BoardVo> editList() throws Exception;
+		public List<BoardVo> editList(PagingDto dto) throws Exception;
 		
 		public void modifyNoData(BoardVo vo) throws Exception;
-		
+		//디테일 글 갯수
 		public int totalCount(String s_cate) throws Exception;
 		// 명소 상세보기
 		public BoardVo detailContent(int s_id) throws Exception;
+		//홈화면 리스트
+		public List<BoardVo> homeList() throws Exception;
+		//수정화면 글 갯수
+		public int totalCountEdit() throws Exception;
 }

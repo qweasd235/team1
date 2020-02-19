@@ -42,7 +42,7 @@ public class BoardController {
 		List<BoardVo> list = bService.list(s_cate, dto);
 //		System.out.println("list:"+ list);
 		int totalCount = bService.totalCount(s_cate);
-		System.out.println(totalCount);
+//		System.out.println(totalCount);
 		dto.setTotalCount(totalCount);
 		model.addAttribute("list", list);
 		model.addAttribute("dto", dto);
@@ -60,8 +60,8 @@ public class BoardController {
 	@RequestMapping(value = "/registPro", method = RequestMethod.POST)
 	public String registPro(BoardVo vo, MultipartHttpServletRequest req) throws Exception {
 		 String s_pic = dataUpload(req);
-	     System.out.println(vo);
-	     System.out.println(s_pic);
+//	     System.out.println(vo);
+//	     System.out.println(s_pic);
 	     vo.setS_pic(s_pic);
 	     System.out.println(vo);
 		bService.regist(vo);
@@ -80,24 +80,28 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/editPage", method = RequestMethod.GET)
-	public String editSpot(Model model) throws Exception {
-		List<BoardVo> list = bService.editList();
+	public String editSpot(Model model, PagingDto dto) throws Exception {
+		List<BoardVo> list = bService.editList(dto);
+		int totalCount = bService.totalCountEdit();
+		System.out.println(totalCount);
+		dto.setTotalCount(totalCount);
 		model.addAttribute("list", list);
+		model.addAttribute("dto", dto);
 		return "board/editPage";
 	}
 	
 	@RequestMapping(value = "/delSpot", method = RequestMethod.GET)
 	public String delete(@RequestParam("s_id") int s_id, 
 						 @RequestParam("fileName") String fileName) throws Exception {
-		System.out.println("delSpot!");
-		System.out.println(s_id);
+//		System.out.println("delSpot!");
+//		System.out.println(s_id);
 		bService.delete(s_id);
 		boardFileDelete(fileName);
 		return "redirect:/board/editPage";
 	}
 	@RequestMapping(value = "/editSpot", method = RequestMethod.GET)
 	public String edit(@RequestParam("s_id") int s_id, Model model) throws Exception {
-		System.out.println(s_id);
+//		System.out.println(s_id);
 		BoardVo vo = bService.read(s_id);
 		model.addAttribute("vo", vo);
 		return "/board/editSpotForm";
@@ -105,7 +109,7 @@ public class BoardController {
 	
 	@RequestMapping(value = "/editSpotPro", method = RequestMethod.POST)
 	public String editPro(BoardVo vo, MultipartHttpServletRequest req) throws Exception {
-		System.out.println(vo);
+//		System.out.println(vo);
 		String file = dataUpload(req);
 		vo.setS_pic(file);
 		String s_pic = vo.getS_pic();
@@ -126,7 +130,7 @@ public class BoardController {
 	// 메인페이지
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home(Model model) throws Exception {
-		List<BoardVo> list = bService.editList();
+		List<BoardVo> list = bService.homeList();
 		model.addAttribute("list", list);
 		return "board/home";
 	}		
@@ -182,7 +186,7 @@ public class BoardController {
 } 
 	@RequestMapping(value = "/detailContent", method = RequestMethod.GET)
 	public String detailContent(@RequestParam("s_id") int s_id, Model model) throws Exception {
-		System.out.println(s_id);
+//		System.out.println(s_id);
 		BoardVo vo = bService.detailContent(s_id);
 		model.addAttribute("vo", vo);
 		return "/board/detailSpot";

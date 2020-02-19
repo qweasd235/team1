@@ -53,8 +53,8 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public List<BoardVo> editList() throws Exception {
-		return sqlsession.selectList(NAMESPACE + ".editList");
+	public List<BoardVo> editList(PagingDto dto) throws Exception {
+		return sqlsession.selectList(NAMESPACE + ".editList", dto);
 	}
 
 	@Override
@@ -71,6 +71,16 @@ public class BoardDaoImpl implements BoardDao {
 	@Override
 	public BoardVo detailContent(int s_id) throws Exception {
 		return sqlsession.selectOne(NAMESPACE + ".detailContent", s_id);
+	}
+
+	@Override
+	public List<BoardVo> homeList() throws Exception {
+		return sqlsession.selectList(NAMESPACE + ".homeList");
+	}
+
+	@Override
+	public int totalCountEdit() throws Exception {
+		return sqlsession.selectOne(NAMESPACE + ".totalCountEdit");
 	}
 
 
