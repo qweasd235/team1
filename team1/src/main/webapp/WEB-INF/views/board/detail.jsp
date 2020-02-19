@@ -8,6 +8,13 @@ img{
  	height : 140px;
  } 
 </style>
+
+<script>
+$(document).ready(function() {
+
+	
+});
+</script>
 		<!-- Content -->
 		<!--
 			Note: To show a background image, set the "data-bg" attribute below
@@ -42,6 +49,9 @@ img{
 						<footer>
 							<ul class="actions">
 								<li><a href="#" class="button alt icon fa-chevron-left"><span class="label">Previous</span></a></li>
+								
+								
+								
 								<li><a href="#" class="button alt icon fa-chevron-right"><span class="label">Next</span></a></li>
 							</ul>
 						</footer>
