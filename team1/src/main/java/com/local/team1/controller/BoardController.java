@@ -80,9 +80,13 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/editPage", method = RequestMethod.GET)
-	public String editSpot(Model model) throws Exception {
-		List<BoardVo> list = bService.editList();
+	public String editSpot(Model model, PagingDto dto) throws Exception {
+		List<BoardVo> list = bService.editList(dto);
+		int totalCount = bService.totalCountEdit();
+		System.out.println(totalCount);
+		dto.setTotalCount(totalCount);
 		model.addAttribute("list", list);
+		model.addAttribute("dto", dto);
 		return "board/editPage";
 	}
 	
@@ -126,7 +130,7 @@ public class BoardController {
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home(Model model) throws Exception {
-		List<BoardVo> list = bService.editList();
+		List<BoardVo> list = bService.homeList();
 		model.addAttribute("list", list);
 		return "board/home";
 	}		
