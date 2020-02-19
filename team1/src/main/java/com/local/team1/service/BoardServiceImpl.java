@@ -45,8 +45,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<BoardVo> editList() throws Exception {
-		return dao.editList();
+	public List<BoardVo> editList(PagingDto dto) throws Exception {
+		return dao.editList(dto);
 	}
 
 	@Override
@@ -63,6 +63,16 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public BoardVo detailContent(int s_id) throws Exception {
 		return dao.detailContent(s_id);
+	}
+
+	@Override
+	public List<BoardVo> homeList() throws Exception {
+		return dao.homeList();
+	}
+
+	@Override
+	public int totalCountEdit() throws Exception {
+		return dao.totalCountEdit();
 	}
 
 }
