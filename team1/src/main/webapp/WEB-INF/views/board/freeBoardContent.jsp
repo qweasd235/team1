@@ -51,6 +51,7 @@ $(document).ready(function() {
 		-->
 			<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 				<div class="inner">
+					<div class="row">
 					<article class="box">
 						<header>							
 							<h2>글 상세보기</h2>
@@ -111,11 +112,17 @@ $(document).ready(function() {
 								<tbody>								
 								</tbody>
 							</table>
-							
-							<input type="text" id="r_content" class="form-control font_color" name="r_content"/>
-							<button type="button" class="btn btn-success">등록</button>							
+							<form>
+							<div class="col-md-11">
+								<input type="text" id="r_content" class="form-control" name="r_content"/>
+							</div>	
+							<div class="col-md-1">
+								<button type="button" class="btn btn-success">등록</button>
+							</div>
+							</form>							
 						</article> 
 					</article>
+					</div>
 				</div>
 			</section>
 

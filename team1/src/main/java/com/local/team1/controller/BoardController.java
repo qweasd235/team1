@@ -36,11 +36,11 @@ public class BoardController {
 	// 상세보기
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public String detail(Model model, @RequestParam("s_cate") String s_cate, PagingDto dto) throws Exception {
-		System.out.println(dto);
-		System.out.println(dto.getStartRow());
-		System.out.println(dto.getEndRow());
+//		System.out.println(dto);
+//		System.out.println(dto.getStartRow());
+//		System.out.println(dto.getEndRow());
 		List<BoardVo> list = bService.list(s_cate, dto);
-		System.out.println("list:"+ list);
+//		System.out.println("list:"+ list);
 		int totalCount = bService.totalCount(s_cate);
 		System.out.println(totalCount);
 		dto.setTotalCount(totalCount);
@@ -123,7 +123,7 @@ public class BoardController {
 		return "redirect:/board/editPage";
 	}
 
-	
+	// 메인페이지
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home(Model model) throws Exception {
 		List<BoardVo> list = bService.editList();
