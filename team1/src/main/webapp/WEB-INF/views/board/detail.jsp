@@ -48,6 +48,7 @@ hr {
 			var page = $(this).attr("data-page");
 			$("input[name=page]").val(page);
 			$("#frmPage").submit();
+			
 		});
 
 	});
