@@ -7,7 +7,7 @@ import com.local.team1.domain.PagingDto;
 
 public interface BoardService {
 	
-	// 글쓰기
+		// 글쓰기
 		public void regist(BoardVo vo) throws Exception;
 		
 		// 글읽기
@@ -27,4 +27,6 @@ public interface BoardService {
 		public void modifyNoData(BoardVo vo) throws Exception;
 		
 		public int totalCount(String s_cate) throws Exception;
+		// 명소 상세보기
+		public BoardVo detailContent(int s_id) throws Exception;
 }

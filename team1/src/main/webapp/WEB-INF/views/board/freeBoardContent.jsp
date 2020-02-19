@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<%@ include file="../include/header.jsp" %> 
+<%@ include file="../include/header.jsp" %>
 
 <style>
 #replyBox {
@@ -39,16 +39,11 @@ $(document).ready(function() {
 	// 리플 정의
 	function replyList() {
 		$("#reply_Table_List").empty();
-		var url = "";
+		var url = "/reply/";
 	}
 });
 </script>
 
-		<form id="frmPage" action="/board/freeBoardList" method="get">
-			<input type="hidden" name="b_num" />
-			<input type="hidden" name="page" value="${pagingDto.page}"/>						
-		</form>
-		
 
 		<!-- Content -->
 		<!--
@@ -105,6 +100,12 @@ $(document).ready(function() {
 						</div>																							
 						</form>
 						
+						<!-- 데이터만 보내기 -->
+						<form id="frmPage" action="/board/freeBoardList" method="get">
+							<input type="hidden" name="b_num" />
+							<input type="hidden" name="page" value="${pagingDto.page}"/>						
+						</form>
+						
 					<!-- 리플 박스 -->	
 						<article class="box" id="replyBox">
 							<label>댓글</label><br>
@@ -117,10 +118,6 @@ $(document).ready(function() {
 							<button type="button" class="btn btn-success">등록</button>							
 						</article> 
 					</article>
-					<!-- // 상세보기 박스 -->
-					
-					
-					
 				</div>
 			</section>
 

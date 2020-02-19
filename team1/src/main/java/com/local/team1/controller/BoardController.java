@@ -71,7 +71,7 @@ public class BoardController {
 	@ResponseBody
 	public byte[] displayFile(@RequestParam("fileName") String fileName) throws Exception {
 		String realPath = uploadPath + File.separator + fileName.replace("/", "\\");
-		System.out.println("realPath:"+ realPath);
+//		System.out.println("realPath:"+ realPath);
 		FileInputStream is = new FileInputStream(realPath);
 		byte[] bytes = IOUtils.toByteArray(is);
 		is.close();
@@ -179,6 +179,13 @@ public class BoardController {
 	
 	return null;
 } 
+	@RequestMapping(value = "/detailContent", method = RequestMethod.GET)
+	public String detailContent(@RequestParam("s_id") int s_id, Model model) throws Exception {
+		System.out.println(s_id);
+		BoardVo vo = bService.detailContent(s_id);
+		model.addAttribute("vo", vo);
+		return "/board/detailSpot";
+	}
 	
 	
 }

@@ -7,14 +7,43 @@ img{
  	width : 160px; 
  	height : 140px;
  } 
+ 
+ #subDetail{
+ 	padding : 1px;
+ 	vertical-align : middle;
+ }
+hr{
+	margin : 5px;
+}
+#spot_title{
+	font-size : 25px;
+	font-weight : bold;
+}
+.detail_content{
+	color : white;
+}
 </style>
 
 <script>
+<<<<<<< HEAD
 $(document).ready(function() {
 
 	
 });
 </script>
+=======
+$(document).ready(function(){
+	$(".detail_content").click(function(e){
+// 		e.preventDefault();
+		var s_id = $(this).attr("data-s_id");
+// 		console.log(s_id);
+		location.href = "/board/detailContent?s_id=" + s_id;
+	});
+});	
+</script>
+<!-- 		<form id= -->
+
+>>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 		<!-- Content -->
 		<!--
 			Note: To show a background image, set the "data-bg" attribute below
@@ -33,15 +62,15 @@ $(document).ready(function() {
 						<table>
 							<c:forEach items="${list}" var="vo">
 								<tr>
-									<th>${vo.s_name }</th>
-									<th>${vo.s_add }</th>
-								</tr>
-								<tr>
 									<td>
 										<img alt='Bootstrap Image Preview' 
 										 	src='/board/displayFile?fileName=${vo.s_pic}'/>
 									</td>
-									<td>${vo.s_detail }</td>
+									<td id="subDetail">
+										<div id="spot_title">
+										<a data-s_id="${vo.s_id}" class="detail_content">${vo.s_name}</a></div>
+									<hr>  
+									${vo.s_add}</td>
 								</tr>
 							</c:forEach>
 						</table>

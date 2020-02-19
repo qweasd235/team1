@@ -68,5 +68,10 @@ public class BoardDaoImpl implements BoardDao {
 		return sqlsession.selectOne(NAMESPACE + ".totalCount", s_cate);
 	}
 
+	@Override
+	public BoardVo detailContent(int s_id) throws Exception {
+		return sqlsession.selectOne(NAMESPACE + ".detailContent", s_id);
+	}
+
 
 }
