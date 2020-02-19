@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <%@ include file="../include/header.jsp"%>
 <style>
 img {
@@ -25,6 +25,14 @@ hr {
 .detail_content {
 	color: white;
 }
+ 
+/* #paging > li { */
+/* 	float: letf; */
+/* 	display: inline; */
+	
+/* } */
+
+
 </style>
 <script>
 	$(document).ready(function() {
@@ -84,13 +92,16 @@ hr {
 				</table>
 			</div>
 			<footer>
-				<ul class="actions">
-					<!--  <li><a href="#" class="button alt icon fa-chevron-left"><span class="label">Previous</span></a></li> -->
+				<div class="row">
+		<div class="col-md-12 text-center">
+			<nav>
+				<ul class="pagination">
+<!-- 					<li><a href="#" class="button alt icon fa-chevron-left"><span class="label">Previous</span></a></li> -->
 
-					<nav>
 						<c:if test="${dto.hasPrev == true}">
-							<li class="page-item"><a class="page-link"
-								data-page="${dto.startPage - 1}">이전</a></li>
+							<li class="page-item">
+								<a class="page-link" data-page="${dto.startPage - 1}">이전</a>
+							</li>
 						</c:if>
 						<c:forEach begin="${dto.startPage}" end="${dto.endPage}" var="v">
 							<li
@@ -106,13 +117,19 @@ hr {
 							</li>
 						</c:forEach>
 						<c:if test="${dto.hasNext == true}">
-							<li class="page-item"><a class="page-link"
-								data-page="${dto.endPage + 1}">다음</a></li>
+							<li class="page-item">
+								<a class="page-link" data-page="${dto.endPage + 1}">다음</a>
+							</li>
 						</c:if>
-
-					</nav>
-					<!-- 	<li><a href="#" class="button alt icon fa-chevron-right"><span class="label">Next</span></a></li> -->
+						
+						
+						
+			
+<!-- 						<li><a href="#" class="button alt icon fa-chevron-right"><span class="label">Next</span></a></li> -->
 				</ul>
+				</nav>
+				</div>
+				</div>
 			</footer>
 		</article>
 	</div>
