@@ -60,4 +60,9 @@ public class BoardServiceImpl implements BoardService {
 		return dao.totalCount(s_cate);
 	}
 
+	@Override
+	public BoardVo detailContent(int s_id) throws Exception {
+		return dao.detailContent(s_id);
+	}
+
 }
