@@ -49,23 +49,9 @@ hr {
 		});
 
 	});
-<<<<<<< HEAD
+
 </script> 
 
-
-    
-=======
-</script>
-<!-- 		<form id= -->
-
-<!-- Content -->
-<!--
-			Note: To show a background image, set the "data-bg" attribute below
-			to the full filename of your image. This is used in each section to set
-			the background image.
-		-->
-
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 				<div class="inner">
 					<article class="box">
