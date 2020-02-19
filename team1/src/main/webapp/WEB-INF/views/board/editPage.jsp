@@ -11,10 +11,10 @@ img {
 
 <script>
 	$(function() {
-		$(".delSpot").click(
-				function() {
+		$(".delSpot").click(function() {
 					console.log("delSopt!");
 					var src = $(".srcVal").attr("src");
+					console.log(src);
 					var str = src.substring(src.lastIndexOf("=") + 1);
 					console.log(str);
 					if (confirm("명소를 삭제하겠습니까?") == true) {
@@ -52,7 +52,7 @@ img {
 				<table>
 					<c:forEach items="${list}" var="vo">
 						<tr>
-							<td><img alt='Bootstrap Image Preview'
+							<td><img class="srcVal" alt='Bootstrap Image Preview'
 								src='/board/displayFile?fileName=${vo.s_pic}' /></td>
 							<td id="subDetail">
 								<div id="spot_title">
