@@ -57,5 +57,10 @@
 		select count(*) from t_spot
 		where s_cate = #{s_cate}
 	</select>
-		
+	
+		<select id="detailContent" resultType="BoardVo">
+			select * from t_spot
+			where s_id = #{s_id}
+		</select>
+			
 </mapper>  

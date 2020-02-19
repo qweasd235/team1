@@ -23,5 +23,7 @@ public interface BoardDao {
 	public void updateData(BoardVo vo) throws Exception;
 	
 	public int totalCount(String s_cate) throws Exception;
+	// 명소 상세내용 보기
+	public BoardVo detailContent(int s_id) throws Exception;
 
 }
