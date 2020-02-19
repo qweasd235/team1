@@ -7,6 +7,21 @@ img {
 	width: 160px;
 	height: 140px;
 }
+#subDetail {
+	padding: 1px;
+	vertical-align: middle;
+}
+hr {
+	margin: 5px;
+}
+#spot_title {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.detail_content {
+	color: white;
+}
 </style>
 
 <script>
@@ -42,12 +57,12 @@ img {
 </script>
 
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
-	<!-- 데이터 전송 -->
+	<div class="inner">
+		<article class="box">
+			<!-- 데이터 전송 -->
 			<form id="frmPage" action="/board/editPage" method="get">
 				<input type="hidden" name="page" value="${dto.page}" />
 			</form>
-	<div class="inner">
-		<article class="box">
 			<div class="content">
 				<table>
 					<c:forEach items="${list}" var="vo">
