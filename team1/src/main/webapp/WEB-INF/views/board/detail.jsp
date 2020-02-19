@@ -77,7 +77,8 @@ hr {
 								<div id="spot_title">
 									<a data-s_id="${vo.s_id}" class="detail_content">${vo.s_name}</a>
 								</div>
-								<hr> ${vo.s_add}
+								<hr> 
+								${vo.s_add}
 							</td>
 						</tr>
 					</c:forEach>
