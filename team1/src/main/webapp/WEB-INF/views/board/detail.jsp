@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<%@ include file="../include/header.jsp"%>
+    pageEncoding="UTF-8"%>
+<%@ include file="../include/header.jsp" %>    
 <style>
 img {
 	width: 160px;
@@ -31,9 +30,8 @@ hr {
 /* 	display: inline; */
 	
 /* } */
-
-
-</style>
+</style>    
+ 
 <script>
 	$(document).ready(function() {
 
@@ -48,30 +46,17 @@ hr {
 			var page = $(this).attr("data-page");
 			$("input[name=page]").val(page);
 			$("#frmPage").submit();
-			
 		});
 
 	});
-</script>
-<!-- 		<form id= -->
-
-<!-- Content -->
-<!--
-			Note: To show a background image, set the "data-bg" attribute below
-			to the full filename of your image. This is used in each section to set
-			the background image.
-		-->
-
-<form id="frmPage" action="/board/detail" method="get">
-	<input type="hidden" name="s_cate" value="${s_cate}" /> <input
-		type="hidden" name="page" value="${dto.page}" />
-</form>
+</script> 
 
 
+    
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
-	<div class="inner">
-		<article class="box">
-			<header>
+				<div class="inner">
+					<article class="box">
+						<header>
 				<!-- 							<h2>Nibh non lobortis mus nibh</h2> -->
 				<!-- 							<p>01.01.2017</p> -->
 			</header>
@@ -132,8 +117,8 @@ hr {
 				</div>
 				</div>
 			</footer>
-		</article>
-	</div>
-</section>
+					</article>
+				</div>
+			</section>
 
-<%@ include file="../include/footer.jsp"%>
+<%@ include file="../include/footer.jsp" %>
