@@ -1,91 +1,121 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="../include/header.jsp" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="../include/header.jsp"%>
 <style>
-img{ 
- 	width : 160px; 
- 	height : 140px;
- } 
- 
- #subDetail{
- 	padding : 1px;
- 	vertical-align : middle;
- }
-hr{
-	margin : 5px;
+img {
+	width: 160px;
+	height: 140px;
 }
-#spot_title{
-	font-size : 25px;
-	font-weight : bold;
+
+#subDetail {
+	padding: 1px;
+	vertical-align: middle;
 }
-.detail_content{
-	color : white;
+
+hr {
+	margin: 5px;
+}
+
+#spot_title {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.detail_content {
+	color: white;
 }
 </style>
-
 <script>
-<<<<<<< HEAD
-$(document).ready(function() {
+	$(document).ready(function() {
 
-	
-});
-</script>
-=======
-$(document).ready(function(){
-	$(".detail_content").click(function(e){
-// 		e.preventDefault();
-		var s_id = $(this).attr("data-s_id");
-// 		console.log(s_id);
-		location.href = "/board/detailContent?s_id=" + s_id;
+		$(".detail_content").click(function(e) {
+			// 		e.preventDefault();
+			var s_id = $(this).attr("data-s_id");
+			location.href = "/board/detailContent?s_id=" + s_id;
+		});
+
+		$(".page-link").click(function(e) {
+			e.preventDefault(); // 브라우저의 기본 기능 막기
+			var page = $(this).attr("data-page");
+			$("input[name=page]").val(page);
+			$("#frmPage").submit();
+		});
+
 	});
-});	
 </script>
 <!-- 		<form id= -->
 
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
-		<!-- Content -->
-		<!--
+<!-- Content -->
+<!--
 			Note: To show a background image, set the "data-bg" attribute below
 			to the full filename of your image. This is used in each section to set
 			the background image.
 		-->
-			<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
-				<div class="inner">
-					<article class="box">
-						<header>
-<!-- 							<h2>Nibh non lobortis mus nibh</h2> -->
-<!-- 							<p>01.01.2017</p> -->
-						</header>
-						<div class="content">
 
-						<table>
-							<c:forEach items="${list}" var="vo">
-								<tr>
-									<td>
-										<img alt='Bootstrap Image Preview' 
-										 	src='/board/displayFile?fileName=${vo.s_pic}'/>
-									</td>
-									<td id="subDetail">
-										<div id="spot_title">
-										<a data-s_id="${vo.s_id}" class="detail_content">${vo.s_name}</a></div>
-									<hr>  
-									${vo.s_add}</td>
-								</tr>
-							</c:forEach>
-						</table>
-						</div>
-						<footer>
-							<ul class="actions">
-								<li><a href="#" class="button alt icon fa-chevron-left"><span class="label">Previous</span></a></li>
-								
-								
-								
-								<li><a href="#" class="button alt icon fa-chevron-right"><span class="label">Next</span></a></li>
-							</ul>
-						</footer>
-					</article>
-				</div>
-			</section>
+<form id="frmPage" action="/board/detail" method="get">
+	<input type="hidden" name="s_cate" value="${s_cate}" /> <input
+		type="hidden" name="page" value="${dto.page}" />
+</form>
 
-<%@ include file="../include/footer.jsp" %>
+
+<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
+	<div class="inner">
+		<article class="box">
+			<header>
+				<!-- 							<h2>Nibh non lobortis mus nibh</h2> -->
+				<!-- 							<p>01.01.2017</p> -->
+			</header>
+			<div class="content">
+
+				<table>
+					<c:forEach items="${list}" var="vo">
+						<tr>
+							<td><img alt='Bootstrap Image Preview'
+								src='/board/displayFile?fileName=${vo.s_pic}' /></td>
+							<td id="subDetail">
+								<div id="spot_title">
+									<a data-s_id="${vo.s_id}" class="detail_content">${vo.s_name}</a>
+								</div>
+								<hr> ${vo.s_add}
+							</td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+			<footer>
+				<ul class="actions">
+					<!--  <li><a href="#" class="button alt icon fa-chevron-left"><span class="label">Previous</span></a></li> -->
+
+					<nav>
+						<c:if test="${dto.hasPrev == true}">
+							<li class="page-item"><a class="page-link"
+								data-page="${dto.startPage - 1}">이전</a></li>
+						</c:if>
+						<c:forEach begin="${dto.startPage}" end="${dto.endPage}" var="v">
+							<li
+								<c:choose>
+								<c:when test="${dto.page == v}">
+									class="page-item active"
+								</c:when>
+								<c:otherwise>
+									class="page-item"
+								</c:otherwise>
+							</c:choose>>
+								<a class="page-link" data-page="${v}">${v}</a>
+							</li>
+						</c:forEach>
+						<c:if test="${dto.hasNext == true}">
+							<li class="page-item"><a class="page-link"
+								data-page="${dto.endPage + 1}">다음</a></li>
+						</c:if>
+
+					</nav>
+					<!-- 	<li><a href="#" class="button alt icon fa-chevron-right"><span class="label">Next</span></a></li> -->
+				</ul>
+			</footer>
+		</article>
+	</div>
+</section>
+
+<%@ include file="../include/footer.jsp"%>
