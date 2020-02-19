@@ -11,16 +11,7 @@
 		insert into t_board (b_num, b_title, b_content, b_writer)
 		values (seq_b_num.nextval, #{b_title}, #{b_content}, #{b_writer})
 	</insert>
-		
-	<!-- 게시판 전체리스트보기 -->
-	<select id="listAll" resultType="FreeBoardVo">
-		select *
-		from (select rownum rnum, a.*
-			  from (select * from t_board 
-					order by b_num desc) a)
-		where rnum &gt;= #{startRow} and rnum &lt;= #{endRow}
-	</select>
-		
+					
 	<!-- 게시판 글 상세보기 -->
 	<select id="read" resultType="FreeBoardVo">
 		select * from t_board
@@ -44,7 +35,36 @@
 	<!-- 게시판 전체 글 갯수 -->
 	<select id="totalCount" resultType="int">
 		select count(*) from t_board
+		<include refid="search"></include>
 	</select>
 	
+	<!-- 게시판 전체리스트보기 -->
+	<select id="listAll" resultType="FreeBoardVo">
+		select *
+		from (select rownum rnum, a.*
+			  from (select * from t_board
+			  
+			  		<include refid="search"></include>
+			   
+					order by b_num desc) a)
+		where rnum &gt;= #{startRow} and rnum &lt;= #{endRow}
+	</select>
+	
+	<!-- 검색 정의 -->
+	<sql id="search">
+		<if test="searchType != null">
+  			<choose>
+  				<when test="searchType == 'title'">
+  					where b_title like '%' || #{keyword} || '%'
+  				</when>
+  				<when test="searchType == 'content'">
+  					where b_content like '%' || #{keyword} || '%'
+  				</when>
+  				<when test="searchType == 'writer'">
+  					where b_writer like '%' || #{keyword} || '%'
+  				</when>
+  			</choose>
+  		</if>
+	</sql>
 	
 </mapper>  
