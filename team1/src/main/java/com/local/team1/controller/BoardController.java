@@ -46,6 +46,7 @@ public class BoardController {
 		dto.setTotalCount(totalCount);
 		model.addAttribute("list", list);
 		model.addAttribute("dto", dto);
+		model.addAttribute("s_cate", s_cate);
 		return "board/detail";
 	}
 	

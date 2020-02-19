@@ -1,9 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <%@ include file="../include/header.jsp" %>
 
+<style>
+.page-link {
+	cursor: pointer;
+}
+
+#search {
+	background-color: white;
+	color: black; 	 		
+}
+</style>
  
 <script>
 $(document).ready(function() {
@@ -28,6 +36,8 @@ $(document).ready(function() {
 		$("#frmPage").submit();
 	});
 	
+	
+	
 });
 </script>
    
@@ -42,8 +52,38 @@ $(document).ready(function() {
 					<article class="box" style="background-color: gray;">
 						<header>
 							<h2><span class = "font_color">자유 게시판</span></h2>	
-							${pagingDto} 																																														
-							<button type="button" id="btnRegister" class="btn btn-danger">글쓰기</button>
+							<div class="row">
+							<div class="col-md-1">					 					 																																						
+								<button type="button" id="btnRegister" class="btn btn-danger">글쓰기</button>
+							</div>
+							<div class="col-md-5">&nbsp;</div>
+							<div class="col-md-6">								
+								<form class="form-inline" action="/board/freeBoardList">
+									<select class="form-control" name="searchType">
+										<option value="title" 
+										<c:if test="${pagingDto.searchType == 'title'}">
+											selected
+										</c:if>
+										>제목</option>
+										
+										<option value="content"
+										<c:if test="${pagingDto.searchType == 'content'}">
+											selected
+										</c:if>
+										>내용</option>
+										
+										<option value="writer"
+										<c:if test="${pagingDto.searchType == 'writer'}">
+											selected
+										</c:if>
+										>작성자</option>
+									</select>
+									<input class="form-control mr-sm-2" type="text" id="search" name="keyword" placeholder="검색어를 입력하세요"/> 
+									<button class="btn btn-primary my-2 my-sm-0" type="submit">검색</button>
+								</form>
+							</div>
+							</div>	
+							${pagingDto}	 
 							<br><br>							
 <!-- 							<p>01.01.2017</p> -->
 						</header>
@@ -74,9 +114,12 @@ $(document).ready(function() {
 					</table>
 		<!-- // 게시판 테이블 -->
 		
+		<!-- 데이터 전송 -->
 		<form id="frmPage" action="/board/freeBoardList" method="get">
 			<input type="hidden" name="b_num" />
 			<input type="hidden" name="page" value="${pagingDto.page}"/>						
+			<input type="hidden" name="searchType" value="${pagingDto.searchType}"/>						
+			<input type="hidden" name="keyword" value="${pagingDto.keyword}"/>						
 		</form>
 		
 		<!-- pagination -->

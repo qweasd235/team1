@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
 <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
 
