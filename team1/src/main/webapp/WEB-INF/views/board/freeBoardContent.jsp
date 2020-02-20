@@ -28,9 +28,9 @@ $(document).ready(function() {
 	});
 	
 	// 글 수정하기
-	$("#btnModify").click(function() {
-		$("#b_title").prop("readonly", false).val("");
-		$("#b_content").prop("readonly", false).val("");
+	$("#btnModify").click(function() {		
+		$("#b_title").prop("readonly", false).css("background-color", "white");
+		$("#b_content").prop("readonly", false);
 		$(this).hide(600);
 		$("button[type=submit]").show(600);
 	}); 
@@ -166,9 +166,7 @@ $(document).ready(function() {
 						</div>
 						<div class="form-group">
 							<label for="b_writer">글쓴이</label>
-							<input type="text" class="form-control" id="b_writer" 
-								name="b_writer" value="${fb_vo.b_writer }" style="color: black;"
-								readonly/>
+							<span><strong>${fb_vo.b_writer }</strong></span>
 						</div>
 						<hr>
 						<div style="clear:both;">
@@ -215,9 +213,10 @@ $(document).ready(function() {
 							<div class="col-md-1">
 								<button type="button" class="btn btn-success" id="btnReplyRegist">등록</button>
 							</div>
-							</form>	
+							</form>
+						<!-- // 리플 박스 -->	
 							
-							<!-- 댓글 수정 모달 창 -->
+	<!-- 댓글 수정 모달 창 -->	
 	<div class="row">
 		<div class="col-md-12">
 			 <a id="modal_reply" href="#modal-container" role="button" class="btn" data-toggle="modal"
@@ -260,7 +259,8 @@ $(document).ready(function() {
 				
 			</div>
 			</div>
-		</div>
+		</div>	
+	<!-- // 댓글 수정 모달 창 -->
 													
 						</article> 
 					</article>
