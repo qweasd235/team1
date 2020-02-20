@@ -1,9 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %> 
-<script>
+<style>
+.changeColor{
+	background-color : white;
+	color : black;
+}
+</style>
 
+<script>
 $(document).ready(function(){
+	$(".changeColor").css("background-color", "white")
+					 .css("color", "black");
+	
+	
 	$("#btnCancel").click(function(){
 		location.href = "/board/home"
 	});
@@ -68,7 +78,7 @@ $(document).ready(function(){
 		}); // $(#btnCheckId)
 
 	
-	$("#mem_pw2").blur(function(){
+	$("#mem_pw2").keyup(function(){
 		if($("#mem_pw").val() != $("#mem_pw2").val()){
 			if($("#mem_pw2").val() != ""){
 				$("#pwSpan").text("패스워드가 일치하지 않습니다.");
@@ -80,6 +90,10 @@ $(document).ready(function(){
 	});
 }); //ready
 </script>	
+
+<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
+				<div class="inner">
+					<article class="box">
 <body>
 	<!-- Main -->
 
@@ -88,22 +102,22 @@ $(document).ready(function(){
 		<table border="1">
 			<tr>
 				<th>이름</th>
-				<td><input type="text" name="mem_name" id="mem_name" required/></td>
+				<td><input class="changeColor" type="text" name="mem_name" id="mem_name" required/></td>
 			</tr>		
 			<tr>
 				<th>아이디</th>
-				<td><input type="text" name="mem_id" id="mem_id" required/>
+				<td><input class="changeColor" type="text" name="mem_id" id="mem_id" required/>
 					<input type="button" value="중복확인" id="btnCheckId"/>
 					<span id="resultSpan"></span>
 				</td>	
 			</tr>
 			<tr>
 				<th>패스워드</th>
-				<td><input type="password" name="mem_pw" id="mem_pw" required/></td>
+				<td><input class="changeColor" type="password" name="mem_pw" id="mem_pw" required/></td>
 			</tr>
 			<tr>
 				<th>패스워드 확인</th>
-				<td><input type="password" name="mem_pw2" id="mem_pw2" required/>
+				<td><input class="changeColor" type="password" name="mem_pw2" id="mem_pw2" required/>
 					<span id="pwSpan"></span>
 				</td>
 				
@@ -123,5 +137,8 @@ $(document).ready(function(){
 			<script src="../resources/assets/js/skel.min.js"></script>
 			<script src="../resources/assets/js/util.js"></script>
 			<script src="../resources/assets/js/main.js"></script>
-</body>
+	</body>
+	</article>
+	</div>
+	</section>
 </html>

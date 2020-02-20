@@ -9,12 +9,18 @@ $(function(){
 		alert("로그인 실패");
 	}
 	
+	$(".changeColor").css("background-color", "white")
+	 				 .css("color", "black");
+	
 	$("#btnCancel").click(function(){
 		location.href = "/board/home";
 	});
 	
 });
 </script>
+<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
+				<div class="inner">
+					<article class="box">
 <body>
 
 <!-- Main -->
@@ -23,11 +29,11 @@ $(function(){
 		<table border="1">
 			<tr>
 				<th>아이디</th>
-				<td><input type="text" id="mem_id" name="mem_id" required/>
+				<td><input class="changeColor" type="text" id="mem_id" name="mem_id" required/>
 			</tr>
 			<tr>
 				<th>패스워드</th>
-				<td><input type="password" id="mem_id" name="mem_pw" required/></td>
+				<td><input class="changeColor" type="password" id="mem_id" name="mem_pw" required/></td>
 			</tr>
 		</table>
 			<input type="submit" value="로그인" id="btnSubmit"/>
@@ -37,5 +43,8 @@ $(function(){
 	<hr />
 
 </body>
+</article>
+</div>
+</section>
 </html>
 <%@ include file="../include/footer.jsp" %>
