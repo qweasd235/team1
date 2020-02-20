@@ -83,5 +83,4 @@ public class BoardDaoImpl implements BoardDao {
 		return sqlsession.selectOne(NAMESPACE + ".totalCountEdit");
 	}
 
-
 }

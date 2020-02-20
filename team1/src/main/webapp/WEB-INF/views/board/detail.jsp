@@ -23,6 +23,7 @@ hr {
 
 .detail_content {
 	color: white;
+	text-decoration: none;
 }
  
 /* #paging > li { */
