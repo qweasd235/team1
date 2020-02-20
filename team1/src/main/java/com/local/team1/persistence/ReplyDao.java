@@ -10,7 +10,7 @@ public interface ReplyDao {
 	// 데이터 쓰기
 	public void create(ReplyVo r_vo) throws Exception;
 	// 데이터 목록
-	public List<FreeBoardVo> listAll() throws Exception;	
+	public List<ReplyVo> listAll(int b_num) throws Exception;	
 	// 데이터 수정
 	public void modify() throws Exception;
 	// 데이터 삭제

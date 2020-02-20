@@ -22,9 +22,8 @@ public class ReplyServiceImpl implements ReplyService {
 	}
 
 	@Override
-	public List<FreeBoardVo> listAll() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public List<ReplyVo> listAll(int b_num) throws Exception {
+		return dao.listAll(b_num);
 	}
 
 	@Override
