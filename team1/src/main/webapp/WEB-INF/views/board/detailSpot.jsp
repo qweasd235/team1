@@ -73,12 +73,55 @@ span {
 					</c:if>
 				</ul>
 			</div>
-			<hr>
-			<strong>${vo.s_name} 위치</strong><br>
-			<div id="map" style="width: 900px; height: 400px;"></div>
-
-
-			<div>
+				
+						<hr>
+						<div class="content">
+							${vo.s_detail}
+						</div>
+						<hr>
+						<div class="detail_info">
+							<h4>상세정보</h4>
+							<ul>
+								<c:if test="${not empty vo.s_tel}">
+								<li>
+									<strong id="info">문의 및 안내</strong>
+									<span>${vo.s_tel}</span>
+								</li>
+								</c:if>
+								<c:if test="${not empty vo.s_homepage}">
+								<li>
+									<strong class="title">홈페이지</strong>
+									<span>
+										<a href="${vo.s_homepage}" target="_blank">${vo.s_homepage}</a>
+									</span>
+								</li>
+								</c:if>
+								<c:if test="${not empty vo.s_holiday}">
+								<li>
+									<strong>휴무일</strong>
+									<span>${vo.s_holiday}</span>
+								</li>
+								</c:if>
+								<c:if test="${not empty vo.s_worktime}">
+								<li>
+									<strong>이용시간</strong>
+									<span>${vo.s_worktime}</span>
+								</li>
+								</c:if>
+								<c:if test="${not empty vo.s_cost}">
+								<li>
+									<strong>입장료</strong>
+									<span>${vo.s_cost}</span>
+								</li>
+								</c:if>
+							</ul>
+						</div>
+						<hr>
+						<strong>${vo.s_name} 위치</strong><br>
+						<div id="map" style="width:900px;height:400px;"></div>
+									
+				<!-- // 댓글 작성 -->
+				<div>
 				<c:if test="${not empty memberVo.mem_id}">
 					<div class="row">
 						<div class="col-md-12">
@@ -101,10 +144,8 @@ span {
 								<button type="button" class="btn-xs btn-success" id="btnReply">작성완료</button>
 							</div>
 						</div>
-					</div>
-				</c:if>
-				<!-- // 댓글 작성 -->
-
+						</div>
+					</c:if>	
 				<hr />
 
 				<!-- 댓글 목록 -->
@@ -128,7 +169,6 @@ span {
 						</table>
 					</div>
 				</div>
-
 			</div>
 		</article>
 	</div>

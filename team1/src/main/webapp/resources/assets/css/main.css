@@ -1670,6 +1670,12 @@
 
 		a:hover {
 			text-decoration: none;
+			color: red;
+			cursor : pointer;
+		}
+		
+		a:visited{
+			color : white;
 		}
 
 	strong, b {

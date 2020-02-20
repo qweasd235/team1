@@ -6,7 +6,9 @@
 	<h3>EDIT Form</h3>
 	<form method="post" action="/board/editSpotPro" enctype="multipart/form-data">
 	<input type="hidden" name="s_ref" value="MASTER">
-	<input type="hidden" name="s_id" value="${vo.s_id }">
+	<input type="hidden" name="page" value="${pagingDto.page}">
+	<input type="hidden" name="s_id" value="${vo.s_id}">
+	
 		<div class="row uniform">
 			<div class="6u 12u$(xsmall)">
 				<input type="text" name="s_name" id="s_name" placeholder="명소" value="${vo.s_name }"/>
