@@ -14,7 +14,8 @@
 	
 	<!-- 리플 보기 -->
 	<select id="replyListAll">
-	
+		select * from t_reply
+		order by r_num;
 	</select>
 	
 	<!-- 리플 수정 -->

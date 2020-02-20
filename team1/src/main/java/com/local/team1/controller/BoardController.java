@@ -127,7 +127,7 @@ public class BoardController {
 		return "redirect:/board/editPage";
 	}
 
-	
+	// 메인페이지
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home(Model model) throws Exception {
 		List<BoardVo> list = bService.homeList();

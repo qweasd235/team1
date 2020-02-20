@@ -1,7 +1,10 @@
 package com.local.team1.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,6 +25,12 @@ public class ReplyController {
 	public String create(@RequestBody ReplyVo r_vo) throws Exception {
 		rService.create(r_vo);
 		return "reply_success";
+	}
+	
+	// 리플 보기
+	@RequestMapping(value = "/listAll/{b_num}", method = RequestMethod.GET)
+	public List<ReplyVo> listAll(@PathVariable("b_num") int b_num) throws Exception {		
+		return null;
 	}
 	
 }
