@@ -173,6 +173,7 @@ span {
 		</article>
 	</div>
 </section>
+
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=027af565dc7eede95404567343c1e203&libraries=services"></script>
 <script>
@@ -250,12 +251,80 @@ span {
 				"data" : JSON.stringify(sendData),
 				"success" : function(rData) {
 					console.log(rData);
-// 					replyList();
+					replyList();
 				}
 			}); // $.ajax()
 		});
 		
+		// 댓글 삭제 버튼
+		$("#replyList").on("click", ".btnReplyDelete", function() {
+			console.log("댓글 삭제 버튼");
+			var m_id = $(this).attr("data-m_id");
+			var s_id = $(this).attr("data-s_id");
+			var url = "/mark/delete/" + m_id + "/" + s_id;
+			
+			$.ajax({
+				"type" : "delete",
+				"url" : url,
+				"headers" : {
+					"Content-Type" : "application/json",
+					"X-HTTP-Method-Override" : "delete"
+				},
+				"success" : function(rData) {
+					console.log(rData);
+					replyList();
+					$("#btnModalClose").trigger("click");
+				}
+			}); // $.ajax()
+		});
 		
+	
+		// 댓글 목록 가져오기 - 정의
+		function replyList() {
+			$("#replyList").empty();
+			var url = "/mark/listAll/${vo.s_id}";
+			$.getJSON(url, function(rData) {
+				console.log(rData);
+				var strHtml = "";
+				$(rData).each(function() {
+					strHtml += "<tr>";
+					strHtml += "<td>" + this.m_id +"</td>";
+					
+					switch(this.m_point){
+					case 5: strHtml += "<td>  ★★★★★ </td>";
+						break;
+					case 4 : strHtml += "<td> ★★★★☆ </td>";
+						break;
+					case 3 : strHtml += "<td> ★★★☆☆ </td>";
+						break;
+					case 2 : strHtml += "<td> ★★☆☆☆ </td>";
+						break;
+					case 1 : strHtml += "<td> ★☆☆☆☆ </td>";
+						break;
+					}
+					
+					strHtml += "<td>" + this.m_detail + "</td>";
+					strHtml += "<td>" + this.mem_id + "</td>";
+					strHtml += "<td>" + dateString(this.m_reg_date) + "</td>";
+					
+					if(this.mem_id == "${memberVo.mem_id}"){
+						strHtml += "<td><button type='button' class='btn-xs btn-warning btnReplyUpdate'";
+						strHtml += " data-m_id='" + this.m_id + "'";
+						strHtml += " data-m_id='" + this.m_point + "'";
+						strHtml += " data-m_detail='" + this.m_detail + "'";
+						strHtml += " data-mem_id='" + this.mem_id + "'>수정</button></td>";
+						strHtml += "<td><button type='button' class='btn-xs btn-danger btnReplyDelete'";
+						strHtml += " data-m_id='" + this.m_id + "'";
+						strHtml += " data-s_id='" + this.s_id + "'>삭제</button></td>";
+					}
+				
+					
+					strHtml += "</tr>";
+				});
+				$("#replyList").append(strHtml); // <tbody>의 자식 엘리먼트로 html을 추가
+			});
+		}
+		replyList();
 		
 	})
 </script>
