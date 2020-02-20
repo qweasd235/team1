@@ -34,11 +34,83 @@ $(document).ready(function() {
 		location.href = "/board/fbDelete?b_num=${fb_vo.b_num}";
 	});
 	
+	// 리플 쓰기
+	$("#btnReplyRegist").click(function() {
+		var b_num = "${fb_vo.b_num}"; // 게시글번호(댓글번호 아님)
+		var r_content = $("#r_content").val(); // 댓글내용		
+		var sendData = {
+				"b_num" : b_num,
+				"r_content" : r_content				
+		};
+		var url = "/reply/register";
+
+		$.ajax({
+			"type" : "post",
+			"url" : url,
+			"headers" : {
+				"Content-Type" : "application/json",
+				"X-HTTP-Method-Override" : "post"
+			},
+			"dataType" : "text",
+			"data" : JSON.stringify(sendData),
+			"success" : function(rData) {
+				console.log(rData);
+				replyList();
+			}
+		}); // $.ajax()
+	});
+	
+	// 리플 수정
+	
+	// 리플 삭제
+	$("#Reply_Table_List").on("click", ".btnReplyDelete", function() {
+		var r_num = $(this).attr("data-r_num");
+		var b_num = $(this).attr("data-b_num");
+		var url = "/replies/delete/" + rno + "/" + bno;
+		
+		$.ajax({
+			"type" : "delete",
+			"url" : url,
+			"headers" : {
+				"Content-Type" : "application/json",
+				"X-HTTP-Method-Override" : "delete"
+			},
+			"success" : function(rData) {
+				console.log(rData);
+				replyList();
+				$("#btnModalClose").trigger("click");
+			}
+		}); // $.ajax()		
+	});
+	
+	
 	// 리플 정의
 	function replyList() {
-		$("#reply_Table_List").empty();
-		var url = "/reply/";
-	}
+		$("#Reply_Table_List").empty();
+		var url = "/reply/listAll/${fb_vo.b_num}";
+		$.getJSON(url, function(rData) {
+			console.log(rData);
+			var strHtml = "";
+			$(rData).each(function() {
+				strHtml += "<tr>";
+				strHtml += "<td>" + this.r_num +"</td>";
+				strHtml += "<td>" + this.r_content + "</td>";
+				strHtml += "<td>" + this.r_writer + "</td>";
+				strHtml += "<td>" + dateString(this.r_regdate) + "</td>";  
+				strHtml += "<td><button type='button' class='btn-xs btn-warning btnReplyUpdate'";
+				strHtml += " data-r_num='" + this.r_num + "'";
+				strHtml += " data-r_content='" + this.r_content + "'";
+				strHtml += " data-r_writer='" + this.r_writer + "'>수정</button></td>";
+				strHtml += "<td><button type='button' class='btn-xs btn-danger btnReplyDelete'";
+				strHtml += " data-r_num='" + this.r_num + "'";
+				strHtml += " data-b_num='" + this.b_num + "'>삭제</button></td>";
+				strHtml += "</tr>";
+			});
+			$("#Reply_Table_List").append(strHtml); // <tbody>의 자식 엘리먼트로 html을 추가
+		});
+	} // replyList()
+	
+	replyList();
 });
 </script>
 
@@ -108,8 +180,8 @@ $(document).ready(function() {
 					<!-- 리플 박스 -->	
 						<article class="box" id="replyBox">
 							<label>댓글</label><br>
-							<table id="Reply_Table_List">
-								<tbody>								
+							<table>
+								<tbody id="Reply_Table_List">								
 								</tbody>
 							</table>
 							<form>
@@ -117,7 +189,7 @@ $(document).ready(function() {
 								<input type="text" id="r_content" class="form-control" name="r_content"/>
 							</div>	
 							<div class="col-md-1">
-								<button type="button" class="btn btn-success">등록</button>
+								<button type="button" class="btn btn-success" id="btnReplyRegist">등록</button>
 							</div>
 							</form>							
 						</article> 

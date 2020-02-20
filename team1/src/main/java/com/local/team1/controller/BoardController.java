@@ -68,7 +68,7 @@ public class BoardController {
 		bService.regist(vo);
 		return "redirect:/board/home";
 	}
-	
+	//서버 파일 접속
 	@RequestMapping(value = "/displayFile", method =  RequestMethod.GET)
 	@ResponseBody
 	public byte[] displayFile(@RequestParam("fileName") String fileName) throws Exception {
@@ -80,6 +80,7 @@ public class BoardController {
 		return bytes;
 	}
 	
+	//수정페이지 연결
 	@RequestMapping(value = "/editPage", method = RequestMethod.GET)
 	public String editSpot(Model model, PagingDto dto) throws Exception {
 		List<BoardVo> list = bService.editList(dto);
@@ -91,6 +92,7 @@ public class BoardController {
 		return "board/editPage";
 	}
 	
+	//명소 삭제
 	@RequestMapping(value = "/delSpot", method = RequestMethod.GET)
 	public String delete(@RequestParam("s_id") int s_id, 
 						 @RequestParam("fileName") String fileName) throws Exception {
@@ -100,6 +102,8 @@ public class BoardController {
 		boardFileDelete(fileName);
 		return "redirect:/board/editPage";
 	}
+	
+	//명소 수정 폼
 	@RequestMapping(value = "/editSpot", method = RequestMethod.GET)
 	public String edit(@RequestParam("s_id") int s_id, Model model, @ModelAttribute PagingDto dto) throws Exception {
 //		System.out.println(s_id);
@@ -107,7 +111,7 @@ public class BoardController {
 		model.addAttribute("vo", vo);
 		return "/board/editSpotForm";
 	}
-	
+	//명소 수정 프로
 	@RequestMapping(value = "/editSpotPro", method = RequestMethod.POST)
 	public String editPro(BoardVo vo, MultipartHttpServletRequest req, @ModelAttribute PagingDto dto) throws Exception {
 //		System.out.println(vo);
@@ -135,7 +139,8 @@ public class BoardController {
 		model.addAttribute("list", list);
 		return "board/home";
 	}		
-
+	
+	//파일첨부 메쏘드
 	public String dataUpload(MultipartHttpServletRequest req) {
 		    MultipartFile mFile = req.getFile("file");
 		
@@ -170,6 +175,7 @@ public class BoardController {
 	        return s_pic;
 	}
 	
+	//서버 파일 삭제
 	@ResponseBody
 	public String boardFileDelete(String fileName) {
 
@@ -185,6 +191,8 @@ public class BoardController {
 	
 	return null;
 } 
+	
+	//명소 상세보기
 	@RequestMapping(value = "/detailContent", method = RequestMethod.GET)
 	public String detailContent(@RequestParam("s_id") int s_id, Model model) throws Exception {
 //		System.out.println(s_id);
@@ -192,6 +200,5 @@ public class BoardController {
 		model.addAttribute("vo", vo);
 		return "/board/detailSpot";
 	}
-	
 	
 }

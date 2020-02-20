@@ -11,7 +11,7 @@ public interface ReplyService {
 	// 리플 쓰기
 	public void create(ReplyVo r_vo) throws Exception;
 	// 리플 목록
-	public List<FreeBoardVo> listAll() throws Exception;
+	public List<ReplyVo> listAll(int b_num) throws Exception;
 	// 리플 수정하기
 	public void modify() throws Exception;
 	// 리플 삭제하기

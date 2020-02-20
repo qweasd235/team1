@@ -24,9 +24,8 @@ public class ReplyDaoImpl implements ReplyDao {
 	}
 
 	@Override
-	public List<FreeBoardVo> listAll() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public List<ReplyVo> listAll(int b_num) throws Exception {
+		return sqlSession.selectList(NAMESPACE + ".replyListAll", b_num);
 	}
 
 	@Override

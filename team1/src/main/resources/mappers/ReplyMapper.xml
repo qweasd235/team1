@@ -13,9 +13,10 @@
 	</insert>
 	
 	<!-- 리플 보기 -->
-	<select id="replyListAll">
+	<select id="replyListAll" resultType="ReplyVo">
 		select * from t_reply
-		order by r_num;
+		where b_num = #{b_num}
+		order by r_num
 	</select>
 	
 	<!-- 리플 수정 -->

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.local.mappers.markMapper">
+	
+	<!-- 리플 쓰기 -->
+	<insert id="markCreate">
+		insert into t_mark (m_id, s_id, mem_id, m_point, m_detail)
+		values (seq_m_id.nextval, #{s_id}, #{mem_id}, #{m_point}, #{m_detail})
+	</insert>
+	
+	<!-- 리플 보기 -->
+	<select id="markListAll">
+		
+	</select>
+	
+	<!-- 리플 수정 -->
+	<update id="markModify">
+	
+	</update>
+	
+	<!-- 리플 삭제 -->
+	<delete id="markDelete">
+	
+	</delete>
+		
+		
+</mapper>  

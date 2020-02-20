@@ -83,4 +83,5 @@
 	<select id="homeList" resultType="BoardVo">
 		select s_pic, s_cate from t_spot
 	</select>			
+	
 </mapper>  
