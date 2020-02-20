@@ -59,7 +59,7 @@ span{
 								<li>
 									<strong class="title">홈페이지</strong>
 									<span>
-										<a href="http://www.cheongpungcablecar.com/" target="_blank">${vo.s_homepage}</a>
+										<a href="${vo.s_homepage}" target="_blank">${vo.s_homepage}</a>
 									</span>
 								</li>
 								</c:if>

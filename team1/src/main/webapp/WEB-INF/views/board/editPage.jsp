@@ -21,6 +21,7 @@ hr {
 
 .detail_content {
 	color: white;
+	text-decoration: none;
 }
 </style>
 
@@ -43,7 +44,8 @@ hr {
 		$(".editSpot").click(function() {
 			console.log("editSpot");
 			var s_id = $(this).val();
-			location.href = "/board/editSpot?s_id=" + s_id;
+			location.href = "/board/editSpot?s_id=" + s_id
+											+ "&page=${dto.page}";
 		});
 
 		$(".page-link").click(function(e) {

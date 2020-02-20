@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <!DOCTYPE html>
+<style>
+.pagination{
+	cursor : pointer;
+}
+</style>
 <html>
 	<head>
 		<title>TEAM1</title>

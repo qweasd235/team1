@@ -11,6 +11,7 @@ import javax.inject.Inject;
 import org.apache.commons.io.IOUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -100,7 +101,7 @@ public class BoardController {
 		return "redirect:/board/editPage";
 	}
 	@RequestMapping(value = "/editSpot", method = RequestMethod.GET)
-	public String edit(@RequestParam("s_id") int s_id, Model model) throws Exception {
+	public String edit(@RequestParam("s_id") int s_id, Model model, @ModelAttribute PagingDto dto) throws Exception {
 //		System.out.println(s_id);
 		BoardVo vo = bService.read(s_id);
 		model.addAttribute("vo", vo);
@@ -108,7 +109,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/editSpotPro", method = RequestMethod.POST)
-	public String editPro(BoardVo vo, MultipartHttpServletRequest req) throws Exception {
+	public String editPro(BoardVo vo, MultipartHttpServletRequest req, @ModelAttribute PagingDto dto) throws Exception {
 //		System.out.println(vo);
 		String file = dataUpload(req);
 		vo.setS_pic(file);
@@ -124,7 +125,7 @@ public class BoardController {
 			System.out.println(s_pic);
 			bService.modify(vo);
 		}
-		return "redirect:/board/editPage";
+		return "redirect:/board/editPage?page=" + dto.getPage(); 
 	}
 
 	// 메인페이지
