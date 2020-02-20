@@ -13,8 +13,9 @@
 	</insert>
 	
 	<!-- 리플 보기 -->
-	<select id="markListAll">
-		
+	<select id="markListAll" resultType="MarkVo">
+		select * from t_mark
+		where s_id = #{s_id}
 	</select>
 	
 	<!-- 리플 수정 -->
@@ -24,7 +25,8 @@
 	
 	<!-- 리플 삭제 -->
 	<delete id="markDelete">
-	
+		delete from t_mark
+		where m_id = #{m_id}
 	</delete>
 		
 		
