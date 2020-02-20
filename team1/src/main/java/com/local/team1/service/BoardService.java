@@ -3,6 +3,7 @@ package com.local.team1.service;
 import java.util.List;
 
 import com.local.team1.domain.BoardVo;
+import com.local.team1.domain.MarkVo;
 import com.local.team1.domain.PagingDto;
 
 public interface BoardService {
