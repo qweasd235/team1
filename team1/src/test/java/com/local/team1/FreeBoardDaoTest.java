@@ -66,4 +66,8 @@ public class FreeBoardDaoTest {
 		rDao.create(vo);
 		
 	}
+//	@Test
+//	public void listAllTest() throws Exception {
+//	rDao.listAll();
+//}
 }
