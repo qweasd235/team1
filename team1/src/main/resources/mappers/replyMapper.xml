@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.local.mappers.ReplyMapper">
+<mapper namespace="com.local.mappers.replyMapper">
 	
 	<!-- 리플 쓰기 -->
 	<insert id="replyCreate">
@@ -21,13 +21,27 @@
 	
 	<!-- 리플 수정 -->
 	<update id="replyModify">
-	
+		update t_reply set
+			r_content = #{r_content},
+			r_update = sysdate
+		where r_num = #{r_num}
 	</update>
 	
 	<!-- 리플 삭제 -->
 	<delete id="replyDelete">
-	
+		delete from t_reply
+		where r_num = #{r_num}
 	</delete>
+	
+	<!-- 게시판 글 삭제하기전 먼저 리플 삭제하기위해 만듬 (한번에 리플삭제) -->
+	<delete id="replyDeleteByb_num">
+		delete from t_reply
+		where b_num = #{b_num}
+	</delete>
+	
+	
+	
+	
 		
 		
 </mapper>  

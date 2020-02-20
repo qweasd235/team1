@@ -13,7 +13,7 @@ import com.local.team1.domain.ReplyVo;
 @Repository
 public class ReplyDaoImpl implements ReplyDao {
 	
-	private static final String NAMESPACE = "com.local.mappers.ReplyMapper";
+	private static final String NAMESPACE = "com.local.mappers.replyMapper";
 	
 	@Inject
 	private SqlSession sqlSession;
@@ -29,15 +29,18 @@ public class ReplyDaoImpl implements ReplyDao {
 	}
 
 	@Override
-	public void modify() throws Exception {
-		// TODO Auto-generated method stub
-
+	public void modify(ReplyVo r_vo) throws Exception {
+		sqlSession.update(NAMESPACE + ".replyModify", r_vo);
 	}
 
 	@Override
-	public void delete() throws Exception {
-		// TODO Auto-generated method stub
+	public void delete(int r_num) throws Exception {
+		sqlSession.delete(NAMESPACE + ".replyDelete", r_num);
+	}
 
+	@Override
+	public void deleteByb_num(int b_num) throws Exception {
+		sqlSession.delete(NAMESPACE + ".replyDeleteByb_num", b_num);
 	}
 
 }

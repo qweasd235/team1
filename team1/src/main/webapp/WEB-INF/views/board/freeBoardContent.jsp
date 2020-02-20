@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
 
+
 <style>
 #replyBox {
 	background-color: gray;
@@ -61,12 +62,21 @@ $(document).ready(function() {
 	});
 	
 	// 리플 수정
+	$("#Reply_Table_List").on("click", ".btnReplyUpdate", function() {
+		console.log("댓글 수정 버튼");
+				
+		$("#modal_reply").trigger("click");
+	});
 	
 	// 리플 삭제
 	$("#Reply_Table_List").on("click", ".btnReplyDelete", function() {
+		console.log("클릭");
 		var r_num = $(this).attr("data-r_num");
 		var b_num = $(this).attr("data-b_num");
-		var url = "/replies/delete/" + rno + "/" + bno;
+		var url = "/reply/delete/" + r_num + "/" + b_num;
+		console.log("r_num" + r_num);
+		console.log("b_num" + b_num);
+		console.log("url" + url);
 		
 		$.ajax({
 			"type" : "delete",
@@ -78,7 +88,7 @@ $(document).ready(function() {
 			"success" : function(rData) {
 				console.log(rData);
 				replyList();
-				$("#btnModalClose").trigger("click");
+				
 			}
 		}); // $.ajax()		
 	});
@@ -180,7 +190,17 @@ $(document).ready(function() {
 					<!-- 리플 박스 -->	
 						<article class="box" id="replyBox">
 							<label>댓글</label><br>
-							<table>
+							<table> 
+								<thead>
+									<tr>
+										<th>번호</th>
+										<th>내용</th>
+										<th>작성자</th>
+										<th>날짜</th>
+										<th>수정</th>
+										<th>삭제</th>
+									</tr>
+								</thead>
 								<tbody id="Reply_Table_List">								
 								</tbody>
 							</table>
@@ -191,7 +211,52 @@ $(document).ready(function() {
 							<div class="col-md-1">
 								<button type="button" class="btn btn-success" id="btnReplyRegist">등록</button>
 							</div>
-							</form>							
+							</form>	
+							
+							<!-- 댓글 수정 모달 창 -->
+	<div class="row">
+		<div class="col-md-12">
+			 <a id="modal_reply" href="#modal-container" role="button" class="btn" data-toggle="modal"
+			 	>Launch demo modal</a>
+			
+			 <div class="modal fade" id="modal-container" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="myModalLabel">
+								댓글 수정하기
+							</h5> 
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<input type="hidden" id="modal_rno"/>
+							<label for="modal_reply_text">댓글내용</label>
+							<input type="text" class="form-control"
+								id="modal_reply_text"/>
+							<label for="modal_replyer">작성자</label>
+							<input type="text" class="form-control"
+								id="modal_replyer"/>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary"
+								id="btnModalReply">
+								수정완료
+							</button> 
+							<button type="button" class="btn btn-secondary" data-dismiss="modal"
+								id="btnModalClose">
+								닫기
+							</button>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			</div>
+		</div>
+													
 						</article> 
 					</article>
 					</div>
