@@ -73,9 +73,7 @@ span {
 					</c:if>
 				</ul>
 			</div>
-			<hr>
-			<strong>${vo.s_name} 위치</strong><br>
-			<div id="map" style="width: 900px; height: 400px;"></div>
+				
 						<hr>
 						<div class="content">
 							${vo.s_detail}
