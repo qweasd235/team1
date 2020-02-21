@@ -3,7 +3,9 @@ package com.local.team1.controller;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
@@ -22,6 +24,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.local.team1.domain.BoardVo;
 import com.local.team1.domain.PagingDto;
 import com.local.team1.service.BoardService;
+import com.local.team1.service.MarkService;
 
 
 @Controller
@@ -33,6 +36,9 @@ public class BoardController {
 	
 	@Inject
 	private BoardService bService;
+	
+	@Inject
+	private MarkService mService;
 	
 	// 상세보기
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
@@ -196,8 +202,21 @@ public class BoardController {
 	@RequestMapping(value = "/detailContent", method = RequestMethod.GET)
 	public String detailContent(@RequestParam("s_id") int s_id, Model model) throws Exception {
 //		System.out.println(s_id);
+		double avg = mService.avgMark(s_id);
+		String str_avg =String.format("%.2f", avg);
+		int total = mService.totalMark(s_id);
+		
+//		System.out.println(avg);
+		System.out.println(str_avg);
+		System.out.println(total);
+		
+		Map<String, Object> paramMap = new HashMap<>();
+		paramMap.put("avg", str_avg);
+		paramMap.put("total", total);
+		
 		BoardVo vo = bService.detailContent(s_id);
 		model.addAttribute("vo", vo);
+		model.addAttribute("paramMap", paramMap);
 		return "/board/detailSpot";
 	}
 	
