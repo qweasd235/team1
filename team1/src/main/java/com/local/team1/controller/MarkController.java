@@ -1,12 +1,11 @@
 package com.local.team1.controller;
 
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
+
 
 import javax.inject.Inject;
 
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,21 +32,8 @@ public class MarkController {
 
 	// 리플 목록
 	@RequestMapping(value = "/listAll/{s_id}", method = RequestMethod.GET)
-	public List<MarkVo> listAll(@PathVariable("s_id") int s_id, Model model) throws Exception {
+	public List<MarkVo> listAll(@PathVariable("s_id") int s_id) throws Exception {
 		System.out.println(s_id);
-		double avg = mService.avgMark(s_id);
-		String str_avg =String.format("%.2f", avg);
-		int total = mService.totalMark(s_id);
-		
-//		System.out.println(avg);
-		System.out.println(str_avg);
-		System.out.println(total);
-		
-		Map<String, Object> paramMap = new HashMap<>();
-		paramMap.put("avg", str_avg);
-		paramMap.put("total", total);
-		model.addAttribute("paramMap", paramMap);
-		
 		return mService.markList(s_id);
 	}
 

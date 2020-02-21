@@ -114,7 +114,9 @@ span {
 				<!-- 댓글 목록 -->
 				<div class="row">
 					<div class="col-md-12">
+					<c:if test="${not empty paramMap}">
 						<div>평균 평점 : ${paramMap.avg } 점 참여자 :${paramMap.total } 명</div>
+					</c:if>
 						<table class="table">
 							<thead>
 								<tr>
@@ -247,6 +249,7 @@ span {
 	
 		// 댓글 목록 가져오기 - 정의
 		function replyList() {
+			var i = 1;
 			$("#replyList").empty();
 			var url = "/mark/listAll/${vo.s_id}";
 			$.getJSON(url, function(rData) {
@@ -254,7 +257,7 @@ span {
 				var strHtml = "";
 				$(rData).each(function() {
 					strHtml += "<tr>";
-					strHtml += "<td>" + this.m_id +"</td>";
+					strHtml += "<td>" + i++ +"</td>";
 					
 					switch(this.m_point){
 					case 5 : strHtml += "<td> ★★★★★ </td>";
