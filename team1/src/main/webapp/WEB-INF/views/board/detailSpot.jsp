@@ -39,6 +39,7 @@ span {
 	height: 20px;
 	width: 20px;
 }
+
 </style>
 
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">

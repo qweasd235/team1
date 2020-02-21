@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.local.team1.domain.FreeBoardVo;
 import com.local.team1.domain.ReplyVo;
 
 @Repository

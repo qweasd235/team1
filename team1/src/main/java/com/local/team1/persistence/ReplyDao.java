@@ -2,8 +2,6 @@ package com.local.team1.persistence;
 
 import java.util.List;
 
-import com.local.team1.domain.FreeBoardVo;
-import com.local.team1.domain.PagingDto;
 import com.local.team1.domain.ReplyVo;
 
 public interface ReplyDao {
