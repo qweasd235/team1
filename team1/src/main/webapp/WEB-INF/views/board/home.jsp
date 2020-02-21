@@ -12,7 +12,6 @@ img{
 	height : 300px;
 }
 
-
 .swiper-container{
 	width:901px;
 	height:358px;

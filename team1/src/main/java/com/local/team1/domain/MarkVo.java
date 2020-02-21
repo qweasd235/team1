@@ -9,6 +9,7 @@ public class MarkVo {
 	private int m_point;
 	private String m_detail;
 	private Timestamp m_reg_date;
+	private String mem_pic;
 
 	public int getM_id() {
 		return m_id;
@@ -58,10 +59,18 @@ public class MarkVo {
 		this.m_reg_date = m_reg_date;
 	}
 
+	public String getMem_pic() {
+		return mem_pic;
+	}
+
+	public void setMem_pic(String mem_pic) {
+		this.mem_pic = mem_pic;
+	}
+
 	@Override
 	public String toString() {
 		return "MarkVo [m_id=" + m_id + ", s_id=" + s_id + ", mem_id=" + mem_id + ", m_point=" + m_point + ", m_detail="
-				+ m_detail + ", m_reg_date=" + m_reg_date + "]";
+				+ m_detail + ", m_reg_date=" + m_reg_date + ", mem_pic=" + mem_pic + "]";
 	}
 
 }
