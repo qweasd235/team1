@@ -34,6 +34,11 @@ a {
 span {
 	margin-left: 20px;
 }
+
+.imgPro {
+	height: 20px;
+	width: 20px;
+}
 </style>
 
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
@@ -264,7 +269,15 @@ span {
 					}
 					
 					strHtml += "<td>" + this.m_detail + "</td>";
-					strHtml += "<td>" + this.mem_id + "</td>";
+					
+					if(this.mem_pic == null){
+						strHtml += "<td><img src='../resources/images/nothing.jpg' class='imgPro'/>"
+								+ this.mem_id + "</td>";
+					} else {
+						strHtml += "<td><img src='/board/displayFile?fileName=" + this.mem_pic + "'class='imgPro'/>" 
+								+ this.mem_id + "</td>";
+					}
+					
 					strHtml += "<td>" + dateString(this.m_reg_date) + "</td>";
 					
 					if(this.mem_id == "${memberVo.mem_id}"){
