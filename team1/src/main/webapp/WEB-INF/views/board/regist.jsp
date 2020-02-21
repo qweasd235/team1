@@ -1,9 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
-	<!-- Main -->
+<style>
+option{
+	color : black;
+}
+</style>
 
-	<h3>Form</h3>
+
+	<!-- Main -->
+<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
+	<div class="inner">
+		<article class="box">
+			<h3>명소 등록</h3>
 	<form method="post" action="/board/registPro" enctype="multipart/form-data">
 	<input type="hidden" name="s_ref" value="MASTER">
 		<div class="row uniform">
@@ -61,5 +70,7 @@
 	</form>
 
 	<hr />
-
+	</article>
+</div>
+</section>
 <%@ include file="../include/footer.jsp" %>

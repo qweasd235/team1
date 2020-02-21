@@ -9,8 +9,8 @@ $(function(){
 		alert("로그인 실패");
 	}
 	
-	$(".changeColor").css("background-color", "white")
-	 				 .css("color", "black");
+// 	$(".changeColor").css("background-color", "white")
+// 	 				 .css("color", "black");
 	
 	$("#btnCancel").click(function(){
 		location.href = "/board/home";
@@ -24,7 +24,7 @@ $(function(){
 <body>
 
 <!-- Main -->
-	<form id="loginForm" method="post" action="/mem/loginPost">
+	<form id="loginForm" method="post" action="/mem/loginPost" autocomplete="off">
 		<h3>로그인</h3>
 		<table border="1">
 			<tr>
