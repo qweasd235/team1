@@ -116,8 +116,10 @@ span {
 									<th>댓글내용</th>
 									<th>작성자</th>
 									<th>날짜</th>
-									<th>수정</th>
-									<th>삭제</th>
+<%-- 								<c:if test="${not empty memberVo.mem_id}"> --%>
+<!-- 									<th>수정</th> -->
+<!-- 									<th>삭제</th> -->
+<%-- 								</c:if> --%>
 								</tr>
 							</thead>
 							<tbody id="replyList">
