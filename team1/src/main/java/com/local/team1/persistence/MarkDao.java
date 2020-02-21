@@ -12,4 +12,8 @@ public interface MarkDao {
 	public List<MarkVo> markList(int s_id) throws Exception;
 	// 데이터 삭제
 	public void deleteMark(int s_id, int m_id) throws Exception;
+	// 데이터 갯수
+	public int totalMark(int s_id) throws Exception;
+	// 데이터 평균
+	public double avgMark(int s_id) throws Exception; 
 }

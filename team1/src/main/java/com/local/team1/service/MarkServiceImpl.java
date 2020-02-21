@@ -30,4 +30,14 @@ public class MarkServiceImpl implements MarkService {
 		dao.deleteMark(s_id, m_id);
 	}
 
+	@Override
+	public int totalMark(int s_id) throws Exception {
+		return dao.totalMark(s_id);
+	}
+
+	@Override
+	public double avgMark(int s_id) throws Exception {
+		return dao.avgMark(s_id);
+	}
+
 }
