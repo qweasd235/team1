@@ -49,7 +49,7 @@ $(document).ready(function() {
 		-->
 			<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 				<div class="inner">
-					<article class="box" style="background-color: gray;">
+					<article class="box">
 						<header>
 							<h2><span class = "font_color">자유 게시판</span></h2>	
 							<div class="row">

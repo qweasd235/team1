@@ -9,6 +9,8 @@ public class FreeBoardVo {
 	private String b_writer;
 	private Timestamp b_regdate;
 	private int b_read_count;
+	private String b_pic;
+	
 	public int getB_num() {
 		return b_num;
 	}
@@ -45,12 +47,19 @@ public class FreeBoardVo {
 	public void setB_read_count(int b_read_count) {
 		this.b_read_count = b_read_count;
 	}
-	
+	public String getB_pic() {
+		return b_pic;
+	}
+	public void setB_pic(String b_pic) {
+		this.b_pic = b_pic;
+	}
 	@Override
 	public String toString() {
-		return "freeBoardVo [b_num=" + b_num + ", b_title=" + b_title + ", b_content=" + b_content + ", b_writer="
-				+ b_writer + ", b_regdate=" + b_regdate + ", b_read_count=" + b_read_count + "]";
+		return "FreeBoardVo [b_num=" + b_num + ", b_title=" + b_title + ", b_content=" + b_content + ", b_writer="
+				+ b_writer + ", b_regdate=" + b_regdate + ", b_read_count=" + b_read_count + ", b_pic=" + b_pic + "]";
 	}
+	
+	
 	
 	
 }
