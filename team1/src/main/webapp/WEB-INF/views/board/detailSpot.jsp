@@ -291,7 +291,7 @@ span {
 					strHtml += "<td>" + this.m_id +"</td>";
 					
 					switch(this.m_point){
-					case 5: strHtml += "<td>  ★★★★★ </td>";
+					case 5 : strHtml += "<td> ★★★★★ </td>";
 						break;
 					case 4 : strHtml += "<td> ★★★★☆ </td>";
 						break;
