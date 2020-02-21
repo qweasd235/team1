@@ -2,10 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %> 
 <style>
-.changeColor{
-	background-color : white;
-	color : black;
-}
+
 </style>
 
 <script>
@@ -98,26 +95,26 @@ $(document).ready(function(){
 	<!-- Main -->
 
 	<h3>회원가입</h3>
-	<form id="joinForm" method="post" action="/mem/joinPost">
+	<form id="joinForm" method="post" action="/mem/joinPost" autocomplete="off">
 		<table border="1">
 			<tr>
 				<th>이름</th>
-				<td><input class="changeColor" type="text" name="mem_name" id="mem_name" required/></td>
+				<td><input type="text" name="mem_name" id="mem_name" required/></td>
 			</tr>		
 			<tr>
 				<th>아이디</th>
-				<td><input class="changeColor" type="text" name="mem_id" id="mem_id" required/>
+				<td><input type="text" name="mem_id" id="mem_id" required/>
 					<input type="button" value="중복확인" id="btnCheckId"/>
 					<span id="resultSpan"></span>
 				</td>	
 			</tr>
 			<tr>
 				<th>패스워드</th>
-				<td><input class="changeColor" type="password" name="mem_pw" id="mem_pw" required/></td>
+				<td><input type="password" name="mem_pw" id="mem_pw" required/></td>
 			</tr>
 			<tr>
 				<th>패스워드 확인</th>
-				<td><input class="changeColor" type="password" name="mem_pw2" id="mem_pw2" required/>
+				<td><input type="password" name="mem_pw2" id="mem_pw2" required/>
 					<span id="pwSpan"></span>
 				</td>
 				
