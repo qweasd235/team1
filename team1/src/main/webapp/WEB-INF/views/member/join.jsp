@@ -95,7 +95,7 @@ $(document).ready(function(){
 	<!-- Main -->
 
 	<h3>회원가입</h3>
-	<form id="joinForm" method="post" action="/mem/joinPost" autocomplete="off">
+	<form id="joinForm" method="post" action="/mem/joinPost" autocomplete="off" enctype="multipart/form-data">
 		<table border="1">
 			<tr>
 				<th>이름</th>
@@ -117,8 +117,11 @@ $(document).ready(function(){
 				<td><input type="password" name="mem_pw2" id="mem_pw2" required/>
 					<span id="pwSpan"></span>
 				</td>
-				
 			</tr>
+			<tr>
+				<th>프로필 사진</th>
+				<td><input type="file" name="file" id="mem_pic"/></td>
+			</tr>	
 		</table>
 			<input type="submit" value="가입완료" id="btnSubmit"/>
 			<input type="button" value="취소" id="btnCancel"/>

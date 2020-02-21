@@ -34,6 +34,7 @@ a {
 span {
 	margin-left: 20px;
 }
+
 </style>
 
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
