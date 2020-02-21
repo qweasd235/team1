@@ -109,6 +109,7 @@ span {
 				<!-- 댓글 목록 -->
 				<div class="row">
 					<div class="col-md-12">
+						<div>평균 평점 : ${paramMap.avg } 점 참여자 :${paramMap.total } 명</div>
 						<table class="table">
 							<thead>
 								<tr>

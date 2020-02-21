@@ -13,15 +13,12 @@
 	color: black;
 }
 
-#myModalLabel, #aa, #bb,
-#modal_r_content, #cc{
-	color: black;
-}
 </style>
 
-<script>
+<script>  
 $(document).ready(function() {
 	jQuery.noConflict();	// 마법의 단어(충돌할때)
+	$(".font_color").css("color", "black");
 	// 리스트 가기
 	$("#btnListAll").click(function() {		
 		$("#frmPage").submit();
@@ -68,8 +65,45 @@ $(document).ready(function() {
 	
 	// 리플 수정
 	$("#Reply_Table_List").on("click", ".btnReplyUpdate", function() {
-		console.log("댓글 수정 버튼");		
+		console.log("댓글 수정 버튼");
+		var r_num = $(this).attr("data-r_num");
+		var r_content = $(this).attr("data-r_content");
+		var r_writer = $(this).attr("data-r_writer");
+		
+		$("#modal_r_num").val(r_num);
+		$("#modal_r_content").val(r_content);
+		$("#modal_r_writer").val(r_writer);
+		
 		$("#modal_reply").trigger("click");
+	});
+	
+	// 리플 수정 완료버튼
+	$("#btnModalReply").click(function() {
+		var r_num = $("#modal_r_num").val();
+		var r_content = $("#modal_r_content").val();		
+		
+		var sendData = {
+				"r_num" : r_num,
+				"r_content" : r_content,				
+		};				
+		
+		var url = "/reply/update";
+		
+		$.ajax({
+			"type" : "put",
+			"url" : url,
+			"headers" : {
+				"Content-Type" : "application/json",
+				"X-HTTP-Method-Override" : "put"
+			},
+			"dataType" : "text",
+			"data" : JSON.stringify(sendData),
+			"success" : function(rData) {
+				console.log(rData);
+				replyList();
+				$("#btnModalClose").trigger("click");
+			}
+		}); // $.ajax()
 	});
 	
 	// 리플 삭제
@@ -220,27 +254,24 @@ $(document).ready(function() {
 	<div class="row">
 		<div class="col-md-12">
 			 <a id="modal_reply" href="#modal-container" role="button" class="btn" data-toggle="modal"
-			 	>모달창</a>
+			 	style="display: none;">모달창</a>
 			
 			 <div class="modal fade" id="modal-container" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="myModalLabel">
-								댓글 수정하기
-							</h5> 
-							<button type="button" class="close" data-dismiss="modal">
-								<span aria-hidden="true">×</span>
-							</button>
-						</div>
+							<h5 class="modal-title font_color" id="myModalLabel">
+								댓글 수정하기															
+							</h5>  
+						</div> 
 						<form action="#" method="post">
 						<div class="modal-body">
 							<input type="hidden" id="modal_r_num"/>
-							<label for="modal_r_content" id="aa">댓글내용</label>
-							<input type="text" class="form-control"
+							<label for="modal_r_content" class="font_color">댓글내용</label>
+							<input type="text" class="form-control font_color"
 								id="modal_r_content"/><br>
-							<label for="modal_r_writer" id="bb">작성자</label>
-							<div id="cc">${fb_vo.b_writer}</div>
+							<label class="font_color">작성자</label>
+							<div class="font_color">${fb_vo.b_writer}</div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-primary"

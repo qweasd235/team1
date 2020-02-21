@@ -39,4 +39,14 @@ public class MarkDaoImpl implements MarkDao {
 		sqlSession.delete(NAMESPACE + ".markDelete", paramMap);
 	}
 
+	@Override
+	public int totalMark(int s_id) throws Exception {
+		return sqlSession.selectOne(NAMESPACE + ".totalMark", s_id);
+	}
+
+	@Override
+	public double avgMark(int s_id) throws Exception {
+		return sqlSession.selectOne(NAMESPACE + ".avgMark", s_id);
+	}
+
 }
