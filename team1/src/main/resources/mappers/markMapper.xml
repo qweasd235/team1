@@ -20,6 +20,7 @@
 		from t_mark t, t_member m
 		where t.mem_id = m.mem_id
 		and s_id = #{s_id}
+		order by m_id asc
 	</select>
 
 	<!-- 리플 수정 -->
