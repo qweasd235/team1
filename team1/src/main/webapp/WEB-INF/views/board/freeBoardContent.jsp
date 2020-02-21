@@ -21,7 +21,7 @@
 
 <script>
 $(document).ready(function() {
-// 	jQuery.noConflict();	// 마법의 단어(충돌할때)
+	jQuery.noConflict();	// 마법의 단어(충돌할때)
 	// 리스트 가기
 	$("#btnListAll").click(function() {		
 		$("#frmPage").submit();
