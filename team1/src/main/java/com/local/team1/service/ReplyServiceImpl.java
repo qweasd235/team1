@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.local.team1.domain.FreeBoardVo;
 import com.local.team1.domain.ReplyVo;
@@ -27,15 +28,14 @@ public class ReplyServiceImpl implements ReplyService {
 	}
 
 	@Override
-	public void modify() throws Exception {
-		// TODO Auto-generated method stub
-
+	public void modify(ReplyVo r_vo) throws Exception {
+		dao.modify(r_vo);
 	}
 
+	
 	@Override
-	public void delete() throws Exception {
-		// TODO Auto-generated method stub
-
+	public void delete(int r_num) throws Exception {
+		dao.delete(r_num);		
 	}
 
 }

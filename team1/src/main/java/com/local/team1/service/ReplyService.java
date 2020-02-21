@@ -13,9 +13,7 @@ public interface ReplyService {
 	// 리플 목록
 	public List<ReplyVo> listAll(int b_num) throws Exception;
 	// 리플 수정하기
-	public void modify() throws Exception;
+	public void modify(ReplyVo r_vo) throws Exception;
 	// 리플 삭제하기
-	public void delete() throws Exception;
-	
-	
+	public void delete(int r_num) throws Exception;		
 }
