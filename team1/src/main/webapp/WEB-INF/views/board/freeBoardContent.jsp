@@ -143,14 +143,17 @@ $(document).ready(function() {
 				strHtml += "<td>" + this.r_num +"</td>";
 				strHtml += "<td>" + this.r_content + "</td>"; 
 				strHtml += "<td>" + this.r_writer + "</td>";
-				strHtml += "<td>" + dateString(this.r_regdate) + "</td>";  
-				strHtml += "<td><button type='button' class='btn-xs btn-warning btnReplyUpdate'";
-				strHtml += " data-r_num='" + this.r_num + "'";
-				strHtml += " data-r_content='" + this.r_content + "'";
-				strHtml += " data-r_writer='" + this.r_writer + "'>수정</button></td>";
-				strHtml += "<td><button type='button' class='btn-xs btn-danger btnReplyDelete'";
-				strHtml += " data-r_num='" + this.r_num + "'";
-				strHtml += " data-b_num='" + this.b_num + "'>삭제</button></td>";
+				strHtml += "<td>" + dateString(this.r_regdate) + "</td>"; 
+				if (this.r_writer == "${memberVo.mem_id}") {
+					strHtml += "<td><button type='button' class='btn-xs btn-warning btnReplyUpdate'";
+					strHtml += " data-r_num='" + this.r_num + "'";
+					strHtml += " data-r_content='" + this.r_content + "'";
+					strHtml += " data-r_writer='" + this.r_writer + "'>수정</button></td>";
+					strHtml += "<td><button type='button' class='btn-xs btn-danger btnReplyDelete'";
+					strHtml += " data-r_num='" + this.r_num + "'";
+					strHtml += " data-b_num='" + this.b_num + "'>삭제</button></td>";
+				}
+				
 				strHtml += "</tr>";
 			});
 			$("#Reply_Table_List").append(strHtml); // <tbody>의 자식 엘리먼트로 html을 추가
@@ -231,9 +234,7 @@ $(document).ready(function() {
 										<th>번호</th>
 										<th>내용</th>
 										<th>작성자</th>
-										<th>날짜</th>
-										<th>수정</th>
-										<th>삭제</th>
+										<th>날짜</th>										
 									</tr>
 								</thead>
 								<tbody id="Reply_Table_List">								
