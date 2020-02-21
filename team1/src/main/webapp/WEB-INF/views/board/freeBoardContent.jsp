@@ -12,6 +12,11 @@
 	color: black;
 }
 
+.imgPro {
+	height: 20px;
+	width: 20px;
+}
+
 </style>
 
 <script>  
@@ -141,8 +146,14 @@ $(document).ready(function() {
 			$(rData).each(function() {
 				strHtml += "<tr>";
 				strHtml += "<td>" + this.r_num +"</td>";
-				strHtml += "<td>" + this.r_content + "</td>"; 
-				strHtml += "<td>" + this.r_writer + "</td>";
+				strHtml += "<td>" + this.r_content + "</td>";
+				if(this.mem_pic == null){
+					strHtml += "<td><img src='../resources/images/nothing.jpg' class='imgPro'/>" 
+							+ this.r_writer + "</td>";
+				} else {
+					strHtml += "<td><img src='/board/displayFile?fileName=" + this.mem_pic + "'class='imgPro'/>" 
+							+ this.r_writer + "</td>";
+				}
 				strHtml += "<td>" + dateString(this.r_regdate) + "</td>"; 
 				if (this.r_writer == "${memberVo.mem_id}") {
 					strHtml += "<td><button type='button' class='btn-xs btn-warning btnReplyUpdate'";

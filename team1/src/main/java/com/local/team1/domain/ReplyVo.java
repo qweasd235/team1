@@ -9,6 +9,7 @@ public class ReplyVo {
 	private String r_content;
 	private Timestamp r_regdate;
 	private Timestamp r_update;
+	private String mem_pic;
 	
 	public int getR_num() {
 		return r_num;
@@ -46,10 +47,16 @@ public class ReplyVo {
 	public void setR_update(Timestamp r_update) {
 		this.r_update = r_update;
 	}
+	public String getMem_pic() {
+		return mem_pic;
+	}
+	public void setMem_pic(String mem_pic) {
+		this.mem_pic = mem_pic;
+	}
 	@Override
 	public String toString() {
 		return "ReplyVo [r_num=" + r_num + ", b_num=" + b_num + ", r_writer=" + r_writer + ", r_content=" + r_content
-				+ ", r_regdate=" + r_regdate + ", r_update=" + r_update + "]";
+				+ ", r_regdate=" + r_regdate + ", r_update=" + r_update + ", mem_pic=" + mem_pic + "]";
 	}
 	
 	
