@@ -116,8 +116,10 @@ span {
 									<th>댓글내용</th>
 									<th>작성자</th>
 									<th>날짜</th>
-									<th>수정</th>
-									<th>삭제</th>
+<%-- 								<c:if test="${not empty memberVo.mem_id}"> --%>
+<!-- 									<th>수정</th> -->
+<!-- 									<th>삭제</th> -->
+<%-- 								</c:if> --%>
 								</tr>
 							</thead>
 							<tbody id="replyList">
@@ -248,7 +250,7 @@ span {
 					strHtml += "<td>" + this.m_id +"</td>";
 					
 					switch(this.m_point){
-					case 5: strHtml += "<td>  ★★★★★ </td>";
+					case 5 : strHtml += "<td> ★★★★★ </td>";
 						break;
 					case 4 : strHtml += "<td> ★★★★☆ </td>";
 						break;
