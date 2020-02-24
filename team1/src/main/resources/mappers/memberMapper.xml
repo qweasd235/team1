@@ -8,8 +8,8 @@
 
 	<!-- 회원가입 -->
 	<insert id="insertMember">
-  		insert into t_member(mem_id, mem_pw, mem_name, mem_pic)
-  				values(#{mem_id}, #{mem_pw}, #{mem_name}, #{mem_pic})
+  		insert into t_member(mem_id, mem_pw, mem_name, mem_pic, mem_email)
+  				values(#{mem_id}, #{mem_pw}, #{mem_name}, #{mem_pic}, #{mem_email})
   	</insert>
   	<!-- 아이디 체크 -->
   	<select id="readMember" resultType="int" parameterType="String">
@@ -22,5 +22,26 @@
   		select * from t_member
   		where mem_id = #{mem_id} and mem_pw = #{mem_pw}
   	</select>
-	
+  	
+  	<!-- 회원정보 불러오기 -->
+  	<select id="readMemInfo" resultType="MemberVo">
+  		select * from t_member
+  		where mem_id = #{mem_id}
+  	</select>
+  	
+  	
+  	<!-- 회원정보 수정 -->
+  	<update id="updateMember">
+  		update t_member set
+  			mem_email = #{mem_email},
+			mem_pic = #{mem_pic}
+		where mem_id = #{mem_id}
+  	</update>
+  	
+  	<!-- 프로필 사진 없이 수정 -->
+  	<update id="updateNopic">
+		update t_member set
+  			mem_email = #{mem_email}
+			where mem_id = #{mem_id}
+	</update>		
 </mapper>  

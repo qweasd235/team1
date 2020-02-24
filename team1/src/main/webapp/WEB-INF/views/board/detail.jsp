@@ -61,7 +61,7 @@ hr {
 				<!-- 							<h2>Nibh non lobortis mus nibh</h2> -->
 				<!-- 							<p>01.01.2017</p> -->
 			</header>
-			${list }
+			
 			<!-- 데이터 전송 -->
 			<form id="frmPage" action="/board/detail" method="get">
 				<input type="hidden" name="s_cate" value="${s_cate}" /> 
@@ -116,10 +116,7 @@ hr {
 								<a class="page-link" data-page="${dto.endPage + 1}">다음</a>
 							</li>
 						</c:if>
-						
-						
-						
-			
+								
 <!-- 						<li><a href="#" class="button alt icon fa-chevron-right"><span class="label">Next</span></a></li> -->
 				</ul>
 				</nav>

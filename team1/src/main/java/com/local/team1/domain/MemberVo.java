@@ -9,6 +9,7 @@ public class MemberVo {
 	private String mem_name;
 	private Timestamp mem_join_date;
 	private String mem_pic;
+	private String mem_email;
 	public MemberVo() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -51,11 +52,18 @@ public class MemberVo {
 	public void setMem_pic(String mem_pic) {
 		this.mem_pic = mem_pic;
 	}
+	public String getMem_email() {
+		return mem_email;
+	}
+	public void setMem_email(String mem_email) {
+		this.mem_email = mem_email;
+	}
 	@Override
 	public String toString() {
 		return "MemberVo [mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_name=" + mem_name + ", mem_join_date="
-				+ mem_join_date + ", mem_pic=" + mem_pic + "]";
+				+ mem_join_date + ", mem_pic=" + mem_pic + ", mem_email=" + mem_email + "]";
 	}
+	
 	
 	
 }

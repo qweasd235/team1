@@ -11,7 +11,7 @@ option{
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 	<div class="inner">
 		<article class="box">
-			<h3>명소 수정/삭제</h3>
+			<h3>명소정보 수정</h3>
 	<form method="post" action="/board/editSpotPro" enctype="multipart/form-data">
 	<input type="hidden" name="s_ref" value="MASTER">
 	<input type="hidden" name="page" value="${pagingDto.page}">

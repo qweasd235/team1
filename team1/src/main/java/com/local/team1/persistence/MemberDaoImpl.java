@@ -36,4 +36,21 @@ public class MemberDaoImpl implements MemberDao {
 		return sqlSession.selectOne(NAMESPACE + ".readWithPw", paramMap);
 	}
 
+	@Override
+	public void updateMember(MemberVo vo) throws Exception {
+		sqlSession.update(NAMESPACE + ".updateMember", vo);
+		
+	}
+
+	@Override
+	public void updateNopic(MemberVo vo) throws Exception {
+		sqlSession.update(NAMESPACE + ".updateNopic", vo);
+		
+	}
+
+	@Override
+	public MemberVo readMemInfo(String mem_id) throws Exception {
+		return sqlSession.selectOne(NAMESPACE + ".readMemInfo", mem_id);
+	}
+
 }

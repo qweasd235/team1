@@ -10,4 +10,10 @@ public interface MemberDao {
 	public int readMember(String mem_id) throws Exception;
 	//로그인
 	public MemberVo readWithPw(String mem_id, String mem_pw) throws Exception;
+	//회원정보 가져오기
+	public MemberVo readMemInfo(String mem_id) throws Exception;
+	//회원정보 변경
+	public void updateMember(MemberVo vo) throws Exception;
+	// 프로필 사진 변경없이 회원정보 변경
+	public void updateNopic(MemberVo vo) throws Exception;
 }
