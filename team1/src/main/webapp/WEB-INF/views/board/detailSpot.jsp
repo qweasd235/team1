@@ -142,6 +142,57 @@ span {
 	</div>
 </section>
 
+	<div class="row">
+		<div class="col-md-12">
+			 <a id="modal-a" href="#modal-container" role="button" class="btn" data-toggle="modal"
+			 	style="display:none;">Launch demo modal</a>
+			
+			 <div class="modal fade" id="modal-container" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="myModalLabel">
+								댓글 수정하기
+							</h5> 
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<input type="hidden" id="modal_m_id"/>
+							<label for="modal_m_detail">댓글내용</label>
+							<input type="text" class="form-control"
+								id="modal_m_detail"/>
+							<label for="modal_mem_id">평점</label>
+							<select name="point" id="modal_m_point">
+										<option value="1">★☆☆☆☆</option>
+										<option value="2">★★☆☆☆</option>
+										<option value="3">★★★☆☆</option>
+										<option value="4">★★★★☆</option>
+										<option value="5">★★★★★</option>
+								</select>
+<!-- 							<input type="hidden" class="form-control" -->
+<!-- 								id="modal_mem_id"/> -->
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary"
+								id="btnModalReply">
+								수정완료
+							</button> 
+							<button type="button" class="btn btn-secondary" data-dismiss="modal"
+								id="btnModalClose">
+								닫기
+							</button>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=027af565dc7eede95404567343c1e203&libraries=services"></script>
 <script>
@@ -191,6 +242,7 @@ span {
 					});
 
 	$(function() {
+		jQuery.noConflict();
 		// 댓글 작성 완료 버튼
 		$("#btnReply").click(function() {
 			var s_id = "${vo.s_id}"; // 게시글번호(댓글번호 아님)
@@ -220,6 +272,69 @@ span {
 				"success" : function(rData) {
 					console.log(rData);
 					replyList();
+				}
+			}); // $.ajax()
+		});
+		
+		
+		// 댓글 수정 버튼
+		$("#replyList").on("click", ".btnReplyUpdate", function() {
+			console.log("댓글 수정 버튼");
+			var m_id = $(this).attr("data-m_id");
+			var m_detail = $(this).attr("data-m_detail");
+			var m_point = $(this).attr("data-m_point");
+// 			var mem_id = $(this).attr("data-mem_id");
+			$("#modal_m_id").val(m_id);
+			$("#modal_m_detail").val(m_detail);
+			$("#modal_m_point").val(m_point);
+			
+			switch(m_point){
+			case 5 : $("#modal_m_point").val("5").prop("selected", true);
+				break;
+			case 4 : $("#modal_m_point").val("4").prop("selected", true);
+				break;
+			case 3 : $("#modal_m_point").val("3").prop("selected", true);
+				break;
+			case 2 : $("#modal_m_point").val("2").prop("selected", true);
+				break;
+			case 1 : $("#modal_m_point").val("1").prop("selected", true);
+				break;
+			}
+			
+			
+// 			$("#modal_mem_id").val(mem_id);
+			$("#modal-a").trigger("click");
+		});
+		
+		// 모달창 완료 버튼
+		$("#btnModalReply").click(function() {
+			var m_id = $("#modal_m_id").val();
+			var m_detail = $("#modal_m_detail").val();
+// 			var mem_id = $("#modal_mem_id").val();
+			var m_point = $("#modal_m_point").val();
+			
+			var sendData = {
+					"m_id" : m_id,
+					"m_detail" : m_detail,
+// 					"mem_id" : mem_id,
+					"m_point" : m_point
+			};
+			
+			var url = "/mark/editMark";
+			
+			$.ajax({
+				"type" : "put",
+				"url" : url,
+				"headers" : {
+					"Content-Type" : "application/json",
+					"X-HTTP-Method-Override" : "put"
+				},
+				"dataType" : "text",
+				"data" : JSON.stringify(sendData),
+				"success" : function(rData) {
+					console.log(rData);
+					replyList();
+					$("#btnModalClose").trigger("click");
 				}
 			}); // $.ajax()
 		});
@@ -287,7 +402,7 @@ span {
 					if(this.mem_id == "${memberVo.mem_id}"){
 						strHtml += "<td><button type='button' class='btn-xs btn-warning btnReplyUpdate'";
 						strHtml += " data-m_id='" + this.m_id + "'";
-						strHtml += " data-m_id='" + this.m_point + "'";
+						strHtml += " data-m_point='" + this.m_point + "'";
 						strHtml += " data-m_detail='" + this.m_detail + "'";
 						strHtml += " data-mem_id='" + this.mem_id + "'>수정</button></td>";
 						strHtml += "<td><button type='button' class='btn-xs btn-danger btnReplyDelete'";

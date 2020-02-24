@@ -49,4 +49,9 @@ public class MarkDaoImpl implements MarkDao {
 		return sqlSession.selectOne(NAMESPACE + ".avgMark", s_id);
 	}
 
+	@Override
+	public void editMark(MarkVo vo) throws Exception {
+		sqlSession.update(NAMESPACE + ".markModify", vo);
+	}
+
 }

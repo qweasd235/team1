@@ -40,4 +40,9 @@ public class MarkServiceImpl implements MarkService {
 		return dao.avgMark(s_id);
 	}
 
+	@Override
+	public void editMark(MarkVo vo) throws Exception {
+		dao.editMark(vo);
+	}
+
 }
