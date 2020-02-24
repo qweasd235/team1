@@ -43,4 +43,11 @@ public class MarkController {
 		mService.markDelete(s_id, m_id);
 		return "success";
 	}
+	//리플 수정
+	@RequestMapping(value = "/editMark", method = RequestMethod.PUT)
+	public String edit(@RequestBody MarkVo vo) throws Exception {
+		System.out.println(vo);
+		mService.editMark(vo);
+		return "success";
+	}
 }

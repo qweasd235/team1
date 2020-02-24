@@ -25,7 +25,11 @@
 
 	<!-- 리플 수정 -->
 	<update id="markModify">
-
+		update t_mark set
+			m_detail = #{m_detail},
+			m_point = #{m_point},
+			m_reg_date = sysdate
+		where m_id = #{m_id}
 	</update>
 
 	<!-- 리플 삭제 -->

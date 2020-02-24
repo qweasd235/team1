@@ -20,4 +20,7 @@ public interface MarkService {
 
 	// 데이터 평균
 	public double avgMark(int s_id) throws Exception;
+	
+	//데이터 수정
+	public void editMark(MarkVo vo) throws Exception;
 }

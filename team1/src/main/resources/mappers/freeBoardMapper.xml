@@ -8,8 +8,8 @@
 	
 	<!-- 게시판 글쓰기 -->
 	<insert id="create">
-		insert into t_board (b_num, b_title, b_content, b_writer)
-		values (seq_b_num.nextval, #{b_title}, #{b_content}, #{b_writer})
+		insert into t_board (b_num, b_title, b_content, b_writer, b_pic)
+		values (seq_b_num.nextval, #{b_title}, #{b_content}, #{b_writer}, #{b_pic})
 	</insert>
 					
 	<!-- 게시판 글 상세보기 -->
