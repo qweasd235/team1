@@ -43,6 +43,7 @@
 						<li><a href="/mem/joinGet">회원가입</a></li>
 					</c:if>
 					<c:if test="${not empty memberVo}">
+						<li><a href="/mem/editmemGet">회원정보 수정</a></li>
 						<li><a href="/mem/logout">로그아웃</a></li>
 						<li><a href="/mem/testId">testid</a></li>
 					</c:if>

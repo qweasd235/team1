@@ -33,6 +33,12 @@ $(document).ready(function(){
 			return false;
 		}
 		
+		if($("#mem_email").val()==""){
+			alert("이메일을 입력해주세요.");
+			$("#mem_email").focus();
+			return false;
+		}
+		
 		if(isCheckId == false){
 			alert("아이디 중복을 체크해 주세요.");
 			return false;
@@ -98,10 +104,6 @@ $(document).ready(function(){
 	<form id="joinForm" method="post" action="/mem/joinPost" autocomplete="off" enctype="multipart/form-data">
 		<table border="1">
 			<tr>
-				<th>이름</th>
-				<td><input type="text" name="mem_name" id="mem_name" required/></td>
-			</tr>		
-			<tr>
 				<th>아이디</th>
 				<td><input type="text" name="mem_id" id="mem_id" required/>
 					<input type="button" value="중복확인" id="btnCheckId"/>
@@ -117,6 +119,14 @@ $(document).ready(function(){
 				<td><input type="password" name="mem_pw2" id="mem_pw2" required/>
 					<span id="pwSpan"></span>
 				</td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td><input type="text" name="mem_name" id="mem_name" required/></td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td><input type="text" name="mem_email" id="mem_email" required/></td>
 			</tr>
 			<tr>
 				<th>프로필 사진</th>

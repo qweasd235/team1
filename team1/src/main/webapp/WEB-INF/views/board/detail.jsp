@@ -115,10 +115,7 @@ hr {
 								<a class="page-link" data-page="${dto.endPage + 1}">다음</a>
 							</li>
 						</c:if>
-						
-						
-						
-			
+								
 <!-- 						<li><a href="#" class="button alt icon fa-chevron-right"><span class="label">Next</span></a></li> -->
 				</ul>
 				</nav>

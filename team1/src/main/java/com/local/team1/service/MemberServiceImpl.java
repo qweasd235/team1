@@ -1,6 +1,7 @@
 package com.local.team1.service;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,24 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int CheckId(String mem_id) throws Exception {
 		return memberDao.readMember(mem_id);
+	}
+
+	@Override
+	public void modifyMember(MemberVo vo) throws Exception {
+		memberDao.updateMember(vo);
+		
+		
+	}
+
+	@Override
+	public void modifyNopic(MemberVo vo) throws Exception {
+		memberDao.updateNopic(vo);
+		
+	}
+
+	@Override
+	public MemberVo readMemInfo(String mem_id) throws Exception {
+		return memberDao.readMemInfo(mem_id);
 	}
 
 }
