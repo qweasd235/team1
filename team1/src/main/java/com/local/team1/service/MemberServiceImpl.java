@@ -15,7 +15,7 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Inject
 	private MemberDao memberDao;
-
+	
 	@Override
 	public MemberVo login(LoginDto loginDto) throws Exception {
 		return memberDao.readWithPw(loginDto.getMem_id(), loginDto.getMem_pw());
@@ -47,6 +47,11 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public MemberVo readMemInfo(String mem_id) throws Exception {
 		return memberDao.readMemInfo(mem_id);
+	}
+
+	@Override
+	public void deletePic(String mem_id) throws Exception {
+		memberDao.deletePic(mem_id);
 	}
 
 	

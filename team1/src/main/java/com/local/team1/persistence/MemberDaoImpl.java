@@ -53,4 +53,10 @@ public class MemberDaoImpl implements MemberDao {
 		return sqlSession.selectOne(NAMESPACE + ".readMemInfo", mem_id);
 	}
 
+	@Override
+	public void deletePic(String mem_id) throws Exception {
+		sqlSession.update(NAMESPACE + ".updatePic", mem_id);
+		
+	}
+
 }

@@ -43,6 +43,12 @@
 		update t_member set
   			mem_email = #{mem_email}
 			where mem_id = #{mem_id}
-	</update>	
+	</update>
 
+	<!-- 프로필 사진 삭제 -->
+	<update id="updatePic">
+		update t_member set
+			mem_pic = null
+		where mem_id = #{mem_id}
+	</update>
 </mapper>  

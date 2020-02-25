@@ -19,5 +19,7 @@ public interface MemberService {
 	public void modifyMember(MemberVo vo) throws Exception;
 	// 프로필 사진없이 회원정보 변경
 	public void modifyNopic(MemberVo vo) throws Exception;
+	// 프로필 사진 삭제
+	public void deletePic(String mem_id) throws Exception;
 	
 }

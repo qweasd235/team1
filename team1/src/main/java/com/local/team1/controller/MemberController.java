@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
@@ -183,6 +184,17 @@ public class MemberController {
 			memberService.modifyNopic(vo);
 		}
 		return "redirect:/board/home";
+	}
+	
+	@RequestMapping(value = "/deletePic" , method = RequestMethod.GET)
+	@ResponseBody
+	public String deletePic(HttpSession session) throws Exception {
+		MemberVo vo = (MemberVo)session.getAttribute("memberVo");
+		String mem_id = vo.getMem_id();
+		System.out.println("도달");
+		System.out.println(mem_id);
+		memberService.deletePic(mem_id);
+		return "success";
 	}
 
 
