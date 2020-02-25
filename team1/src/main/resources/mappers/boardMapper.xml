@@ -50,6 +50,11 @@
 		where s_id = #{s_id}
 	</delete>
 	
+	<delete id="deleteMark">
+		delete from t_mark
+		where s_id = #{s_id}
+	</delete>
+	
 	<select id="list" resultType="BoardVo">
 		select *
 		from (select rownum rnum, a.*
