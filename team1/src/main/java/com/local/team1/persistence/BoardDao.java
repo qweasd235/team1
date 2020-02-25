@@ -15,6 +15,8 @@ public interface BoardDao {
 	public void update(BoardVo vo) throws Exception;
 	// 데이터  삭제
 	public void delete(Integer s_id) throws Exception;
+	// 데이터 삭제 2
+	public void delete2(Integer s_id) throws Exception;
 	//데이터 상세보기
 	public List<BoardVo> list(String s_cate, PagingDto dto) throws Exception;
 	//수정 페이지 목록

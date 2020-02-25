@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.local.team1.domain.BoardVo;
 import com.local.team1.domain.PagingDto;
@@ -34,8 +35,10 @@ public class BoardServiceImpl implements BoardService {
 
 	}
 
+	@Transactional
 	@Override
 	public void delete(Integer s_id) throws Exception {
+		dao.delete2(s_id);
 		dao.delete(s_id);
 	}
 
