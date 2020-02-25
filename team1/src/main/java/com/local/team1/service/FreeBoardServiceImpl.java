@@ -5,16 +5,21 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.local.team1.domain.FreeBoardVo;
 import com.local.team1.domain.PagingDto;
 import com.local.team1.persistence.FreeBoardDao;
+import com.local.team1.persistence.ReplyDao;
 
 @Service
 public class FreeBoardServiceImpl implements FreeBoardService {
 	
 	@Inject
 	private FreeBoardDao dao;
+	
+	@Inject
+	private ReplyDao rDao;
 
 	@Override
 	public void create(FreeBoardVo fb_vo) throws Exception {
@@ -44,8 +49,10 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		dao.modify_b_pic(fb_vo);
 	}
 
+	@Transactional
 	@Override
 	public void delete(int b_num) throws Exception {
+		rDao.deleteByb_num(b_num);
 		dao.delete(b_num);
 	}
 
