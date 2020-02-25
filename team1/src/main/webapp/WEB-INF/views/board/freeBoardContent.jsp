@@ -44,7 +44,15 @@ $(document).ready(function() {
 	
 	// 글 삭제하기
 	$("#btnDelete").click(function() {
-		location.href = "/board/fbDelete?b_num=${fb_vo.b_num}";
+		var src = $("#img_pic").attr("src");
+		console.log(src);
+		var str = src.substring(src.lastIndexOf("=") + 1);
+		console.log(str);
+		if (!confirm("삭제하시겠습니까?") ) {
+			return false;
+		}
+		location.href = "/board/fbDelete?b_num=${fb_vo.b_num}&fileName=" + str;
+		alert("삭제 되었습니다");
 	});
 	
 	// 리플 쓰기
@@ -222,7 +230,7 @@ $(document).ready(function() {
 							<span><strong>${fb_vo.b_writer }</strong></span>
 						</div>
 						<div class="form-group">
-							<span><img alt='Bootstrap Image Preview'
+							<span><img alt='Bootstrap Image Preview' id="img_pic"
 								src='/board/displayFile?fileName=${fb_vo.b_pic}'/></span>
 						</div>
 						<div class="12u$" style="display: none;" id="pic"> 

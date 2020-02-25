@@ -20,5 +20,7 @@ public interface FreeBoardDao {
 	public void delete(int b_num) throws Exception;
 	// 데이터 총 갯수
 	public int totalCount(PagingDto pagingDto) throws Exception;
+	// 조회수
+	public void read_count(int b_num) throws Exception;
 	
 }

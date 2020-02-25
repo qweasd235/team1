@@ -17,6 +17,14 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 		<script src="/resources/js/myscript.js"></script>
+		
+		<!-- Scripts -->
+			<script src="../resources/assets/js/jquery.min.js"></script>
+			<script src="../resources/assets/js/jquery.scrolly.min.js"></script> 
+			<script src="../resources/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../resources/assets/js/skel.min.js"></script>
+			<script src="../resources/assets/js/util.js"></script>
+			<script src="../resources/assets/js/main.js"></script>
 	</head>
 	<body>
 

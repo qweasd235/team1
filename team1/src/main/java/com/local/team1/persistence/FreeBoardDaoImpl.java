@@ -54,6 +54,11 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 		return sqlsession.selectOne(NAMESPACE + ".totalCount", pagingDto);
 	}
 
+	@Override
+	public void read_count(int b_num) throws Exception {
+		sqlsession.update(NAMESPACE + ".update_read_count", b_num);
+	}
+
 	
 
 }
