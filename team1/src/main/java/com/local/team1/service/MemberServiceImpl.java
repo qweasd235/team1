@@ -1,5 +1,7 @@
 package com.local.team1.service;
 
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
 
@@ -45,6 +47,12 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public MemberVo readMemInfo(String mem_id) throws Exception {
 		return memberDao.readMemInfo(mem_id);
+	}
+
+	@Override
+	public void pw_change(Map<String, Object> map, MemberVo vo) throws Exception {
+		memberDao.pw_change(map, vo);
+		
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.local.team1.persistence;
 
+import java.util.Map;
+
 import com.local.team1.domain.MemberVo;
 
 public interface MemberDao {
@@ -16,4 +18,6 @@ public interface MemberDao {
 	public void updateMember(MemberVo vo) throws Exception;
 	// 프로필 사진 변경없이 회원정보 변경
 	public void updateNopic(MemberVo vo) throws Exception;
+	// 패스워드 변경
+	public void pw_change(Map<String, Object> map, MemberVo vo) throws Exception;
 }

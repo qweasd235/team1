@@ -43,5 +43,12 @@
 		update t_member set
   			mem_email = #{mem_email}
 			where mem_id = #{mem_id}
-	</update>		
+	</update>	
+	
+	<!-- 비밀번호 찾기, 변경 -->	
+	<update id="pw_change" parameterType="hashMap">
+		update t_member set
+			mem_pw = #{mem_pw}
+		where mem_email = #{mem_email}	
+	</update>
 </mapper>  
