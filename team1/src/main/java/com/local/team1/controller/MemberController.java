@@ -33,7 +33,7 @@ import com.local.team1.domain.MemberVo;
 import com.local.team1.service.MemberService;
 
 @Controller
-@RequestMapping("/mem")
+@RequestMapping("/mem/*")
 public class MemberController {
 	
 	@Resource
@@ -249,6 +249,5 @@ public class MemberController {
 //         return mv;
 //         
 //     }
-	 
-	
+
 }

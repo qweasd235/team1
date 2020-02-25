@@ -26,6 +26,15 @@
 		where b_num = #{b_num}
 	</update>	
 	
+	<!-- 게시판 글 수정(이미지도 변경) 하기 -->
+	<update id="modify_b_pic">
+		update t_board set
+			b_title = #{b_title},
+			b_content = #{b_content},
+			b_pic = #{b_pic}
+		where b_num = #{b_num}
+	</update>	
+	
 	<!-- 게시판 글 삭제 -->
 	<delete id="delete">
 		delete from t_board
