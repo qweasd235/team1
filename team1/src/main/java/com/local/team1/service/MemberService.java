@@ -19,6 +19,5 @@ public interface MemberService {
 	public void modifyMember(MemberVo vo) throws Exception;
 	// 프로필 사진없이 회원정보 변경
 	public void modifyNopic(MemberVo vo) throws Exception;
-	// 패스워드 변경
-	public void pw_change(Map<String, Object> map, MemberVo vo) throws Exception;
+	
 }

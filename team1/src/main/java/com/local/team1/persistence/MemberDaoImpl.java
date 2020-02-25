@@ -53,13 +53,4 @@ public class MemberDaoImpl implements MemberDao {
 		return sqlSession.selectOne(NAMESPACE + ".readMemInfo", mem_id);
 	}
 
-	@Override
-	public void pw_change(Map<String, Object> map, MemberVo vo) throws Exception {
-		map.get("mem_pw");
-		map.get("mem_email");
-		
-		sqlSession.update(NAMESPACE + ".pw_change", map);
-		
-	}
-
 }

@@ -49,10 +49,6 @@ public class MemberServiceImpl implements MemberService {
 		return memberDao.readMemInfo(mem_id);
 	}
 
-	@Override
-	public void pw_change(Map<String, Object> map, MemberVo vo) throws Exception {
-		memberDao.pw_change(map, vo);
-		
-	}
+	
 
 }
