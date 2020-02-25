@@ -1,5 +1,7 @@
 package com.local.team1.service;
 
+import java.util.Map;
+
 import com.local.team1.domain.LoginDto;
 import com.local.team1.domain.MemberVo;
 
@@ -17,4 +19,5 @@ public interface MemberService {
 	public void modifyMember(MemberVo vo) throws Exception;
 	// 프로필 사진없이 회원정보 변경
 	public void modifyNopic(MemberVo vo) throws Exception;
+	
 }

@@ -106,7 +106,10 @@ public class BoardController {
 //		System.out.println("delSpot!");
 //		System.out.println(s_id);
 		bService.delete(s_id);
-		boardFileDelete(fileName);
+		if(!fileName.equals("")) {
+			boardFileDelete(fileName);
+		}
+		
 		return "redirect:/board/editPage";
 	}
 	

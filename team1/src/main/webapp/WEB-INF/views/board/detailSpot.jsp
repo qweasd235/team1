@@ -154,7 +154,7 @@ span {
 							<h5 class="modal-title font_color" id="myModalLabel">
 								댓글 수정하기
 							</h5> 
-							<button type="button" class="close" data-dismiss="modal">
+							<button type="button" class="close font_color" data-dismiss="modal">
 								<span aria-hidden="true">×</span>
 							</button>
 						</div>
@@ -175,11 +175,11 @@ span {
 <!-- 								id="modal_mem_id"/> -->
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-primary"
+							<button type="button" class="btn btn-primary font_color"
 								id="btnModalReply">
 								수정완료
 							</button> 
-							<button type="button" class="btn btn-secondary" data-dismiss="modal"
+							<button type="button" class="btn btn-secondary font_color" data-dismiss="modal"
 								id="btnModalClose">
 								닫기
 							</button>
