@@ -122,13 +122,13 @@ public class FreeBoardController {
 		            e.printStackTrace();
 		        }
 		        
-		        String s_pic = "";
+		        String b_pic = "";
 		        	
 		        if(!originFileName.equals("")) {
-		        	s_pic = safeFile.substring(uploadPath.length());
+		        	b_pic = safeFile.substring(uploadPath.length());
 		        }
 		        
-		        return s_pic;
+		        return b_pic;
 		}
 		
 	
