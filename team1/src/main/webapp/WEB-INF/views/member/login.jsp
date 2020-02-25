@@ -21,7 +21,6 @@ $(function(){
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 				<div class="inner">
 					<article class="box">
-<body>
 
 <!-- Main -->
 	<form id="loginForm" method="post" action="/mem/loginPost" autocomplete="off">
@@ -42,9 +41,10 @@ $(function(){
 
 	<hr />
 
-</body>
+
 </article>
 </div>
+<br><br><br><br><br><br><br><br><br>       
 </section>
-</html>
+
 <%@ include file="../include/footer.jsp" %>
