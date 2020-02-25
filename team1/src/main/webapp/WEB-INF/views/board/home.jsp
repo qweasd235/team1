@@ -169,10 +169,8 @@ $(document).ready(function() {
 						<footer>
 							<a href="/board/detail?s_cate=서울/경기" class="button alt">Learn More</a>
 						</footer>
-					</article>
-				</div>
-			</section>
-
+				
 
 
 <%@ include file="../include/footer.jsp" %>
+
