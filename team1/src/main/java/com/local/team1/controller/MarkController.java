@@ -27,7 +27,7 @@ public class MarkController {
 	public String create(@RequestBody MarkVo vo) throws Exception {
 		System.out.println(vo);
 		mService.create(vo);
-		return "reply_success";
+		return "success";
 	}
 
 	// 리플 목록

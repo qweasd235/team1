@@ -41,7 +41,6 @@ public class BoardDaoImpl implements BoardDao {
 	@Override
 	public void delete(Integer s_id) throws Exception {
 		sqlsession.delete(NAMESPACE + ".delete", s_id);
-
 	}
 
 	@Override
