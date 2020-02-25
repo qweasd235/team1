@@ -151,7 +151,7 @@ span {
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="myModalLabel">
+							<h5 class="modal-title font_color" id="myModalLabel">
 								댓글 수정하기
 							</h5> 
 							<button type="button" class="close" data-dismiss="modal">
@@ -160,11 +160,11 @@ span {
 						</div>
 						<div class="modal-body">
 							<input type="hidden" id="modal_m_id"/>
-							<label for="modal_m_detail">댓글내용</label>
-							<input type="text" class="form-control"
+							<label for="modal_m_detail" class="font_color">댓글내용</label>
+							<input type="text" class="form-control font_color"
 								id="modal_m_detail"/>
-							<label for="modal_mem_id">평점</label>
-							<select name="point" id="modal_m_point">
+							<label for="modal_mem_id" class="font_color">평점</label>
+							<select name="point" id="modal_m_point" class="font_color">
 										<option value="1">★☆☆☆☆</option>
 										<option value="2">★★☆☆☆</option>
 										<option value="3">★★★☆☆</option>
@@ -243,6 +243,7 @@ span {
 
 	$(function() {
 		jQuery.noConflict();
+		$(".font_color").css("color", "black");
 		// 댓글 작성 완료 버튼
 		$("#btnReply").click(function() {
 			var s_id = "${vo.s_id}"; // 게시글번호(댓글번호 아님)
