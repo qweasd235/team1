@@ -29,6 +29,9 @@
 				<th>프로필 사진</th>
 				<td><input type="file" name="file" id="mem_pic"/></td>
 			</tr>	
+			<tr>
+				<td><button>프로필 사진 삭제</button></td>
+			</tr>	
 		</table>
 			<input type="submit" value="수정완료" id="btnSubmit"/>
 			<input type="button" value="취소" id="btnCancel"/>

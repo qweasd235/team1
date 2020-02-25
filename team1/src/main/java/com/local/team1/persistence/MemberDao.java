@@ -18,5 +18,6 @@ public interface MemberDao {
 	public void updateMember(MemberVo vo) throws Exception;
 	// 프로필 사진 변경없이 회원정보 변경
 	public void updateNopic(MemberVo vo) throws Exception;
-	
+	// 프로필 사진 삭제
+	public void deletePic(String mem_id) throws Exception;
 }

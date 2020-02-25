@@ -184,6 +184,11 @@ public class MemberController {
 		}
 		return "redirect:/board/home";
 	}
+	
+	@RequestMapping(value = "/deletePic" , method = RequestMethod.PUT)
+	public String deletePic() throws Exception {
+		return "success";
+	}
 
 
 }
