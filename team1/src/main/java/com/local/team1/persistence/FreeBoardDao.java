@@ -14,6 +14,8 @@ public interface FreeBoardDao {
 	public FreeBoardVo read(int b_num) throws Exception;
 	// 데이터 수정
 	public void modify(FreeBoardVo fb_vo) throws Exception;
+	// 데이터 수정(이미지 포함)
+	public void modify_b_pic(FreeBoardVo fb_vo) throws Exception;
 	// 데이터 삭제
 	public void delete(int b_num) throws Exception;
 	// 데이터 총 갯수
