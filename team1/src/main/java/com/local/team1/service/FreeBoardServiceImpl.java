@@ -37,6 +37,11 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 	public void modify(FreeBoardVo fb_vo) throws Exception {
 		dao.modify(fb_vo);		
 	}
+	
+	@Override
+	public void modify_b_pic(FreeBoardVo fb_vo) throws Exception {
+		dao.modify_b_pic(fb_vo);
+	}
 
 	@Override
 	public void delete(int b_num) throws Exception {
@@ -47,5 +52,7 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 	public int totalCount(PagingDto pagingDto) throws Exception {
 		return dao.totalCount(pagingDto);
 	}
+
+	
 
 }

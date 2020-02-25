@@ -43,5 +43,6 @@
 		update t_member set
   			mem_email = #{mem_email}
 			where mem_id = #{mem_id}
-	</update>		
+	</update>	
+
 </mapper>  

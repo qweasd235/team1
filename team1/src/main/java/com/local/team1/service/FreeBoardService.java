@@ -14,6 +14,8 @@ public interface FreeBoardService {
 	public FreeBoardVo read(int b_num) throws Exception;
 	// 글 수정하기
 	public void modify(FreeBoardVo fb_vo) throws Exception;
+	// 글 수정(이미지 포함)
+	public void modify_b_pic(FreeBoardVo fb_vo) throws Exception;
 	// 글 삭제하기
 	public void delete(int b_num) throws Exception;
 	// 글 총 갯수

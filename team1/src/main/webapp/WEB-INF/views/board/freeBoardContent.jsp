@@ -17,6 +17,11 @@
 	width: 20px;
 }
 
+img {
+	width: 160px;
+	height: 140px;
+}
+
 </style>
 
 <script>  
@@ -32,6 +37,7 @@ $(document).ready(function() {
 	$("#btnModify").click(function() {		
 		$("#b_title").prop("readonly", false).css("background-color", "white");
 		$("#b_content").prop("readonly", false);
+		$("#pic").show(1000);
 		$(this).hide(600);
 		$("button[type=submit]").show(600);
 	}); 
@@ -196,7 +202,7 @@ $(document).ready(function() {
 <!-- 							<p>01.01.2017</p> -->
 						</header>
 						<form id="myform" role="form" method="post" 
-							  action="/board/fbModify">
+							  action="/board/fbModify" enctype="multipart/form-data">
 							<input type="hidden" name="b_num" value="${fb_vo.b_num}"/>
 <%-- 							<input type="hidden" name="page" value="${pagingDto.page}"/> --%>
 <%-- 							<input type="hidden" name="perPage" value="${pagingDto.perPage}"/> --%>
@@ -214,6 +220,13 @@ $(document).ready(function() {
 						<div class="form-group">
 							<label for="b_writer">글쓴이</label>
 							<span><strong>${fb_vo.b_writer }</strong></span>
+						</div>
+						<div class="form-group">
+							<span><img alt='Bootstrap Image Preview'
+								src='/board/displayFile?fileName=${fb_vo.b_pic}'/></span>
+						</div>
+						<div class="12u$" style="display: none;" id="pic"> 
+							<input type="file" name="file" id="b_pic" value="${fb_vo.b_pic }"/>
 						</div>
 						<hr>
 						<div style="clear:both;">

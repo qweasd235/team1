@@ -37,6 +37,11 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 	public void modify(FreeBoardVo fb_vo) throws Exception {
 		sqlsession.update(NAMESPACE + ".modify", fb_vo);
 	}
+	
+	@Override
+	public void modify_b_pic(FreeBoardVo fb_vo) throws Exception {
+		sqlsession.update(NAMESPACE + ".modify_b_pic", fb_vo);		
+	}
 
 	@Override
 	public void delete(int b_num) throws Exception {
@@ -48,5 +53,7 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 	public int totalCount(PagingDto pagingDto) throws Exception {		
 		return sqlsession.selectOne(NAMESPACE + ".totalCount", pagingDto);
 	}
+
+	
 
 }

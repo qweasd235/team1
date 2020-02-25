@@ -1,5 +1,7 @@
 package com.local.team1.service;
 
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
 
@@ -46,5 +48,7 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVo readMemInfo(String mem_id) throws Exception {
 		return memberDao.readMemInfo(mem_id);
 	}
+
+	
 
 }

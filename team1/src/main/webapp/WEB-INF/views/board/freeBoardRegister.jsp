@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
+
+<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
+	<div class="inner">
+	<article class="box">
 	<!-- Main -->
 
 	<h3>글쓰기</h3>
 	<form method="post" action="/board/fbRegisterPOST" enctype="multipart/form-data">	
 		<div class="row uniform">
-			<div class="6u 12u$(xsmall)">
+			<div class="12u$">
 				<input type="text" name="b_title" id="b_title" placeholder="제목" />
 			</div>					
 			<div class="12u$">
@@ -25,6 +29,9 @@
 		</div>
 	</form>
 
-	<hr />
+	</article>
+	</div>
+</section>
+
 
 <%@ include file="../include/footer.jsp" %>
