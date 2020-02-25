@@ -97,7 +97,7 @@ $(document).ready(function(){
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 				<div class="inner">
 					<article class="box">
-<body>
+
 	<!-- Main -->
 
 	<h3>회원가입</h3>
@@ -147,7 +147,7 @@ $(document).ready(function(){
 			<script src="../resources/assets/js/skel.min.js"></script>
 			<script src="../resources/assets/js/util.js"></script>
 			<script src="../resources/assets/js/main.js"></script>
-	</body>
+	
 	</article>
 	</div>
 	</section>

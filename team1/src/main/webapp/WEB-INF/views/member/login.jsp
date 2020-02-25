@@ -18,11 +18,11 @@ $(function(){
 	
 });
 </script>
+
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 				<div class="inner">
 					<article class="box">
-<body>
-
+	
 <!-- Main -->
 	<form id="loginForm" method="post" action="/mem/loginPost" autocomplete="off">
 		<h3>로그인</h3>
@@ -42,9 +42,4 @@ $(function(){
 
 	<hr />
 
-</body>
-</article>
-</div>
-</section>
-</html>
 <%@ include file="../include/footer.jsp" %>
