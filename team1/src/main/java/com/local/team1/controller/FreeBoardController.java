@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -90,8 +91,12 @@ public class FreeBoardController {
 	
 	// 게시판 글 삭제하기
 	@RequestMapping(value = "/fbDelete", method = RequestMethod.GET)
-	public String freeBoardDelete(@RequestParam("b_num") int b_num) throws Exception {
+	public String freeBoardDelete(@RequestParam("b_num") int b_num, 
+									@RequestParam("fileName") String fileName) throws Exception {
 		fb_Service.delete(b_num);
+		if(!fileName.equals("")) {
+			boardFileDelete(fileName);
+		}
 		return "redirect:/board/freeBoardList";
 	}
 	
@@ -131,5 +136,15 @@ public class FreeBoardController {
 		        return b_pic;
 		}
 		
-	
+		//서버 파일 삭제
+		@ResponseBody
+		public String boardFileDelete(String fileName) {
+		String path = uploadPath + fileName;
+		File file = new File(path);		
+		if(file.exists() == true){		   
+			file.delete();
+		}		
+		return null;
+	} 
+		
 }

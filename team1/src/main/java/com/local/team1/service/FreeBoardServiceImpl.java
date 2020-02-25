@@ -30,6 +30,7 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 
 	@Override
 	public FreeBoardVo read(int b_num) throws Exception {
+		dao.read_count(b_num);
 		return dao.read(b_num);
 	}
 

@@ -47,6 +47,13 @@
 		<include refid="search"></include>
 	</select>
 	
+	<!-- 게시판 글 조회수 -->
+	<update id="update_read_count">
+		update t_board set
+			b_read_count = b_read_count + 1
+		where b_num = #{b_num}
+	</update>
+	
 	<!-- 게시판 전체리스트보기 -->
 	<select id="listAll" resultType="FreeBoardVo">
 		select *
