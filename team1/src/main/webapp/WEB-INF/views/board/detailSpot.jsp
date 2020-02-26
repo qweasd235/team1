@@ -112,24 +112,14 @@ span {
 				<hr />
 
 				<!-- 댓글 목록 -->
-				<div class="row">
+				<div class="row" >
 					<div class="col-md-12">
 					<c:if test="${not empty paramMap}">
 						<div>평균 평점 : ${paramMap.avg } 점 참여자 :${paramMap.total } 명</div>
 					</c:if>
 						<table class="table">
-							<thead>
-								<tr>
-									<th>번호</th>
-									<th>평점</th>
-									<th>댓글내용</th>
-									<th>작성자</th>
-									<th>날짜</th>
-<%-- 								<c:if test="${not empty memberVo.mem_id}"> --%>
-<!-- 									<th>수정</th> -->
-<!-- 									<th>삭제</th> -->
-<%-- 								</c:if> --%>
-								</tr>
+							<thead id="replyHead">
+								
 							</thead>
 							<tbody id="replyList">
 
@@ -362,6 +352,26 @@ span {
 			}); // $.ajax()
 		});
 		
+		
+		
+		
+		
+		
+		
+		
+		//댓글 목록 헤드
+		function replyHead(){
+			var strHtml = "";
+			strHtml += "<tr>";
+			strHtml += "<th>번호</th>";
+			strHtml += "<th>평점</th>";
+			strHtml += "<th>댓글내용</th>";
+			strHtml += "<th>작성자</th>";
+			strHtml += "<th>날짜</th>";
+			strHtml += "</tr>";
+			$("#replyHead").append(strHtml);
+		}
+		
 	
 		// 댓글 목록 가져오기 - 정의
 		function replyList() {
@@ -370,6 +380,9 @@ span {
 			var url = "/mark/listAll/${vo.s_id}";
 			$.getJSON(url, function(rData) {
 				console.log(rData);
+				if(rData != ""){
+					replyHead();	
+				}
 				var strHtml = "";
 				$(rData).each(function() {
 					strHtml += "<tr>";
@@ -414,11 +427,10 @@ span {
 					
 					strHtml += "</tr>";
 				});
-				$("#replyList").append(strHtml); // <tbody>의 자식 엘리먼트로 html을 추가
+				$("#replyList").append(strHtml); //<tbody>의 자식 엘리먼트로 html을 추가
 			});
 		}
 		replyList();
-		
 	})
 </script>
 
