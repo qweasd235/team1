@@ -2,6 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
 
+<script>
+$(function() {
+	$(".font_color").css("color", "black");
+	$("#b_title").css("background-color", "white")
+});
+</script>
+
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 	<div class="inner">
 	<article class="box">
@@ -14,10 +21,12 @@ ${fb_vo}
 			<input type="hidden" name="b_level" value="${fb_vo.b_level}"/>
 		<div class="row uniform">
 			<div class="12u$">
-				<input type="text" name="b_title" id="b_title" placeholder="제목" />
+				<input type="text" name="b_title" id="b_title" class="form-control font_color"
+						placeholder="제목" value="${fb_vo.b_title}"/>
 			</div>					
 			<div class="12u$">
-				<textarea name="b_content" id="b_content" placeholder="내용" rows="6">${fb_vo.b_content}</textarea>
+				<textarea name="b_content" id="b_content" class="form-control"
+						placeholder="내용" rows="6">${fb_vo.b_content}</textarea>
 			</div>
 			<div class="12u$">
 				<input type="file" name="file" id="b_pic"/>
