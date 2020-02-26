@@ -22,7 +22,8 @@ img {
 	height: 140px;
 }
 
-</style>
+
+</style>  
 
 <script>  
 $(document).ready(function() {
@@ -36,7 +37,7 @@ $(document).ready(function() {
 	// 글 수정하기
 	$("#btnModify").click(function() {		
 		$("#b_title").prop("readonly", false).css("background-color", "white");
-		$("#b_content").prop("readonly", false).focus();
+		$("#b_content").prop("readonly", false);
 		$("#pic").show(1000);
 		$(this).hide(600);
 		$("button[type=submit]").show(600);
@@ -225,15 +226,15 @@ $(document).ready(function() {
 <%-- 							<input type="hidden" name="perPage" value="${pagingDto.perPage}"/> --%>
 						<div class="form-group">
 							<label for="b_title">제목</label>
-							<input type="text" class="form-control" id="b_title" 
-								   name="b_title" value="${fb_vo.b_title }" style="color: black;"
+							<input type="text" id="b_title" class="form-control font_color"
+								   name="b_title" value="${fb_vo.b_title }" 
 								   readonly/>
 						</div>						
 						<div class="form-group">
 							<label for="b_content">내용</label><br>
-							<textarea rows="5" id="b_content" class="form-control"
+							<textarea rows="5" id="b_content" class="form-control font_color"
 								name="b_content" readonly>${fb_vo.b_content }</textarea>
-						</div>
+						</div>   
 						<div class="form-group">
 							<label for="b_writer">글쓴이</label>
 							<span><strong>${fb_vo.b_writer }</strong></span>
@@ -241,8 +242,7 @@ $(document).ready(function() {
 						<div class="form-group">
 					<c:choose>
 					<c:when test="${empty fb_vo.b_pic}">
-							<span><img alt='파일 없음' id="img_null"
-								src='../resources/images/nothing.jpg'/></span>
+							<span></span>
 					</c:when>
 					<c:otherwise>                                  
 						<span><img alt='이미지' id="img_pic"
