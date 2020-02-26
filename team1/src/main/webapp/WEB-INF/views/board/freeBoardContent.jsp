@@ -199,7 +199,7 @@ $(document).ready(function() {
 			$(rData).each(function() {
 				strHtml += "<tr>";
 				strHtml += "<td>" + this.r_num +"</td>";
-				strHtml += "<td>" + this.r_content + "</td>";
+				strHtml += "<td  width='250px' style='word-break:break-all'>" + this.r_content + "</td>";
 				if(this.mem_pic == null){
 					strHtml += "<td><img src='../resources/images/nothing.jpg' class='imgPro'/>" 
 							+ this.r_writer + "</td>";
