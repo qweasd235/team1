@@ -401,7 +401,7 @@ select > option{
 						break;
 					}
 					
-					strHtml += "<td width='150px' style='word-break:break-all'>" + this.m_detail + "</td>";
+					strHtml += "<td width='250px' style='word-break:break-all'>" + this.m_detail + "</td>";
 					
 					if(this.mem_pic == null){
 						strHtml += "<td><img src='../resources/images/nothing.jpg' class='imgPro'/>"
