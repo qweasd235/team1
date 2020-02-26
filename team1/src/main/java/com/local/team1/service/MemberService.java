@@ -19,5 +19,9 @@ public interface MemberService {
 	public void modifyMember(MemberVo vo) throws Exception;
 	// 프로필 사진없이 회원정보 변경
 	public void modifyNopic(MemberVo vo) throws Exception;
+	// 비밀번호 변경 시 비밀번호 체크
+	public int CheckPw(String mem_pw) throws Exception;
+	// 비밀번호 변경
+	public void pw_change(String mem_pw, String mem_id) throws Exception;
 	
 }

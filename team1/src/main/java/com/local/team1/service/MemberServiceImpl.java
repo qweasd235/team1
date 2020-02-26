@@ -49,6 +49,17 @@ public class MemberServiceImpl implements MemberService {
 		return memberDao.readMemInfo(mem_id);
 	}
 
+	@Override
+	public void pw_change(String mem_pw, String mem_id) throws Exception {
+		memberDao.update_pw(mem_pw, mem_id);
+		
+	}
+
+	@Override
+	public int CheckPw(String mem_pw) throws Exception {
+		return memberDao.readPw(mem_pw);
+	}
+
 	
 
 }

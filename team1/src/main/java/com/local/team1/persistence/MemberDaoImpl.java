@@ -53,4 +53,17 @@ public class MemberDaoImpl implements MemberDao {
 		return sqlSession.selectOne(NAMESPACE + ".readMemInfo", mem_id);
 	}
 
+	@Override
+	public int update_pw(String mem_pw, String mem_id) throws Exception {
+		Map<String, String> paramMap = new HashMap<>();
+		paramMap.put("mem_pw", mem_pw);
+		paramMap.put("mem_id", mem_id);
+		return sqlSession.update(NAMESPACE + ".update_pw", paramMap);
+	}
+
+	@Override
+	public int readPw(String mem_pw) throws Exception {
+		return sqlSession.selectOne(NAMESPACE + ".readPw", mem_pw);
+	}
+
 }

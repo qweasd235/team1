@@ -1,12 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../include/header.jsp" %> 
+<%@ include file="../include/header.jsp" %>
+<script>
+$(document).ready(function(){
+	$("#pw_change").click(function(){
+		location.href = "/mem/pw_changeGet";
+	});
+});
+</script> 
     
 
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 				<div class="inner">
 					<article class="box">
-<body>					
+				
 	<!-- Main -->
 
 
@@ -28,7 +35,11 @@
 			<tr>
 				<th>프로필 사진</th>
 				<td><input type="file" name="file" id="mem_pic"/></td>
-			</tr>	
+			</tr>
+			<tr>
+				<th>비밀번호</th>
+				<td><input type="button" id="pw_change" value="비밀번호 변경"/></td>
+			</tr>
 		</table>
 			<input type="submit" value="수정완료" id="btnSubmit"/>
 			<input type="button" value="취소" id="btnCancel"/>
@@ -37,14 +48,8 @@
 	<hr />
 	
 
-		<!-- Scripts -->
-			<script src="../resources/assets/js/jquery.min.js"></script>
-			<script src="../resources/assets/js/jquery.scrolly.min.js"></script>
-			<script src="../resources/assets/js/jquery.scrollex.min.js"></script>
-			<script src="../resources/assets/js/skel.min.js"></script>
-			<script src="../resources/assets/js/util.js"></script>
-			<script src="../resources/assets/js/main.js"></script>
-</body>
+	
 	</article>
 	</div>
 	</section>
+<%@ include file="../include/footer.jsp" %>
