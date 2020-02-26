@@ -60,30 +60,42 @@ $(document).ready(function() {
 		alert("삭제 되었습니다");
 	});
 	
+	// 답글 버튼
+	$("#btnComment").click(function() {
+		location.href = "/board/fbCommentGET?b_num=${fb_vo.b_num}";
+	});
+	
 	// 리플 쓰기
 	$("#btnReplyRegist").click(function() {
 		var b_num = "${fb_vo.b_num}"; // 게시글번호(댓글번호 아님)
-		var r_content = $("#r_content").val(); // 댓글내용		
-		var sendData = {
-				"b_num" : b_num,
-				"r_content" : r_content				
-		};
-		var url = "/reply/register";
+		var r_content = $("#r_content").val(); // 댓글내용	
+		if (r_content == "") {
+			alert("댓글 내용을 입력해주세요");	
+			return;
+		} else {
+			var sendData = {
+					"b_num" : b_num,
+					"r_content" : r_content				
+			};
+			var url = "/reply/register";
 
-		$.ajax({
-			"type" : "post",
-			"url" : url,
-			"headers" : {
-				"Content-Type" : "application/json",
-				"X-HTTP-Method-Override" : "post"
-			},
-			"dataType" : "text",
-			"data" : JSON.stringify(sendData),
-			"success" : function(rData) {
-				console.log(rData);
-				replyList();
-			}
-		}); // $.ajax()
+			$.ajax({
+				"type" : "post",
+				"url" : url,
+				"headers" : {
+					"Content-Type" : "application/json",
+					"X-HTTP-Method-Override" : "post"
+				},
+				"dataType" : "text",
+				"data" : JSON.stringify(sendData),
+				"success" : function(rData) {
+					console.log(rData);
+					$("#r_content").val("");
+					replyList();
+				}
+			}); // $.ajax()
+		}
+		
 	});
 	
 	// 리플 수정
@@ -129,10 +141,7 @@ $(document).ready(function() {
 		}); // $.ajax()
 	});
 	
-	// 답글 버튼
-	$("#btnComment").click(function() {
-		location.href = "/board/fbCommentGET?b_num=${fb_vo.b_num}";
-	});
+	
 	
 	// 리플 삭제
 	$("#Reply_Table_List").on("click", ".btnReplyDelete", function() {
@@ -152,13 +161,29 @@ $(document).ready(function() {
 				"X-HTTP-Method-Override" : "delete"
 			},
 			"success" : function(rData) {
-				console.log(rData);
+				console.log(rData);				
 				replyList();
+				if(rData != ""){
+					$("#replyHead").empty();					
+				}
 				
 			}
 		}); // $.ajax()		
 	});
 	
+	//댓글 헤더 정의
+	
+	function replyHead(){
+		var str = "";
+		str +=	"<tr>";
+		str +=  "<th>번호</th>";
+		str +=	"<th>내용</th>";
+		str +=	"<th>작성자</th>";		
+		str +=	"<th>날짜</th>";
+		str +=   "</tr>";
+
+		$("#replyHead").append(str);
+	}
 	
 	// 리플 정의
 	function replyList() {
@@ -166,6 +191,10 @@ $(document).ready(function() {
 		var url = "/reply/listAll/${fb_vo.b_num}";
 		$.getJSON(url, function(rData) {
 			console.log(rData);
+			if(rData != ""){
+				$("#replyHead").empty();
+				replyHead();
+			}
 			var strHtml = "";
 			$(rData).each(function() {
 				strHtml += "<tr>";
@@ -280,13 +309,7 @@ $(document).ready(function() {
 						<article class="box" id="replyBox">
 							<label>댓글</label><br>
 							<table> 
-								<thead>
-									<tr>
-										<th>번호</th>
-										<th>내용</th>
-										<th>작성자</th>
-										<th>날짜</th>										
-									</tr>
+								<thead id="replyHead">									
 								</thead>
 								<tbody id="Reply_Table_List">								
 								</tbody>
