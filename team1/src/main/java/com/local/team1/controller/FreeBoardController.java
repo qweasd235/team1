@@ -100,20 +100,36 @@ public class FreeBoardController {
 		return "redirect:/board/freeBoardList";
 	}
 	
+	// 게시판 글 답글쓰기 폼
+	@RequestMapping(value = "/fbCommentGET", method = RequestMethod.GET)
+	public String freeBoardCommentGET(@RequestParam("b_num") int b_num, Model model) throws Exception {
+		FreeBoardVo fb_vo = fb_Service.read(b_num);
+		model.addAttribute("fb_vo", fb_vo);
+		return "board/freeBoard_CommentRegister";
+	}
+	
+	// 답글쓰기 처리
+	@RequestMapping(value = "/fbCommentPOST", method = RequestMethod.POST)
+	public String freeBoardCommentPost(FreeBoardVo fb_vo, HttpSession session, MultipartHttpServletRequest req) throws Exception {
+		String b_pic = dataUpload(req);
+		MemberVo memberVo = (MemberVo)session.getAttribute("memberVo");
+		fb_vo.setB_writer(memberVo.getMem_id());
+		fb_vo.setB_pic(b_pic);
+		System.out.println("ref == " + fb_vo.getB_ref());
+		System.out.println("step == " + fb_vo.getB_step());
+		System.out.println("level == " + fb_vo.getB_level());
+		fb_Service.comment_Create(fb_vo);
+		return "redirect:/board/freeBoardList";
+	}
 	
 	//파일첨부 메쏘드
 		public String dataUpload(MultipartHttpServletRequest req) {
 			    MultipartFile mFile = req.getFile("file");
 			
-		        String src = req.getParameter("src");
-		        System.out.println("src value : " + src);
+		        String src = req.getParameter("src");	        
 
 		        String originFileName = mFile.getOriginalFilename(); // 원본 파일 명
-		        long fileSize = mFile.getSize(); // 파일 사이즈
-		        
-		        
-		        System.out.println("originFileName : " + originFileName);
-		        System.out.println("fileSize : " + fileSize);
+		        long fileSize = mFile.getSize(); // 파일 사이즈		        		        		        
 
 		        String safeFile = uploadPath + System.currentTimeMillis() + originFileName;
 

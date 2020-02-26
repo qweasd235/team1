@@ -20,5 +20,8 @@ public interface FreeBoardService {
 	public void delete(int b_num) throws Exception;
 	// 글 총 갯수
 	public int totalCount(PagingDto pagingDto) throws Exception;
+	// 답글 쓰기
+	public void comment_Create(FreeBoardVo fb_vo) throws Exception;
+	
 	
 }
