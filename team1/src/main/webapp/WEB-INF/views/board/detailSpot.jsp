@@ -244,6 +244,12 @@ span {
 			var m_detail = $("#m_detail").val(); // 댓글내용
 			var mem_id = "${memberVo.mem_id}" // 작성자
 			var m_point = $("#m_point").val(); // 평점
+			
+			if (m_detail == "") {
+				alert("댓글 내용을 입력해주세요");	
+				return false;
+			}
+			
 			var sendData = {
 				"s_id" : s_id,
 				"m_detail" : m_detail,
