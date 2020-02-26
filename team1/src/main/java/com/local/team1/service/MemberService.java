@@ -23,5 +23,8 @@ public interface MemberService {
 	public int CheckPw(String mem_pw) throws Exception;
 	// 비밀번호 변경
 	public void pw_change(String mem_pw, String mem_id) throws Exception;
+	// 프로필 사진 삭제
+	public void deletePic(String mem_id) throws Exception;
+
 	
 }

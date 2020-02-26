@@ -9,7 +9,7 @@
 	<!-- 게시판 글쓰기 -->
 	<insert id="create">
 		insert into t_board (b_num, b_title, b_content, b_writer, b_pic)
-		values (seq_b_num.nextval, #{b_title}, #{b_content}, #{b_writer}, #{b_pic})
+		values (seq_b_num.nextval, #{b_title}, #{b_content}, #{b_writer}, #{b_pic, jdbcType=VARCHAR})
 	</insert>
 					
 	<!-- 게시판 글 상세보기 -->
@@ -46,6 +46,13 @@
 		select count(*) from t_board
 		<include refid="search"></include>
 	</select>
+	
+	<!-- 게시판 글 조회수 -->
+	<update id="update_read_count">
+		update t_board set
+			b_read_count = b_read_count + 1
+		where b_num = #{b_num}
+	</update>
 	
 	<!-- 게시판 전체리스트보기 -->
 	<select id="listAll" resultType="FreeBoardVo">

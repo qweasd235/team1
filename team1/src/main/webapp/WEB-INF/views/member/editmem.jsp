@@ -6,15 +6,37 @@ $(document).ready(function(){
 	$("#pw_change").click(function(){
 		location.href = "/mem/pw_changeGet";
 	});
+	$("#delPic").click(function(){
+		console.log("clcikDEl");
+			var url = "/mem/deletePic";
+			
+			$.get(url, function(rData) {
+				console.log(rData);
+				alert("삭제되었습니다");
+				
+			});
+//				$.ajax({
+//					"type" : "put",
+//					"url" : url,
+//					"headers" : {
+//						"Content-Type" : "application/json",
+//						"X-HTTP-Method-Override" : "put"
+//					},
+//					"dataType" : "text",
+//					"success" : function(rData) {
+//					console.log(rData);
+//					alert("삭제되었습니다");
+//					}
+//				})
+	});
 });
 </script> 
-    
-
-<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
+   
+   <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 				<div class="inner">
 					<article class="box">
-				
-	<!-- Main -->
+			
+			<!-- Main -->
 
 
 	<h3>회원정보 수정</h3>
@@ -40,13 +62,16 @@ $(document).ready(function(){
 				<th>비밀번호</th>
 				<td><input type="button" id="pw_change" value="비밀번호 변경"/></td>
 			</tr>
+			<tr>
+				<th>프로필 사진 삭제</th>
+				<td><input type="button" id="delPic" value="프로필 사진 삭제"/></td>			
+			</tr>
 		</table>
 			<input type="submit" value="수정완료" id="btnSubmit"/>
 			<input type="button" value="취소" id="btnCancel"/>
 	</form>
-
-	<hr />
-	
+			
+			<hr />
 
 	
 	</article>

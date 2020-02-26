@@ -65,5 +65,11 @@ public class MemberDaoImpl implements MemberDao {
 	public int readPw(String mem_pw) throws Exception {
 		return sqlSession.selectOne(NAMESPACE + ".readPw", mem_pw);
 	}
+	@Override
+	public void deletePic(String mem_id) throws Exception {
+		sqlSession.update(NAMESPACE + ".updatePic", mem_id);
+		
+
+	}
 
 }

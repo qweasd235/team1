@@ -36,7 +36,7 @@ $(document).ready(function() {
 	// 글 수정하기
 	$("#btnModify").click(function() {		
 		$("#b_title").prop("readonly", false).css("background-color", "white");
-		$("#b_content").prop("readonly", false);
+		$("#b_content").prop("readonly", false).focus();
 		$("#pic").show(1000);
 		$(this).hide(600);
 		$("button[type=submit]").show(600);
@@ -44,7 +44,15 @@ $(document).ready(function() {
 	
 	// 글 삭제하기
 	$("#btnDelete").click(function() {
-		location.href = "/board/fbDelete?b_num=${fb_vo.b_num}";
+		var src = $("#img_pic").attr("src");
+		console.log(src);
+		var str = src.substring(src.lastIndexOf("=") + 1);
+		console.log(str);
+		if (!confirm("삭제하시겠습니까?") ) {
+			return false;
+		}
+		location.href = "/board/fbDelete?b_num=${fb_vo.b_num}&fileName=" + str;
+		alert("삭제 되었습니다");
 	});
 	
 	// 리플 쓰기
@@ -222,11 +230,19 @@ $(document).ready(function() {
 							<span><strong>${fb_vo.b_writer }</strong></span>
 						</div>
 						<div class="form-group">
-							<span><img alt='Bootstrap Image Preview'
+					<c:choose>
+					<c:when test="${empty fb_vo.b_pic}">
+							<span><img alt='파일 없음' id="img_null"
+								src='../resources/images/nothing.jpg'/></span>
+					</c:when>
+					<c:otherwise>                                  
+						<span><img alt='이미지' id="img_pic"
 								src='/board/displayFile?fileName=${fb_vo.b_pic}'/></span>
+					</c:otherwise>    
+					</c:choose>
 						</div>
 						<div class="12u$" style="display: none;" id="pic"> 
-							<input type="file" name="file" id="b_pic" value="${fb_vo.b_pic }"/>
+							<input type="file" name="file" id="b_pic" />
 						</div>
 						<hr>
 						<div style="clear:both;">

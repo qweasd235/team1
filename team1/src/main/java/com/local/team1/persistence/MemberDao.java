@@ -24,4 +24,7 @@ public interface MemberDao {
 	public int readPw(String mem_pw) throws Exception;
 	// 비밀번호 변경
 	public int update_pw(String mem_pw, String mem_id) throws Exception;
+	// 프로필 사진 삭제
+	public void deletePic(String mem_id) throws Exception;
+
 }

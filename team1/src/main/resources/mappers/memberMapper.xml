@@ -52,9 +52,18 @@
 	 where mem_id = #{mem_id}
 	</update>
 
+
 		<!-- 비밀번호 체크 -->
   	<select id="readPw" resultType="int" parameterType="String">
   		select count(*) from t_member
   		where mem_pw = #{old_mem_pw}
   	</select>
+
+	<!-- 프로필 사진 삭제 -->
+	<update id="updatePic">
+		update t_member set
+			mem_pic = null
+		where mem_id = #{mem_id}
+	</update>
+
 </mapper>  
