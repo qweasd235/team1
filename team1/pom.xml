@@ -158,6 +158,14 @@
     <scope>test</scope>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-email</artifactId>
+    <version>1.5</version>
+</dependency>
+
+
 <!-- spring-jdbc 연관 라이브러리로 추가됨 -->
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
 <!-- <dependency> -->

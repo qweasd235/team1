@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
+
 <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
@@ -35,6 +36,10 @@ img{
 </style>
 
 <script>
+var msg = "${msg}";
+if(msg == "pw_change_success"){
+	alert("비밀번호가 변경되었습니다.");
+}
 $(document).ready(function() {
 	new Swiper('.swiper-container', {
 		navigation : {
@@ -44,7 +49,7 @@ $(document).ready(function() {
 	});
 });
 </script>
-
+<c:remove var="msg" scope="session"/>
 
 		<!-- Banner -->
 		<!--
