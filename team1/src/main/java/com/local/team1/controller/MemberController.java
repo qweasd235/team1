@@ -16,6 +16,7 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -186,6 +187,42 @@ public class MemberController {
 		return "redirect:/board/home";
 	}
 	
+
+	// 비밀번호 변경 페이지 이동
+	@RequestMapping(value="/pw_changeGet", method=RequestMethod.GET)
+		public String pw_changeGet() throws Exception{
+		
+			return "member/pw_change";
+	}
+	
+	// 비밀번호 변경 post
+	@RequestMapping(value="/pw_changePost", method=RequestMethod.POST)	
+	public String pw_changePost(String old_mem_pw, String mem_pw, HttpSession session) throws Exception{
+		
+		MemberVo memberVo = (MemberVo)session.getAttribute("memberVo");
+		
+		String cur_mem_pw = memberVo.getMem_pw();
+		// 현재 비밀번호가 맞지 않으면
+		if (!old_mem_pw.equals(cur_mem_pw)) {
+			return "redirect:/mem/pw_changeGet";
+		}
+		
+		// 비밀번호를 새로운 비밀번호로 변경
+		String mem_id = memberVo.getMem_id();
+		
+//		int result = memberService.CheckPw(old_mem_pw);
+		
+//		if(result == 1) {
+//			session.setAttribute("msg", "pw_change_fail");
+//			return "redirect:/mem/pw_changeGet";
+//		}
+		
+		session.setAttribute("msg", "pw_change_success");
+		memberService.pw_change(mem_pw, mem_id);
+		
+		return "redirect:/board/home";
+	}
+
 	@RequestMapping(value = "/deletePic" , method = RequestMethod.GET)
 	@ResponseBody
 	public String deletePic(HttpSession session) throws Exception {

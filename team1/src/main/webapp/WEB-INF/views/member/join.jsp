@@ -138,7 +138,7 @@ $(document).ready(function(){
 	</form>
 
 	<hr />
-				
+
 	</article>
 	</div>
 	</section>

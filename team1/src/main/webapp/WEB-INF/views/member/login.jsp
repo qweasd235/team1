@@ -18,6 +18,7 @@ $(function(){
 	
 });
 </script>
+
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 				<div class="inner">
 					<article class="box">
@@ -41,10 +42,10 @@ $(function(){
 
 	<hr />
 
-
 </article>
 </div>
 <br><br><br><br><br><br><br><br><br>       
 </section>
+
 
 <%@ include file="../include/footer.jsp" %>
