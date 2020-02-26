@@ -102,8 +102,14 @@ $(document).ready(function() {
 								<c:forEach items="${list}" var="fb_vo">
 								<tr>
 
-									<td>${fb_vo.b_num}</td>
-									<td><a href="/board/fbRead" data-b_num="${fb_vo.b_num}" class="title">${fb_vo.b_title}</a></td>
+									<td>${fb_vo.b_num}</td>							
+									<td>
+								<c:if test="${fb_vo.b_level gt 0}">
+<%-- 									<img src="../resources/images/nbsp.png" width="${fb_vo.b_level * 10}"/>ㄴ --%>
+										<span style="width: ${fb_vo.b_level * 5}">ㄴ</span>  
+								</c:if>	
+										<a href="/board/fbRead" data-b_num="${fb_vo.b_num}" class="title">${fb_vo.b_title}</a>
+									</td>
 									<td>${fb_vo.b_writer}</td>
 									<td>${fb_vo.b_regdate}</td>
 									<td>${fb_vo.b_read_count}</td>

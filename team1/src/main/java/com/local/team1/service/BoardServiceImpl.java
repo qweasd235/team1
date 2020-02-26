@@ -77,5 +77,7 @@ public class BoardServiceImpl implements BoardService {
 	public int totalCountEdit() throws Exception {
 		return dao.totalCountEdit();
 	}
+	
+	
 
 }

@@ -59,6 +59,16 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 		sqlsession.update(NAMESPACE + ".update_read_count", b_num);
 	}
 
+	@Override
+	public void comment_Create(FreeBoardVo fb_vo) throws Exception {
+		sqlsession.insert(NAMESPACE + ".comment_Create", fb_vo);
+	}
+
+	@Override
+	public void comment_Update(FreeBoardVo fb_vo) throws Exception {
+		sqlsession.update(NAMESPACE + ".comment_Update", fb_vo);
+	}
+
 	
 
 }

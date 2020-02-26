@@ -61,6 +61,13 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		return dao.totalCount(pagingDto);
 	}
 
+	@Transactional
+	@Override
+	public void comment_Create(FreeBoardVo fb_vo) throws Exception {
+		dao.comment_Update(fb_vo);
+		dao.comment_Create(fb_vo);
+	}
+
 	
 
 }

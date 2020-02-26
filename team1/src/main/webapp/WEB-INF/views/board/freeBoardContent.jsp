@@ -44,10 +44,14 @@ $(document).ready(function() {
 	
 	// 글 삭제하기
 	$("#btnDelete").click(function() {
-		var src = $("#img_pic").attr("src");
-		console.log(src);
-		var str = src.substring(src.lastIndexOf("=") + 1);
-		console.log(str);
+		if ("${fb_vo.b_pic}" != "") {
+			var src = $("#img_pic").attr("src");
+			console.log(src);
+			var str = src.substring(src.lastIndexOf("=") + 1);
+			console.log(str);	   			
+		}
+			
+					
 		if (!confirm("삭제하시겠습니까?") ) {
 			return false;
 		}
@@ -122,6 +126,11 @@ $(document).ready(function() {
 				$("#btnModalClose").trigger("click");
 			}
 		}); // $.ajax()
+	});
+	
+	// 답글 버튼
+	$("#btnComment").click(function() {
+		location.href = "/board/fbCommentGET?b_num=${fb_vo.b_num}";
 	});
 	
 	// 리플 삭제
@@ -254,6 +263,8 @@ $(document).ready(function() {
 							<button type="button" class="btn btn-danger"
 								id="btnDelete">삭제</button>
 						</c:if>
+							<button type="button" class="btn btn-info"
+								id="btnComment">답글쓰기</button>
 							<button type="button" class="btn btn-primary"
 								id="btnListAll">목록</button>
 						</div>																							
