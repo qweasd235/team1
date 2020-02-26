@@ -39,10 +39,11 @@ span {
 	height: 20px;
 	width: 20px;
 }
-select > option{
-    background-color: black;
-    
- } 
+
+.sel > option {
+	background-color: black;
+}
+
  </style>
 
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
@@ -97,7 +98,7 @@ select > option{
 							</div>						
 							<div class="form-group">
 								<label for="mark"> 
-								<select name="point" id="m_point">
+								<select class="sel" name="point" id="m_point">
 										<option value="1">★☆☆☆☆</option>
 										<option value="2">★★☆☆☆</option>
 										<option value="3">★★★☆☆</option>
