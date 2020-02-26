@@ -39,8 +39,11 @@ span {
 	height: 20px;
 	width: 20px;
 }
-
-</style>
+select > option{
+    background-color: black;
+    
+ } 
+ </style>
 
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 	<div class="inner">
@@ -89,8 +92,8 @@ span {
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<label for="m_detail">댓글내용</label> <input type="text"
-									id="m_detail" class="form-control" />
+								<label for="m_detail">댓글내용</label> 
+								<input type="text" id="m_detail" class="form-control" />
 							</div>						
 							<div class="form-group">
 								<label for="mark"> 
@@ -262,6 +265,8 @@ span {
 				"data" : JSON.stringify(sendData),
 				"success" : function(rData) {
 					console.log(rData);
+					$("#m_detail").val("");
+					$("#m_point").val("1");
 					replyList();
 				}
 			}); // $.ajax()
