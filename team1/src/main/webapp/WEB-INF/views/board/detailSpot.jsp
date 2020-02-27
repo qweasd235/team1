@@ -40,7 +40,11 @@ span {
 	width: 20px;
 }
 
-</style>
+.sel > option {
+	background-color: black;
+}
+
+ </style>
 
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 	<div class="inner">
@@ -89,12 +93,12 @@ span {
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<label for="m_detail">댓글내용</label> <input type="text"
-									id="m_detail" class="form-control" />
+								<label for="m_detail">댓글내용</label> 
+								<input type="text" id="m_detail" class="form-control" />
 							</div>						
 							<div class="form-group">
 								<label for="mark"> 
-								<select name="point" id="m_point">
+								<select class="sel" name="point" id="m_point">
 										<option value="1">★☆☆☆☆</option>
 										<option value="2">★★☆☆☆</option>
 										<option value="3">★★★☆☆</option>
@@ -112,24 +116,14 @@ span {
 				<hr />
 
 				<!-- 댓글 목록 -->
-				<div class="row">
+				<div class="row" >
 					<div class="col-md-12">
 					<c:if test="${not empty paramMap}">
 						<div>평균 평점 : ${paramMap.avg } 점 참여자 :${paramMap.total } 명</div>
 					</c:if>
 						<table class="table">
-							<thead>
-								<tr>
-									<th>번호</th>
-									<th>평점</th>
-									<th>댓글내용</th>
-									<th>작성자</th>
-									<th>날짜</th>
-<%-- 								<c:if test="${not empty memberVo.mem_id}"> --%>
-<!-- 									<th>수정</th> -->
-<!-- 									<th>삭제</th> -->
-<%-- 								</c:if> --%>
-								</tr>
+							<thead id="replyHead">
+								
 							</thead>
 							<tbody id="replyList">
 
@@ -250,6 +244,12 @@ span {
 			var m_detail = $("#m_detail").val(); // 댓글내용
 			var mem_id = "${memberVo.mem_id}" // 작성자
 			var m_point = $("#m_point").val(); // 평점
+			
+			if (m_detail == "") {
+				alert("댓글 내용을 입력해주세요");	
+				return false;
+			}
+			
 			var sendData = {
 				"s_id" : s_id,
 				"m_detail" : m_detail,
@@ -272,6 +272,8 @@ span {
 				"data" : JSON.stringify(sendData),
 				"success" : function(rData) {
 					console.log(rData);
+					$("#m_detail").val("");
+					$("#m_point").val("1");
 					replyList();
 				}
 			}); // $.ajax()
@@ -362,6 +364,20 @@ span {
 			}); // $.ajax()
 		});
 		
+		//댓글 헤더
+		
+		function replyHead(){
+			var str = "";
+			str +=	"<tr>";
+			str +=  "<th>번호</th>";
+			str +=	"<th>평점</th>";
+			str +=	"<th>댓글내용</th>";
+			str +=	"<th>작성자</th>";
+			str +=	"<th>날짜</th>";
+			str +=   "</tr>";
+
+			$("#replyHead").append(str);
+		}
 	
 		// 댓글 목록 가져오기 - 정의
 		function replyList() {
@@ -370,6 +386,10 @@ span {
 			var url = "/mark/listAll/${vo.s_id}";
 			$.getJSON(url, function(rData) {
 				console.log(rData);
+				if(rData != ""){
+					$("#replyHead").empty();
+					replyHead();
+				}
 				var strHtml = "";
 				$(rData).each(function() {
 					strHtml += "<tr>";
@@ -388,7 +408,7 @@ span {
 						break;
 					}
 					
-					strHtml += "<td>" + this.m_detail + "</td>";
+					strHtml += "<td width='250px' style='word-break:break-all'>" + this.m_detail + "</td>";
 					
 					if(this.mem_pic == null){
 						strHtml += "<td><img src='../resources/images/nothing.jpg' class='imgPro'/>"

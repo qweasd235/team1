@@ -22,5 +22,9 @@ public interface FreeBoardDao {
 	public int totalCount(PagingDto pagingDto) throws Exception;
 	// 조회수
 	public void read_count(int b_num) throws Exception;
+	// 데이터 쓰기 (답글)
+	public void comment_Create(FreeBoardVo fb_vo) throws Exception;
+	// 데이터 업데이트 (답글)
+	public void comment_Update(FreeBoardVo fb_vo) throws Exception;
 	
 }

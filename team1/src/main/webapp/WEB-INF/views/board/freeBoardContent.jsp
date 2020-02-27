@@ -22,7 +22,8 @@ img {
 	height: 140px;
 }
 
-</style>
+
+</style>  
 
 <script>  
 $(document).ready(function() {
@@ -36,7 +37,7 @@ $(document).ready(function() {
 	// 글 수정하기
 	$("#btnModify").click(function() {		
 		$("#b_title").prop("readonly", false).css("background-color", "white");
-		$("#b_content").prop("readonly", false).focus();
+		$("#b_content").prop("readonly", false);
 		$("#pic").show(1000);
 		$(this).hide(600);
 		$("button[type=submit]").show(600);
@@ -44,10 +45,14 @@ $(document).ready(function() {
 	
 	// 글 삭제하기
 	$("#btnDelete").click(function() {
-		var src = $("#img_pic").attr("src");
-		console.log(src);
-		var str = src.substring(src.lastIndexOf("=") + 1);
-		console.log(str);
+		if ("${fb_vo.b_pic}" != "") {
+			var src = $("#img_pic").attr("src");
+			console.log(src);
+			var str = src.substring(src.lastIndexOf("=") + 1);
+			console.log(str);	   			
+		}
+			
+					
 		if (!confirm("삭제하시겠습니까?") ) {
 			return false;
 		}
@@ -55,30 +60,52 @@ $(document).ready(function() {
 		alert("삭제 되었습니다");
 	});
 	
+	// 답글 버튼
+	$("#btnComment").click(function() {
+		location.href = "/board/fbCommentGET?b_num=${fb_vo.b_num}";
+	});
+	
 	// 리플 쓰기
 	$("#btnReplyRegist").click(function() {
 		var b_num = "${fb_vo.b_num}"; // 게시글번호(댓글번호 아님)
-		var r_content = $("#r_content").val(); // 댓글내용		
-		var sendData = {
-				"b_num" : b_num,
-				"r_content" : r_content				
-		};
-		var url = "/reply/register";
+		var r_content = $("#r_content").val(); // 댓글내용	
+		if (r_content == "") {
+			alert("댓글 내용을 입력해주세요");	
+			return;
+		} else {
+			var sendData = {
+					"b_num" : b_num,
+					"r_content" : r_content				
+			};
+			var url = "/reply/register";
 
-		$.ajax({
-			"type" : "post",
-			"url" : url,
-			"headers" : {
-				"Content-Type" : "application/json",
-				"X-HTTP-Method-Override" : "post"
-			},
-			"dataType" : "text",
-			"data" : JSON.stringify(sendData),
-			"success" : function(rData) {
-				console.log(rData);
-				replyList();
-			}
-		}); // $.ajax()
+			$.ajax({
+				"type" : "post",
+				"url" : url,
+				"headers" : {
+					"Content-Type" : "application/json",
+					"X-HTTP-Method-Override" : "post"
+				},
+				"dataType" : "text",
+				"data" : JSON.stringify(sendData),
+				"beforeSend" : function(xmlHttpRequest) {
+					xmlHttpRequest.setRequestHeader("AJAX", "true");
+				},
+				"error" : function(xhr, textStatus, error){
+				    if(xhr.status=="400"){
+				     alert("로그인 후 이용 가능합니다.");
+				     location.href = "/mem/loginGet"; 
+				     return false;
+				    }    
+				},	
+				"success" : function(rData) {
+					console.log(rData);
+					$("#r_content").val("");
+					replyList();
+				}			
+			}); // $.ajax()
+		} // if 
+		
 	});
 	
 	// 리플 수정
@@ -124,6 +151,8 @@ $(document).ready(function() {
 		}); // $.ajax()
 	});
 	
+	
+	
 	// 리플 삭제
 	$("#Reply_Table_List").on("click", ".btnReplyDelete", function() {
 		console.log("클릭");
@@ -142,13 +171,29 @@ $(document).ready(function() {
 				"X-HTTP-Method-Override" : "delete"
 			},
 			"success" : function(rData) {
-				console.log(rData);
+				console.log(rData);				
 				replyList();
+				if(rData != ""){
+					$("#replyHead").empty();					
+				}
 				
 			}
 		}); // $.ajax()		
 	});
 	
+	//댓글 헤더 정의
+	
+	function replyHead(){
+		var str = "";
+		str +=	"<tr>";
+		str +=  "<th>번호</th>";
+		str +=	"<th>내용</th>";
+		str +=	"<th>작성자</th>";		
+		str +=	"<th>날짜</th>";
+		str +=   "</tr>";
+
+		$("#replyHead").append(str);
+	}
 	
 	// 리플 정의
 	function replyList() {
@@ -156,11 +201,15 @@ $(document).ready(function() {
 		var url = "/reply/listAll/${fb_vo.b_num}";
 		$.getJSON(url, function(rData) {
 			console.log(rData);
+			if(rData != ""){
+				$("#replyHead").empty();
+				replyHead();
+			}
 			var strHtml = "";
 			$(rData).each(function() {
 				strHtml += "<tr>";
 				strHtml += "<td>" + this.r_num +"</td>";
-				strHtml += "<td>" + this.r_content + "</td>";
+				strHtml += "<td  width='250px' style='word-break:break-all'>" + this.r_content + "</td>";
 				if(this.mem_pic == null){
 					strHtml += "<td><img src='../resources/images/nothing.jpg' class='imgPro'/>" 
 							+ this.r_writer + "</td>";
@@ -216,15 +265,15 @@ $(document).ready(function() {
 <%-- 							<input type="hidden" name="perPage" value="${pagingDto.perPage}"/> --%>
 						<div class="form-group">
 							<label for="b_title">제목</label>
-							<input type="text" class="form-control" id="b_title" 
-								   name="b_title" value="${fb_vo.b_title }" style="color: black;"
+							<input type="text" id="b_title" class="form-control font_color"
+								   name="b_title" value="${fb_vo.b_title }" 
 								   readonly/>
 						</div>						
 						<div class="form-group">
 							<label for="b_content">내용</label><br>
-							<textarea rows="5" id="b_content" class="form-control"
+							<textarea rows="5" id="b_content" class="form-control font_color"
 								name="b_content" readonly>${fb_vo.b_content }</textarea>
-						</div>
+						</div>   
 						<div class="form-group">
 							<label for="b_writer">글쓴이</label>
 							<span><strong>${fb_vo.b_writer }</strong></span>
@@ -232,8 +281,7 @@ $(document).ready(function() {
 						<div class="form-group">
 					<c:choose>
 					<c:when test="${empty fb_vo.b_pic}">
-							<span><img alt='파일 없음' id="img_null"
-								src='../resources/images/nothing.jpg'/></span>
+							<span></span>
 					</c:when>
 					<c:otherwise>                                  
 						<span><img alt='이미지' id="img_pic"
@@ -254,6 +302,8 @@ $(document).ready(function() {
 							<button type="button" class="btn btn-danger"
 								id="btnDelete">삭제</button>
 						</c:if>
+							<button type="button" class="btn btn-info"
+								id="btnComment">답글쓰기</button>
 							<button type="button" class="btn btn-primary"
 								id="btnListAll">목록</button>
 						</div>																							
@@ -269,13 +319,7 @@ $(document).ready(function() {
 						<article class="box" id="replyBox">
 							<label>댓글</label><br>
 							<table> 
-								<thead>
-									<tr>
-										<th>번호</th>
-										<th>내용</th>
-										<th>작성자</th>
-										<th>날짜</th>										
-									</tr>
+								<thead id="replyHead">									
 								</thead>
 								<tbody id="Reply_Table_List">								
 								</tbody>
