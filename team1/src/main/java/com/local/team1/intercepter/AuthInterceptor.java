@@ -15,16 +15,19 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			throws Exception {
 		HttpSession session = request.getSession();
 		MemberVo memberVo = (MemberVo)session.getAttribute("memberVo");
+		String uri = request.getRequestURI();
+		String query = request.getQueryString(); // ? 뒤로 전달되는 내용
+		String targetLocation;
 		if(memberVo == null) {
-			if(isAjaxRequest(request)) {				
+			if(isAjaxRequest(request)) {
+				targetLocation = uri + "?" + query;
+				session.setAttribute("targetLocation", targetLocation);
 				response.sendError(400);
 				return false;
-			}
-			String uri = request.getRequestURI();
-			String query = request.getQueryString(); // ? 뒤로 전달되는 내용
-			System.out.println("uri:" + uri);
-			System.out.println("query:" + query);
-			String targetLocation = uri + "?" + query;
+			}			
+//			System.out.println("uri:" + uri);
+//			System.out.println("query:" + query);
+			targetLocation = uri + "?" + query;
 			session.setAttribute("targetLocation", targetLocation);
 			response.sendRedirect("/mem/loginGet");
 			return false;
@@ -34,7 +37,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 	
 	private boolean isAjaxRequest(HttpServletRequest req) {
         String header = req.getHeader("AJAX");
-        System.out.println("header:" + header);
+//        System.out.println("header:" + header);
         if ("true".equals(header)){
          return true;
         }else{
