@@ -30,7 +30,7 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public MemberVo readWithPw(String mem_id, String mem_pw) {
-		Map<String, Object> paramMap = new HashMap<String, Object>();
+		Map<String, Object> paramMap = new HashMap<>();
 		paramMap.put("mem_id", mem_id);
 		paramMap.put("mem_pw", mem_pw);
 		return sqlSession.selectOne(NAMESPACE + ".readWithPw", paramMap);
@@ -70,6 +70,22 @@ public class MemberDaoImpl implements MemberDao {
 		sqlSession.update(NAMESPACE + ".updatePic", mem_id);
 		
 
+	}
+
+//	@Override
+//	public void createAuthKey(String mem_email, String auth_key) throws Exception {
+//		MemberVo vo = new MemberVo();
+//		vo.setAuth_key(auth_key);
+//		vo.setMem_email(mem_email);
+//		
+//		sqlSession.update(NAMESPACE + ".createAuthKey", vo);
+//		
+//	}
+	
+	@Override
+	public void verifyMember(MemberVo vo) throws Exception {
+		// TODO Auto-generated method stub
+		sqlSession.update(NAMESPACE + ".verifyMember", vo);
 	}
 
 }

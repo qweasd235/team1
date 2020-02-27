@@ -25,6 +25,6 @@ public interface MemberService {
 	public void pw_change(String mem_pw, String mem_id) throws Exception;
 	// 프로필 사진 삭제
 	public void deletePic(String mem_id) throws Exception;
-
-	
+	// 이메일 권한 인증 
+	public void verifyMember(MemberVo vo) throws Exception;	
 }
