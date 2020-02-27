@@ -39,10 +39,11 @@ span {
 	height: 20px;
 	width: 20px;
 }
-select > option{
-    background-color: black;
-    
- } 
+
+.sel > option {
+	background-color: black;
+}
+
  </style>
 
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
@@ -97,7 +98,7 @@ select > option{
 							</div>						
 							<div class="form-group">
 								<label for="mark"> 
-								<select name="point" id="m_point">
+								<select class="sel" name="point" id="m_point">
 										<option value="1">★☆☆☆☆</option>
 										<option value="2">★★☆☆☆</option>
 										<option value="3">★★★☆☆</option>
@@ -243,6 +244,12 @@ select > option{
 			var m_detail = $("#m_detail").val(); // 댓글내용
 			var mem_id = "${memberVo.mem_id}" // 작성자
 			var m_point = $("#m_point").val(); // 평점
+			
+			if (m_detail == "") {
+				alert("댓글 내용을 입력해주세요");	
+				return false;
+			}
+			
 			var sendData = {
 				"s_id" : s_id,
 				"m_detail" : m_detail,
