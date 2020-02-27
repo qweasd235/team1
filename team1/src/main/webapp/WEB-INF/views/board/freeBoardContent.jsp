@@ -88,11 +88,21 @@ $(document).ready(function() {
 				},
 				"dataType" : "text",
 				"data" : JSON.stringify(sendData),
+				"beforeSend" : function(xmlHttpRequest) {
+					xmlHttpRequest.setRequestHeader("AJAX", "true");
+				},
+				"error" : function(xhr, textStatus, error){
+				    if(xhr.status=="400"){
+				     alert("로그인 후 이용 가능합니다.");
+				     location.href = "/mem/loginGet"; 
+				     return false;
+				    }    
+				},	
 				"success" : function(rData) {
 					console.log(rData);
 					$("#r_content").val("");
 					replyList();
-				}
+				}			
 			}); // $.ajax()
 		} // if 
 		
