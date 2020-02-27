@@ -34,7 +34,6 @@ $(document).ready(function(){
 					<article class="box">
 
 	<!-- Main -->
-	${memberVo}
 	<h3>비밀번호 변경</h3>
 	<form id="joinForm" method="post" action="/mem/pw_changePost" autocomplete="off" enctype="multipart/form-data">
 		<table border="1">

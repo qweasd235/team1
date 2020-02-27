@@ -5,8 +5,10 @@
 $(function(){
 	
 	var msg = "${msg}";
-	if (msg == "login_fail") {
-		alert("로그인 실패");
+	if (msg == "notVerify") {
+		alert("이메일 인증을 하지 않으셨습니다. 가입하실때 입력하신 이메일을 확인해주세요");
+	}else if(msg == "notCorrect"){
+		alert("가입하지 않은 아이디이거나, 잘못된 비밀번호입니다");
 	}
 	
 // 	$(".changeColor").css("background-color", "white")
@@ -18,6 +20,7 @@ $(function(){
 	
 });
 </script>
+
 
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 				<div class="inner">
@@ -33,7 +36,7 @@ $(function(){
 			</tr>
 			<tr>
 				<th>패스워드</th>
-				<td><input class="changeColor" type="password" id="mem_id" name="mem_pw" required/></td>
+				<td><input class="changeColor" type="password" id="mem_pw" name="mem_pw" required/></td>
 			</tr>
 		</table>
 			<input type="submit" value="로그인" id="btnSubmit"/>

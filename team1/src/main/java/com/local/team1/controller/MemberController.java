@@ -63,22 +63,31 @@ public class MemberController {
 	}
 	
 	// 로그인 post
+	
 	@RequestMapping(value="/loginPost", method= RequestMethod.POST)
 	public String loginPost(HttpSession session, LoginDto loginDto, Model model) throws Exception{
+		
 		MemberVo memberVo = memberService.login(loginDto);
 				
 		System.out.println("loginDto:" + loginDto);
 		System.out.println("memberVo:" + memberVo);
-		if(memberVo == null) {
-			session.setAttribute("msg", "login_fail");
+		
+		if(memberVo != null) {
+			if(memberVo.getAuth_key().equals("y")) {
+				System.out.println("y");
+				 session.setAttribute("msg", "Y");
+			} else if(memberVo.getAuth_key().equals("N")) {
+				session.setAttribute("msg", "notVerify");
+				return "redirect:/mem/loginGet";
+			}
+		} else {
+			session.setAttribute("msg", "notCorrect");
 			return "redirect:/mem/loginGet";
 		}
-//		else {
-//			session.setAttribute("msg", "login_success");
-//		}
 			model.addAttribute("memberVo", memberVo);
-		return "redirect:/board/home" ;
+			return "redirect:/board/home";
 	}
+	
 	
 	//아이디 중복체크
 	@ResponseBody
@@ -96,7 +105,7 @@ public class MemberController {
 	
 	// 회원가입 post 처리
 	@RequestMapping(value="/joinPost", method= RequestMethod.POST)
-	public String joinPost(MemberVo vo, String mem_id, MultipartHttpServletRequest req) throws Exception {
+	public String joinPost(MemberVo vo, String mem_id, MultipartHttpServletRequest req, RedirectAttributes rttr) throws Exception {
 		
 		int result = memberService.CheckId(mem_id);
 		
@@ -106,10 +115,10 @@ public class MemberController {
 			String mem_pic = dataUpload(req);
 			vo.setMem_pic(mem_pic);
 			memberService.join(vo);
+			
 		}
-		
-		
-		return "redirect:/";
+				
+		return "/member/auth_confirm";
 	}
 	
 	//파일첨부 메쏘드
@@ -234,5 +243,13 @@ public class MemberController {
 		return "success";
 	}
 
+	//이메일인증
+	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
+	public String emailConfirm(MemberVo vo, Model model) throws Exception { // 이메일인증
+		memberService.verifyMember(vo);
+		model.addAttribute("mem_name", vo.getMem_name());
+
+		return "member/auth_success";
+	}
 
 }

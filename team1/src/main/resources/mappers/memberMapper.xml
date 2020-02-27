@@ -65,5 +65,17 @@
 			mem_pic = null
 		where mem_id = #{mem_id}
 	</update>
+	<!-- 권한키 생성 -->
+	<update id="createAuthKey">
+	update t_member set 
+		auth_key = #{auth_key, jdbcType=VARCHAR} 
+	where mem_email = #{mem_email, jdbcType=VARCHAR}
+	</update>
+	
+	<update id="verifyMember">
+		update t_member set auth_key='y' 
+		where mem_id=#{mem_id, jdbcType=VARCHAR} and mem_email=#{mem_email, jdbcType=VARCHAR}
+	</update>
+	
 
 </mapper>  

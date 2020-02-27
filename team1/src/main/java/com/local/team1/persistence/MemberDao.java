@@ -26,5 +26,8 @@ public interface MemberDao {
 	public int update_pw(String mem_pw, String mem_id) throws Exception;
 	// 프로필 사진 삭제
 	public void deletePic(String mem_id) throws Exception;
-
+	// 권한키
+//	public void createAuthKey(String mem_email, String auth_key) throws Exception;
+	// 이메일 권한 인증
+	public void verifyMember(MemberVo vo) throws Exception;
 }
