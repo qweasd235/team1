@@ -15,8 +15,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		
-		HttpSession session = request.getSession();
-		int b_num = (int)session.getAttribute("b_num");
+		HttpSession session = request.getSession();		
 		PagingDto pagingDto = (PagingDto)session.getAttribute("pagingDto");
 		MemberVo memberVo = (MemberVo)session.getAttribute("memberVo");
 		String uri = request.getRequestURI();
@@ -25,8 +24,9 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 //		System.out.println("uri:" + uri);
 //		System.out.println("query:" + query);
 		String targetLocation;
-		if(memberVo == null) {
+		if(memberVo == null) {			
 			if(isAjaxRequest(request)) {
+				int b_num = (int)session.getAttribute("b_num");
 				targetLocation = "/freeboard/fbRead?b_num=" + b_num + "&page=" + pagingDto.getPage();				
 				session.setAttribute("targetLocation", targetLocation);
 				session.removeAttribute("b_num");
