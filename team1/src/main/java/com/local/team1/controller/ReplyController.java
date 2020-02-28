@@ -47,8 +47,7 @@ public class ReplyController {
 	// 댓글 삭제
 	@RequestMapping(value = "/delete/{r_num}/{b_num}", method = RequestMethod.DELETE)
 	public String delete(@PathVariable("r_num") int r_num, @PathVariable("b_num") int b_num) throws Exception {
-		// b_num 은 해당 게시글의 댓글 한번에 삭제하기위해 지금은 잠시 안씀
-		rService.delete(r_num);
+		rService.delete(r_num, b_num);
 		return "success";
 	}
 	

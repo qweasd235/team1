@@ -79,6 +79,13 @@
 		where b_ref = #{b_ref} and b_step &gt; #{b_step}
 	</update>
 	
+	<!-- 리플 갯수 -->
+	<update id="Reply_Count_Update">
+		update t_board set
+			r_count = r_count + #{count}
+		where b_num = #{b_num}
+	</update>
+	
 	<!-- 검색 정의 -->
 	<sql id="search">
 		<if test="searchType != null">
