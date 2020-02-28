@@ -3,6 +3,10 @@
 <%@ include file="../include/header.jsp" %>
 <script>
 $(document).ready(function(){
+	$("#btnCancel").click(function(){
+		location.href = "/board/home";
+	});
+	
 	$("#pw_change").click(function(){
 		location.href = "/mem/pw_changeGet";
 	});
