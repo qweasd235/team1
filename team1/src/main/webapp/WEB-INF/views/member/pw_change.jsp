@@ -8,7 +8,9 @@
 <script>
 var msg = "${msg}";
 if (msg == "pw_change_fail") {
-	alert("비밀번호 변경 실패");
+	alert("현재 비밀번호가 틀렸습니다.");
+}else if(msg == "pw_not_equal"){
+	alert("변경할 비밀번호와 변경할 비밀번호 확인을 똑같이 입력해주세요.");
 }
 
 $(document).ready(function(){
