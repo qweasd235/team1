@@ -1,6 +1,8 @@
 package com.local.team1.persistence;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -67,6 +69,14 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 	@Override
 	public void comment_Update(FreeBoardVo fb_vo) throws Exception {
 		sqlsession.update(NAMESPACE + ".comment_Update", fb_vo);
+	}
+
+	@Override
+	public void reply_count(int count, int b_num) throws Exception {
+		Map<String, Integer> paramMap = new HashMap<>(); 
+		paramMap.put("count", count);
+		paramMap.put("b_num", b_num);
+		sqlsession.update(NAMESPACE + ".Reply_Count_Update", paramMap);
 	}
 
 	

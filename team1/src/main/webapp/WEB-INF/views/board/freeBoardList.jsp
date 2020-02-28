@@ -111,7 +111,8 @@ $(document).ready(function() {
 									</c:forEach> 
 									<span>ㄴ</span> 
 								</c:if>	
-										<a href="/board/fbRead" data-b_num="${fb_vo.b_num}" class="title">${fb_vo.b_title}</a>
+										<a href="/board/fbRead" data-b_num="${fb_vo.b_num}" class="title">${fb_vo.b_title}
+										<span class="badge badge-secondary">${fb_vo.r_count}</span></a>
 									</td>
 									<td>${fb_vo.b_writer}</td>
 									<td>${fb_vo.b_regdate}</td>

@@ -13,6 +13,7 @@ public class FreeBoardVo {
 	private int b_ref;
 	private int b_step;
 	private int b_level;
+	private int r_count;
 	
 	public int getB_num() {
 		return b_num;
@@ -74,13 +75,21 @@ public class FreeBoardVo {
 	public void setB_level(int b_level) {
 		this.b_level = b_level;
 	}
+	public int getR_count() {
+		return r_count;
+	}
+	public void setR_count(int r_count) {
+		this.r_count = r_count;
+	}
 	
 	@Override
 	public String toString() {
 		return "FreeBoardVo [b_num=" + b_num + ", b_title=" + b_title + ", b_content=" + b_content + ", b_writer="
 				+ b_writer + ", b_regdate=" + b_regdate + ", b_read_count=" + b_read_count + ", b_pic=" + b_pic
-				+ ", b_ref=" + b_ref + ", b_step=" + b_step + ", b_level=" + b_level + "]";
+				+ ", b_ref=" + b_ref + ", b_step=" + b_step + ", b_level=" + b_level + ", r_count=" + r_count + "]";
 	}
+	
+	
 	
 	
 	

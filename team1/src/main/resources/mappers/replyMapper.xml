@@ -39,10 +39,5 @@
 		delete from t_reply
 		where b_num = #{b_num}
 	</delete>
-	
-	
-	
-	
-		
-		
+			
 </mapper>  

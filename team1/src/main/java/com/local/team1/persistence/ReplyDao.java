@@ -16,4 +16,5 @@ public interface ReplyDao {
 	// 데이터 삭제 by b_num (해당 게시글의 댓글 한번에 삭제)
 	public void deleteByb_num(int b_num) throws Exception;
 	
+	
 }
