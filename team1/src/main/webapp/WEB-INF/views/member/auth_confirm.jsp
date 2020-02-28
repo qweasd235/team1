@@ -18,7 +18,7 @@ $(function(){
         <p class="scMessage2">인증메일의 링크를 누르면 회원가입이 완료됩니다.</p>
         
 	
-			<input type="submit" value="확인" id="btnConfirm"/>
+			<input type="button" value="확인" id="btnConfirm"/>
 			
 
 
@@ -26,7 +26,7 @@ $(function(){
 
 </article>
 </div>
-<br><br><br><br><br><br><br><br><br>       
+<br><br><br><br><br><br><br><br><br><br><br><br><br>       
 </section>
 
 

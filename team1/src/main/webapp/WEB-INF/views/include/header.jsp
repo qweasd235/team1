@@ -30,7 +30,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<div class="logo"><a href="/board/home">TEAM1 <span>by TEAM1</span></a></div>
+				<div class="logo"><a href="/board/home">방방곡곡 <span>by TEAM1</span></a></div>
 				<c:choose>
 					<c:when test="${memberVo.mem_name != null}">
 						<span>${memberVo.mem_name}님 환영합니다.</span>
@@ -63,7 +63,7 @@
 					<li><a href="/board/detail?s_cate=서울/경기">서울/경기</a></li>
 					<li><a href="/board/detail?s_cate=강원도">강원도</a></li>
 					<li><a href="/board/detail?s_cate=충청/전라">충청/전라</a></li>
-					<li><a href="/board/detail?s_cate=경남">경남</a></li>
+					<li><a href="/board/detail?s_cate=경남">경상도</a></li>
 					<li>--커뮤니티--</li>
 					<li><a href="/board/freeBoardList">자유 게시판</a></li>
 				</ul>

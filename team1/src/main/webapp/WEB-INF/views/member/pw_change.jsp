@@ -57,8 +57,10 @@ $(document).ready(function(){
 	</form>
 
 	<hr />
-
 	</article>
+	<c:forEach begin="1" end="7">
+		<br>
+	</c:forEach>
 	</div>
 	</section>
 <%@ include file="../include/footer.jsp" %>
