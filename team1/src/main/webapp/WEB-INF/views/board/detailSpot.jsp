@@ -360,6 +360,9 @@ span {
 					console.log(rData);
 					replyList();
 					$("#btnModalClose").trigger("click");
+					if(rData != ""){
+						$("#replyHead").empty();
+					}
 				}
 			}); // $.ajax()
 		});
