@@ -62,13 +62,13 @@ $(document).ready(function() {
 		if (!confirm("삭제하시겠습니까?") ) {
 			return false;
 		}
-		location.href = "/board/fbDelete?b_num=${fb_vo.b_num}&fileName=" + str;
+		location.href = "/freeboard/fbDelete?b_num=${fb_vo.b_num}&fileName=" + str;
 		alert("삭제 되었습니다");
 	});
 	
 	// 답글 버튼
 	$("#btnComment").click(function() {
-		location.href = "/board/fbCommentGET?b_num=${fb_vo.b_num}";
+		location.href = "/freeboard/fbCommentGET?b_num=${fb_vo.b_num}";
 	});
 	
 	// 리플 쓰기
@@ -254,7 +254,7 @@ $(document).ready(function() {
 <!-- 							<p>01.01.2017</p> -->
 						</header>
 						<form id="myform" method="post"
-							  action="/board/fbModify" enctype="multipart/form-data">
+							  action="/freeboard/fbModify" enctype="multipart/form-data">
 							<input type="hidden" name="b_num" value="${fb_vo.b_num}"/>
 <%-- 							<input type="hidden" name="page" value="${pagingDto.page}"/> --%>
 <%-- 							<input type="hidden" name="perPage" value="${pagingDto.perPage}"/> --%>
@@ -305,7 +305,7 @@ $(document).ready(function() {
 						</form>
 						
 						<!-- 데이터만 보내기 -->
-						<form id="frmPage" action="/board/freeBoardList" method="get">
+						<form id="frmPage" action="/freeboard/freeBoardList" method="get">
 							<input type="hidden" name="b_num" />
 							<input type="hidden" name="page" value="${pagingDto.page}"/>						
 						</form>

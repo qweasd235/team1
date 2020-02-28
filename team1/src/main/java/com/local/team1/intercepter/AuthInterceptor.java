@@ -27,7 +27,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 		String targetLocation;
 		if(memberVo == null) {
 			if(isAjaxRequest(request)) {
-				targetLocation = "/board/fbRead?b_num=" + b_num + "&page=" + pagingDto.getPage();				
+				targetLocation = "/freeboard/fbRead?b_num=" + b_num + "&page=" + pagingDto.getPage();				
 				session.setAttribute("targetLocation", targetLocation);
 				session.removeAttribute("b_num");
 				session.removeAttribute("pagingDto");

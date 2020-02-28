@@ -15,7 +15,7 @@ $(function() {
 	<!-- Main -->
 ${fb_vo}
 	<h3>답글쓰기</h3>
-	<form method="post" action="/board/fbCommentPOST" enctype="multipart/form-data">	
+	<form method="post" action="/freeboard/fbCommentPOST" enctype="multipart/form-data">	
 			<input type="hidden" name="b_ref" value="${fb_vo.b_ref}"/>
 			<input type="hidden" name="b_step" value="${fb_vo.b_step}"/>
 			<input type="hidden" name="b_level" value="${fb_vo.b_level}"/>
