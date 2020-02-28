@@ -113,7 +113,10 @@ public class MemberController {
 	
 	// 회원가입 post 처리
 	@RequestMapping(value="/joinPost", method= RequestMethod.POST)
-	public String joinPost(MemberVo vo, String mem_id, MultipartHttpServletRequest req, RedirectAttributes rttr) throws Exception {
+	public String joinPost(MemberVo vo, MultipartHttpServletRequest req) throws Exception {
+		
+		System.out.println(vo);
+		String mem_id = vo.getMem_id();
 		
 		int result = memberService.CheckId(mem_id);
 		
@@ -254,8 +257,9 @@ public class MemberController {
 	//이메일인증
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
 	public String emailConfirm(MemberVo vo, Model model) throws Exception { // 이메일인증
+		System.out.println(vo);
 		memberService.verifyMember(vo);
-		model.addAttribute("mem_name", vo.getMem_name());
+		model.addAttribute("mem_id", vo.getMem_id());
 
 		return "member/auth_success";
 	}

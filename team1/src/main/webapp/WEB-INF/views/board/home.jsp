@@ -60,8 +60,7 @@ $(document).ready(function() {
 			<section id="banner" class="bg-img" data-bg="banner.jpg">
 				<div class="inner">
 					<header>
-						<h1>Team1 Project</h1>
-						<p>경복궁</p>
+						<h1>방방곡곡</h1>
 					</header>
 				</div>
 				<a href="#one" class="more">Learn More</a>
