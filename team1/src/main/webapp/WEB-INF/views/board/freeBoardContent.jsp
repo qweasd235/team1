@@ -27,6 +27,12 @@ img {
 
 <script>  
 $(document).ready(function() {
+	$('input[type="text"]').keydown(function() {
+		  if (event.keyCode === 13) {
+		    event.preventDefault();
+		 };
+	});
+	
 	jQuery.noConflict();	// 마법의 단어(충돌할때)
 	$(".font_color").css("color", "black");
 	// 리스트 가기
@@ -35,7 +41,7 @@ $(document).ready(function() {
 	});
 	
 	// 글 수정하기
-	$("#btnModify").click(function() {		
+	$("#btnModify").click(function() {			
 		$("#b_title").prop("readonly", false).css("background-color", "white");
 		$("#b_content").prop("readonly", false);
 		$("#pic").show(1000);
@@ -44,7 +50,7 @@ $(document).ready(function() {
 	}); 
 	
 	// 글 삭제하기
-	$("#btnDelete").click(function() {
+	$("#btnDelete").click(function() {		
 		if ("${fb_vo.b_pic}" != "") {
 			var src = $("#img_pic").attr("src");
 			console.log(src);
@@ -72,7 +78,7 @@ $(document).ready(function() {
 		if (r_content == "") {
 			alert("댓글 내용을 입력해주세요");	
 			return;
-		} else {
+		} else {  
 			var sendData = {
 					"b_num" : b_num,
 					"r_content" : r_content				
@@ -247,7 +253,7 @@ $(document).ready(function() {
 							
 <!-- 							<p>01.01.2017</p> -->
 						</header>
-						<form id="myform" method="post" 
+						<form id="myform" method="post"
 							  action="/board/fbModify" enctype="multipart/form-data">
 							<input type="hidden" name="b_num" value="${fb_vo.b_num}"/>
 <%-- 							<input type="hidden" name="page" value="${pagingDto.page}"/> --%>
