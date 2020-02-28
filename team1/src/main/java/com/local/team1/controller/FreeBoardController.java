@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -69,6 +70,8 @@ public class FreeBoardController {
 	public String freeBoardRead(@RequestParam("b_num") int b_num, Model model, 
 								HttpSession session, @ModelAttribute PagingDto pagingDto) throws Exception {
 		FreeBoardVo fb_vo = fb_Service.read(b_num);
+		session.setAttribute("b_num", b_num);
+		session.setAttribute("pagingDto", pagingDto);
 		model.addAttribute("fb_vo", fb_vo);
 		MemberVo memberVo = (MemberVo)session.getAttribute("memberVo");
 		model.addAttribute("memberVo", memberVo);
