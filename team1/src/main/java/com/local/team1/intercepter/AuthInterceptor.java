@@ -22,8 +22,8 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 		String uri = request.getRequestURI();
 		String query = request.getQueryString(); // ? 뒤로 전달되는 내용
 					
-		System.out.println("uri:" + uri);
-		System.out.println("query:" + query);
+//		System.out.println("uri:" + uri);
+//		System.out.println("query:" + query);
 		String targetLocation;
 		if(memberVo == null) {
 			if(isAjaxRequest(request)) {
