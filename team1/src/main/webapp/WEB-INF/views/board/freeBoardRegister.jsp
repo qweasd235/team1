@@ -31,8 +31,9 @@
 
 	</article>
 	</div>
-	<br><br><br>   
-	
+	<c:forEach begin="1" end="5">
+		<br> 
+	</c:forEach>
 
 </section>
 

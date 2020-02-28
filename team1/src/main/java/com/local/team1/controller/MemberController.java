@@ -71,6 +71,8 @@ public class MemberController {
 				
 		System.out.println("loginDto:" + loginDto);
 		System.out.println("memberVo:" + memberVo);
+		String targetLocation = (String)session.getAttribute("targetLocation");
+		String redirectPage = "/board/home";
 		
 		if(memberVo != null) {
 			if(memberVo.getAuth_key().equals("y")) {
@@ -84,8 +86,14 @@ public class MemberController {
 			session.setAttribute("msg", "notCorrect");
 			return "redirect:/mem/loginGet";
 		}
+		
+		if (targetLocation != null) {
+			redirectPage = targetLocation;
+		}
+		System.out.println("redirectPage:" + redirectPage);
+		
 			model.addAttribute("memberVo", memberVo);
-			return "redirect:/board/home";
+			return "redirect:" + redirectPage;
 	}
 	
 	
