@@ -17,18 +17,27 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 		MemberVo memberVo = (MemberVo)session.getAttribute("memberVo");
 		String uri = request.getRequestURI();
 		String query = request.getQueryString(); // ? 뒤로 전달되는 내용
+					
+		System.out.println("uri:" + uri);
+		System.out.println("query:" + query);
 		String targetLocation;
 		if(memberVo == null) {
 			if(isAjaxRequest(request)) {
-				targetLocation = uri + "?" + query;
+				targetLocation = "/board/fbRead?" + query;				
+				System.out.println("targetLocation(ajax) : " + targetLocation);
 				session.setAttribute("targetLocation", targetLocation);
 				response.sendError(400);
 				return false;
 			}			
 //			System.out.println("uri:" + uri);
 //			System.out.println("query:" + query);
+		if (query != null) {
 			targetLocation = uri + "?" + query;
+		} else {
+			targetLocation = uri;
+		}			
 			session.setAttribute("targetLocation", targetLocation);
+			System.out.println("targetLocation : " + targetLocation);
 			response.sendRedirect("/mem/loginGet");
 			return false;
 		}

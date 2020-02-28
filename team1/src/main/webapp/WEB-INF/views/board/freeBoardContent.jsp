@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../include/header.jsp" %>
-
+<%@ include file="../include/header.jsp" %>   
+ 
 <style>
 #replyBox {
 	background-color: gray;
@@ -239,26 +239,15 @@ $(document).ready(function() {
 </script>
 
 
-		<!-- Content -->
-		<!--
-			Note: To show a background image, set the "data-bg" attribute below
-			to the full filename of your image. This is used in each section to set
-			the background image.
-		-->
-			<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
+<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 				<div class="inner">
-					<div class="row">
 					<article class="box">
 						<header>							
 							<h2>글 상세보기</h2>
-							<h5>확인용</h5>
-							${memberVo}
-							${pagingDto}
-							${fb_vo }
-							<h5>// 확인용</h5>
+							
 <!-- 							<p>01.01.2017</p> -->
 						</header>
-						<form id="myform" role="form" method="post" 
+						<form id="myform" method="post" 
 							  action="/board/fbModify" enctype="multipart/form-data">
 							<input type="hidden" name="b_num" value="${fb_vo.b_num}"/>
 <%-- 							<input type="hidden" name="page" value="${pagingDto.page}"/> --%>
@@ -379,7 +368,6 @@ $(document).ready(function() {
 													
 						</article> 
 					</article>
-					</div>
 				</div>
 			</section>
 
