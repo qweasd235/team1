@@ -10,6 +10,15 @@ $(document).ready(function(){
 	$("#pw_change").click(function(){
 		location.href = "/mem/pw_changeGet";
 	});
+	$("#btnSubmit").click(function(){
+		if($("mem_email").val == ""){
+			alert("변경할 이메일 주소를 입력해주세요.");
+			$("#mem_email").focus();
+			return false;
+		}	
+	});
+	
+	
 	$("#delPic").click(function(){
 		console.log("clcikDEl");
 			var url = "/mem/deletePic";
@@ -56,7 +65,7 @@ $(document).ready(function(){
 			</tr>
 			<tr>
 				<th>이메일</th>
-				<td><input type="email" name="mem_email" value="${memberVo.mem_email}"></td>
+				<td><input type="email" name="mem_email" id="mem_email" value="${memberVo.mem_email}"></td>
 			</tr>
 			<tr>
 				<th>프로필 사진</th>
