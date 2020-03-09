@@ -65,6 +65,8 @@
 			<exclude-mapping path="/board/home"/>
 			<exclude-mapping path="/board/displayFile"/>
 			<exclude-mapping path="/board/detail"/>
+			<exclude-mapping path="/board/regist"/>
+			<exclude-mapping path="/board/editPage"/>
 			<exclude-mapping path="/board/detailContent"/>
 			<exclude-mapping path="/board/freeBoardList"/>
 			<exclude-mapping path="/board/fbRead"/>
