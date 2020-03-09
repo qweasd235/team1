@@ -118,6 +118,9 @@ hr {
 				</div>
 			</footer>
 		</article>
+		<c:forEach begin="1" end="9">
+			<br>
+		</c:forEach>
 	</div>
 </section>
 <%@ include file="../include/footer.jsp"%>
