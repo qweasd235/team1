@@ -16,7 +16,7 @@
 <script>
 $(document).ready(function() {
 	$("#btnRegister").click(function() {
-		location.href = "/board/fbRegisterGet";
+		location.href = "/freeboard/fbRegisterGet";
 	});
 	
 
@@ -25,7 +25,7 @@ $(document).ready(function() {
 		e.preventDefault();			
 		var b_num = $(this).attr("data-b_num");
 		$("input[name=b_num]").val(b_num);
-		$("#frmPage").attr("action", "/board/fbRead");
+		$("#frmPage").attr("action", "/freeboard/fbRead");
 		$("#frmPage").submit();
 	});
 	
@@ -58,7 +58,7 @@ $(document).ready(function() {
 							</div>
 							<div class="col-md-5">&nbsp;</div>
 							<div class="col-md-6">								
-								<form class="form-inline" action="/board/freeBoardList">
+								<form class="form-inline" action="/freeboard/freeBoardList">
 									<select class="form-control" name="searchType">
 										<option value="title" 
 										<c:if test="${pagingDto.searchType == 'title'}">
@@ -111,7 +111,7 @@ $(document).ready(function() {
 									</c:forEach> 
 									<span>ㄴ</span> 
 								</c:if>	
-										<a href="/board/fbRead" data-b_num="${fb_vo.b_num}" class="title">${fb_vo.b_title}
+										<a href="/freeboard/fbRead" data-b_num="${fb_vo.b_num}" class="title">${fb_vo.b_title}
 										<span class="badge badge-secondary">${fb_vo.r_count}</span></a>
 									</td>
 									<td>${fb_vo.b_writer}</td>
@@ -125,7 +125,7 @@ $(document).ready(function() {
 		<!-- // 게시판 테이블 -->
 		
 		<!-- 데이터 전송 -->
-		<form id="frmPage" action="/board/freeBoardList" method="get">
+		<form id="frmPage" action="/freeboard/freeBoardList" method="get">
 			<input type="hidden" name="b_num" />
 			<input type="hidden" name="page" value="${pagingDto.page}"/>						
 			<input type="hidden" name="searchType" value="${pagingDto.searchType}"/>						

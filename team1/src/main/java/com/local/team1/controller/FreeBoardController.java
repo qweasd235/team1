@@ -26,7 +26,7 @@ import com.local.team1.domain.PagingDto;
 import com.local.team1.service.FreeBoardService;
 
 @Controller
-@RequestMapping("/board/*")
+@RequestMapping("/freeboard/*")
 public class FreeBoardController {
 	
 	@Resource
@@ -62,7 +62,7 @@ public class FreeBoardController {
 		fb_vo.setB_writer(memberVo.getMem_id());
 		fb_vo.setB_pic(b_pic);
 		fb_Service.create(fb_vo);
-		return "redirect:/board/freeBoardList";
+		return "redirect:/freeboard/freeBoardList";
 	}
 		
 	// 게시판 상세보기
@@ -89,7 +89,7 @@ public class FreeBoardController {
 			fb_vo.setB_pic(b_pic);			
 			fb_Service.modify_b_pic(fb_vo);
 		}				
-		return "redirect:/board/freeBoardList";
+		return "redirect:/freeboard/freeBoardList";
 	}
 	
 	// 게시판 글 삭제하기
@@ -100,7 +100,7 @@ public class FreeBoardController {
 		if(!fileName.equals("")) {
 			boardFileDelete(fileName);
 		}
-		return "redirect:/board/freeBoardList";
+		return "redirect:/freeboard/freeBoardList";
 	}
 	
 	// 게시판 글 답글쓰기 폼
@@ -122,7 +122,7 @@ public class FreeBoardController {
 		System.out.println("step == " + fb_vo.getB_step());
 		System.out.println("level == " + fb_vo.getB_level());
 		fb_Service.comment_Create(fb_vo);
-		return "redirect:/board/freeBoardList";
+		return "redirect:/freeboard/freeBoardList";
 	}
 	
 	//파일첨부 메쏘드

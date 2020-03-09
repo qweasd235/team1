@@ -8,7 +8,7 @@
 	<!-- Main -->
 
 	<h3>글쓰기</h3>
-	<form method="post" action="/board/fbRegisterPOST" enctype="multipart/form-data">	
+	<form method="post" action="/freeboard/fbRegisterPOST" enctype="multipart/form-data">	
 		<div class="row uniform">
 			<div class="12u$">
 				<input type="text" name="b_title" id="b_title" placeholder="제목" />
