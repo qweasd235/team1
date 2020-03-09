@@ -34,7 +34,7 @@
 				<div class="logo"><a href="/board/home">방방곡곡 <span>by TEAM1</span></a></div>
 				<c:choose>
 					<c:when test="${memberVo.mem_name != null}">
-						<span>${memberVo.mem_name}님 환영합니다.</span>
+						<span>${memberVo.mem_id}님 환영합니다.</span>
 					</c:when>
 					<c:otherwise>
 						<span></span>
