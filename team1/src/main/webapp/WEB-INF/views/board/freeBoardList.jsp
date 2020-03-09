@@ -11,11 +11,20 @@
 	background-color: white;
 	color: black; 	 		
 }
+
+a {
+	color : aqua;
+	
+}
 </style>
  
 <script>
 $(document).ready(function() {
 	$("#btnRegister").click(function() {
+		if (${memberVo == null}) {
+			alert("로그인 후 이용가능합니다.");
+		}
+		
 		location.href = "/freeboard/fbRegisterGet";
 	});
 	
@@ -47,7 +56,7 @@ $(document).ready(function() {
 			to the full filename of your image. This is used in each section to set
 			the background image.
 		-->
-			<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
+			<section id="post" class="wrapper bg-img" data-bg="banner8.JPG">
 				<div class="inner">
 					<article class="box">
 						<header>
@@ -82,8 +91,7 @@ $(document).ready(function() {
 									<button class="btn btn-primary my-2 my-sm-0" type="submit">검색</button>
 								</form>
 							</div>
-							</div>	
-							${pagingDto}	 
+							</div> 
 							<br><br>							
 <!-- 							<p>01.01.2017</p> -->
 						</header>
@@ -172,6 +180,10 @@ $(document).ready(function() {
 	<!-- // pagination -->
 					</article>
 				</div>
+				
+	<c:forEach begin="1" end="8">
+		<br> 
+	</c:forEach>
 			</section>
 
 <%@ include file="../include/footer.jsp" %>

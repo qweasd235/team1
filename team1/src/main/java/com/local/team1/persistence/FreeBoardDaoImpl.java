@@ -79,6 +79,9 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 		sqlsession.update(NAMESPACE + ".Reply_Count_Update", paramMap);
 	}
 
-	
+	@Override
+	public FreeBoardVo read_btnComment(int b_num) throws Exception {
+		return sqlsession.selectOne(NAMESPACE + ".read_btnComment", b_num);
+	}
 
 }

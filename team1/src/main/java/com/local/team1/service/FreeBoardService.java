@@ -22,6 +22,8 @@ public interface FreeBoardService {
 	public int totalCount(PagingDto pagingDto) throws Exception;
 	// 답글 쓰기
 	public void comment_Create(FreeBoardVo fb_vo) throws Exception;
+	// 글 상세보기(답글버튼 누르면)
+	public FreeBoardVo read_btnComment(int b_num) throws Exception;
 	
 	
 }

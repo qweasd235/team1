@@ -2,10 +2,20 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
 
+<style>
+#btnListAll {
+	background-color: green;
+}
+</style>
+
 <script>
 $(function() {
 	$(".font_color").css("color", "black");
-	$("#b_title").css("background-color", "white")
+	$("#b_title").css("background-color", "white");
+	
+	$("#btnListAll").click(function() {		
+		location.href = "/freeboard/freeBoardList";
+	});
 });
 </script>
 
@@ -28,13 +38,25 @@ ${fb_vo}
 				<textarea name="b_content" id="b_content" class="form-control"
 						placeholder="내용" rows="6">${fb_vo.b_content}</textarea>
 			</div>
+			
+<script type="text/javascript">
+   CKEDITOR.replace('b_content' 
+                  , {height: 200,  
+ 	 			   width: 900 
+                  });    
+
+</script>
+			
 			<div class="12u$">
 				<input type="file" name="file" id="b_pic"/>
 			</div>
 			<!-- Break -->
 			<div class="12u$">
 				<ul class="actions">
-					<li><input type="submit" value="작성완료" /></li>
+					<li>
+						<input type="submit" value="작성완료" />
+						<button type="button" id="btnListAll">목록가기</button>
+					</li>
 					<li><input type="reset" value="초기화" class="alt" /></li>
 				</ul>
 			</div>

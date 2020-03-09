@@ -43,7 +43,7 @@ $(document).ready(function() {
 	// 글 수정하기
 	$("#btnModify").click(function() {			
 		$("#b_title").prop("readonly", false).css("background-color", "white");
-		$("#b_content").prop("readonly", false);
+		CKEDITOR.instances.b_content.setReadOnly( false );
 		$("#pic").show(1000);
 		$(this).hide(600);
 		$("button[type=submit]").show(600);
@@ -267,8 +267,24 @@ $(document).ready(function() {
 						<div class="form-group">
 							<label for="b_content">내용</label><br>
 							<textarea rows="5" id="b_content" class="form-control font_color"
-								name="b_content" readonly>${fb_vo.b_content }</textarea>
-						</div>   
+								name="b_content">${fb_vo.b_content }</textarea>							
+						</div> 
+						
+<script type="text/javascript">
+	var editor = CKEDITOR.instances.b_content;
+   CKEDITOR.replace('b_content' 
+                  , {height: 200,  
+ 	 			     width: 900,
+ 	 			     on : {
+ 	 			   			 instanceReady : function(evt) {
+ 	 			     		 evt.editor.setReadOnly( true );	 			     		 
+ 	 			  		  	 }
+ 	 				 	  }
+ 	 				  
+   });    
+   
+</script>
+						  
 						<div class="form-group">
 							<label for="b_writer">글쓴이</label>
 							<span><strong>${fb_vo.b_writer }</strong></span>

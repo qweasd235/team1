@@ -68,6 +68,9 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		dao.comment_Create(fb_vo);
 	}
 
-	
+	@Override
+	public FreeBoardVo read_btnComment(int b_num) throws Exception {
+		return dao.read_btnComment(b_num);
+	}
 
 }
