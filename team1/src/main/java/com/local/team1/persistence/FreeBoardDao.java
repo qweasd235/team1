@@ -28,5 +28,7 @@ public interface FreeBoardDao {
 	public void comment_Update(FreeBoardVo fb_vo) throws Exception;
 	// 데이터 업데이트 (r_count)
 	public void reply_count(int count, int b_num) throws Exception; 
+	// 데이터 읽기 (답글 버튼 누르면)
+	public FreeBoardVo read_btnComment(int b_num) throws Exception;
 	
 }

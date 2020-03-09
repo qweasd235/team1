@@ -37,12 +37,15 @@ public class FreeBoardController {
 	
 	// 자유게시판 전체목록
 	@RequestMapping(value = "/freeBoardList", method = RequestMethod.GET)
-	public String freeBoard(Model model, PagingDto pagingDto) throws Exception {		
+	public String freeBoard(Model model, PagingDto pagingDto, HttpSession session) throws Exception {		
 		List<FreeBoardVo> list = fb_Service.listAll(pagingDto);	 
 		int totalCount =  fb_Service.totalCount(pagingDto); // 글 총 갯수 구하기
 		pagingDto.setTotalCount(totalCount);		
 		model.addAttribute("list", list);		
 		model.addAttribute("pagingDto", pagingDto);		
+		
+		MemberVo memberVo = (MemberVo)session.getAttribute("memberVo");
+		model.addAttribute("memberVo", memberVo);
 		return "board/freeBoardList";
 	}
 	
@@ -106,7 +109,7 @@ public class FreeBoardController {
 	// 게시판 글 답글쓰기 폼
 	@RequestMapping(value = "/fbCommentGET", method = RequestMethod.GET)
 	public String freeBoardCommentGET(@RequestParam("b_num") int b_num, Model model) throws Exception {
-		FreeBoardVo fb_vo = fb_Service.read(b_num);
+		FreeBoardVo fb_vo = fb_Service.read_btnComment(b_num);
 		model.addAttribute("fb_vo", fb_vo);
 		return "board/freeBoard_CommentRegister";
 	}

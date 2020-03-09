@@ -17,6 +17,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 		<script src="/resources/js/myscript.js"></script>
+		<script type="text/javascript" src="/resources/ckeditor/ckeditor.js"></script>
 		
 		<!-- Scripts -->
 			<script src="../resources/assets/js/jquery.min.js"></script>
