@@ -22,6 +22,10 @@ img {
 	height: 140px;
 }
 
+label {
+	font-weight: bold; 
+}
+
 
 </style>  
 
@@ -123,7 +127,7 @@ $(document).ready(function() {
 		
 		$("#modal_r_num").val(r_num);
 		$("#modal_r_content").val(r_content);
-		$("#modal_r_writer").val(r_writer);
+		$("#modal_r_writer").text(r_writer);
 		
 		$("#modal_reply").trigger("click");
 	});
@@ -161,6 +165,9 @@ $(document).ready(function() {
 	
 	// 리플 삭제
 	$("#Reply_Table_List").on("click", ".btnReplyDelete", function() {
+		if (!confirm("댓글을 삭제하시겠습니까?") ) {
+			return false;
+		}
 		console.log("클릭");
 		var r_num = $(this).attr("data-r_num");
 		var b_num = $(this).attr("data-b_num");
@@ -366,7 +373,7 @@ $(document).ready(function() {
 							<input type="text" class="form-control font_color"
 								id="modal_r_content"/><br>
 							<label class="font_color">작성자</label>
-							<div class="font_color">${fb_vo.b_writer}</div>
+							<div class="font_color" id="modal_r_writer"></div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-primary"

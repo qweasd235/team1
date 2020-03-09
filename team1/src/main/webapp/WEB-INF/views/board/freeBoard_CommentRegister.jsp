@@ -23,7 +23,6 @@ $(function() {
 	<div class="inner">
 	<article class="box">
 	<!-- Main -->
-${fb_vo}
 	<h3>답글쓰기</h3>
 	<form method="post" action="/freeboard/fbCommentPOST" enctype="multipart/form-data">	
 			<input type="hidden" name="b_ref" value="${fb_vo.b_ref}"/>
