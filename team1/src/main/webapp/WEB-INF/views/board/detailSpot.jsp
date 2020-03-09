@@ -44,7 +44,7 @@ span {
 	background-color: black;
 }
 
- </style>
+</style>
 
 <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 	<div class="inner">
@@ -69,7 +69,7 @@ span {
 					</c:if>
 					<c:if test="${not empty vo.s_homepage}">
 						<li><strong class="title">홈페이지</strong> <span> <a
-								href="http://www.cheongpungcablecar.com/" target="_blank">${vo.s_homepage}</a>
+								href="${vo.s_homepage}" target="_blank">${vo.s_homepage}</a>
 						</span></li>
 					</c:if>
 					<c:if test="${not empty vo.s_holiday}">
@@ -85,8 +85,13 @@ span {
 			</div>
 				<hr>
 					<strong>${vo.s_name} 위치</strong><br>
-					<div id="map" style="width:900px;height:400px;"></div>
-									
+					<div class="map_wrap">
+						<div id="map" style="width:900px;height:400px; position:relative; overflow:hidden;"></div>
+						<div class="custom_typecontrol radius_border">
+       						 <span id="btnRoadmap" class="selected_btn" onclick="setMapType('roadmap')">지도</span>
+       						 <span id="btnSkyview" class="btn" onclick="setMapType('skyview')">스카이뷰</span>
+   						 </div>
+   					</div>			
 				<!-- // 댓글 작성 -->
 				<div>
 				<c:if test="${not empty memberVo.mem_id}">
@@ -202,6 +207,21 @@ span {
 
 	var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
+	// 지도타입 컨트롤의 지도 또는 스카이뷰 버튼을 클릭하면 호출되어 지도타입을 바꾸는 함수입니다
+	function setMapType(maptype) { 
+	    var roadmapControl = document.getElementById('btnRoadmap');
+	    var skyviewControl = document.getElementById('btnSkyview'); 
+	    if (maptype === 'roadmap') {
+	        map.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);    
+	        roadmapControl.className = 'selected_btn';
+	        skyviewControl.className = 'btn';
+	    } else {
+	        map.setMapTypeId(kakao.maps.MapTypeId.HYBRID);    
+	        skyviewControl.className = 'selected_btn';
+	        roadmapControl.className = 'btn';
+	    }
+	}	
+	
 	//주소-좌표 변환 객체를 생성합니다
 	var geocoder = new kakao.maps.services.Geocoder();
 

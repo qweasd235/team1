@@ -43,6 +43,12 @@ $(document).ready(function(){
 			alert("아이디 중복을 체크해 주세요.");
 			return false;
 		}		
+		
+		if($("#mem_pw").val() != $("#mem_pw2").val()){
+			alert("패스워드와 패스워드 확인을 동일하게 입력해주세요.");
+			$("#mem_pw2").focus();
+			return false;
+		}
 				
 		var mem_id = $("input[name=mem_id]").val();
 		console.log("--------------------");
