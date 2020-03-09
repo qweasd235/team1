@@ -72,8 +72,18 @@ hr {
 				<table>
 					<c:forEach items="${list}" var="vo">
 						<tr>
-							<td><img alt='Bootstrap Image Preview'
-								src='/board/displayFile?fileName=${vo.s_pic}' /></td>
+							<td>
+							<c:choose>
+								<c:when test="${not empty vo.s_pic}">
+									<img alt='Bootstrap Image Preview'
+									src='/board/displayFile?fileName=${vo.s_pic}' />
+							</c:when>
+								<c:otherwise>
+									<img alt='Bootstrap Image Preview'
+									src='../resources/images/nothing.jpg'/>
+								</c:otherwise>
+							</c:choose>
+							</td>
 							<td id="subDetail">
 								<div id="spot_title">
 									<a data-s_id="${vo.s_id}" class="detail_content">${vo.s_name}</a>

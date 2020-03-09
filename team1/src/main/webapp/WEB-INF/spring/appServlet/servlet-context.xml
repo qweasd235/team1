@@ -61,21 +61,9 @@
 		<interceptor>
 			<mapping path="/freeboard/**/*"/>
 			<mapping path="/reply/**/*"/>
-<<<<<<< HEAD
-			<exclude-mapping path="/reply/listAll/*"/>
-			<exclude-mapping path="/board/home"/>
-			<exclude-mapping path="/board/displayFile"/>
-			<exclude-mapping path="/board/detail"/>
-			<exclude-mapping path="/board/regist"/>
-			<exclude-mapping path="/board/editPage"/>
-			<exclude-mapping path="/board/detailContent"/>
-			<exclude-mapping path="/board/freeBoardList"/>
-			<exclude-mapping path="/board/fbRead"/>
-=======
 			<exclude-mapping path="/reply/listAll/*"/>			
 			<exclude-mapping path="/freeboard/freeBoardList"/>
 			<exclude-mapping path="/freeboard/fbRead"/>
->>>>>>> branch 'master' of https://github.com/qweasd235/team1.git
 			<beans:ref bean="authInterceptor"/>
 		</interceptor>
 	</interceptors>
