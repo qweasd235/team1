@@ -54,8 +54,17 @@ span {
 				<p>${vo.s_add}</p>
 			</header>
 			<div class="spot_photo">
-				<img alt='Bootstrap Image Preview'
-					src='/board/displayFile?fileName=${vo.s_pic}' />
+				<c:choose>
+					<c:when test="${not empty vo.s_pic}">
+							<img alt='Bootstrap Image Preview'
+							src='/board/displayFile?fileName=${vo.s_pic}' />
+					</c:when>
+						<c:otherwise>
+							<img alt='Bootstrap Image Preview'
+								src='../resources/images/nothing.jpg'/>
+						</c:otherwise>
+					</c:choose>
+			
 			</div>
 			<hr>
 			<div class="content">${vo.s_detail}</div>
