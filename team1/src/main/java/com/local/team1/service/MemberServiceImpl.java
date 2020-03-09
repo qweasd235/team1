@@ -44,7 +44,7 @@ public class MemberServiceImpl implements MemberService {
 		sendMail.setText(
 				new StringBuffer().append("<h1>메일인증</h1>").append("<a href='http://localhost/mem/emailConfirm?mem_id=").append(vo.getMem_id()).append("&mem_email=").append(vo.getMem_email()).append("' target='_blenk'>이메일 인증 확인</a>").toString());
 		System.out.println("----6-----");
-		sendMail.setFrom("devstep88@gmail.com", "걸음마코드");
+		sendMail.setFrom("devstep88@gmail.com", "방방곡곡");
 		System.out.println("----7-----");
 		sendMail.setTo(vo.getMem_email());
 		System.out.println("----8-----");

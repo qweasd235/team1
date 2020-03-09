@@ -162,7 +162,16 @@ $(document).ready(function() {
 									<c:forEach items="${list}" var= "vo">
 										<c:if test="${vo.s_cate == '서울/경기'}">
 											<div class="swiper-slide">
-												<img src="/board/displayFile?fileName=${vo.s_pic}">
+												<c:choose>
+													<c:when test="${not empty vo.s_pic}">
+														<img alt='Bootstrap Image Preview'
+															src='/board/displayFile?fileName=${vo.s_pic}' />
+													</c:when>
+													<c:otherwise>
+														<img alt='Bootstrap Image Preview'
+															src='../resources/images/nothing.jpg'/>
+													</c:otherwise>
+												</c:choose>
 											</div>
 										</c:if>
 								</c:forEach>	

@@ -8,15 +8,23 @@
 <script>
 var msg = "${msg}";
 if (msg == "pw_change_fail") {
-	alert("현재 비밀번호가 틀렸습니다.");
+	alert("현재 패스워드가 틀렸습니다.");
 }else if(msg == "pw_not_equal"){
-	alert("변경할 비밀번호와 변경할 비밀번호 확인을 똑같이 입력해주세요.");
+	alert("변경할 패스워드와 변경할 패스워드 확인을 똑같이 입력해주세요.");
 }
 
 $(document).ready(function(){
 	$("#btnCancel").click(function(){
 		location.href = "/board/home";
 	});
+// 	$("#btnSubmit").click(function(){
+// 		if($("#mem_pw").val() != $("#mem_pw2").val()){
+// 			alert("변경할 패스워드와 변경할 패스워드 확인을 동일하게 입력해주세요.");
+// 			$("#mem_pw2").focus();
+// 			return false;
+// 		}
+// 	});
+	
 	$("#mem_pw2").keyup(function(){
 		if($("#mem_pw").val() != $("#mem_pw2").val()){
 			if($("#mem_pw2").val() != ""){
@@ -40,11 +48,11 @@ $(document).ready(function(){
 	<form id="joinForm" method="post" action="/mem/pw_changePost" autocomplete="off" enctype="multipart/form-data">
 		<table border="1">
 			<tr>
-				<th>현재 비밀번호</th>
+				<th>현재 패스워드</th>
 				<td><input type="password" name="old_mem_pw" id="old_mem_pw" required/></td>
 			</tr>
 			<tr>
-				<th>변경할 비밀번호</th>
+				<th>변경할 패스워드</th>
 				<td><input type="password" name="mem_pw" id="mem_pw" required/></td>
 			</tr>
 			<tr>
